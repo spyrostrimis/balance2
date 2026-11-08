@@ -1,0 +1,36 @@
+{
+  "author": "Quaternius",
+  "pack": "Ultimate Modular Men Pack",
+  "source": "https://quaternius.com/packs/ultimatemodularcharacters.html",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "retrieved": "2026-11-08",
+  "folder_url": "https://drive.google.com/drive/folders/1USAAquX2JJWuA2m6zol0KUkFe3UkZ8zX",
+  "original_files": [
+    {
+      "path": "Spacesuit.gltf",
+      "url": "https://drive.google.com/uc?export=download&id=1B6zZMmjGYzk38bIgv8a0hEodH2sgbKnw",
+      "bytes": 3715406,
+      "sha256": "33e0e0fbc6140ffc936a099fd84a274be406115c4b32aa0a697641710b67392a"
+    },
+    {
+      "path": "Swat.gltf",
+      "url": "https://drive.google.com/uc?export=download&id=1VGmU5f8a43NBT22JWB507NDSLbmNxzF9",
+      "bytes": 3368868,
+      "sha256": "622b3f36fcac90539ef8f7121ec1f11b5e1ae603a085019b3fa96eba20dddfd3"
+    },
+    {
+      "path": "Adventurer.gltf",
+      "url": "https://drive.google.com/uc?export=download&id=1fzSq1Rr037f7QkfXPWEAzmbLMNx-FpPA",
+      "bytes": 3671456,
+      "sha256": "21f7a61afb6bd6cef6961490c367594e3c2fc01ec1f041662131172ce763063e"
+    },
+    {
+      "path": "License.txt",
+      "url": "https://drive.google.com/uc?export=download&id=1TTvylHa1CsiJuHFWWiv6PFGhLM-aAH5z",
+      "bytes": 372,
+      "sha256": "e8dbf915a2b82229913e301a0787696611241bdefec4832bc084f54161db1efe"
+    }
+  ],
+  "modifications": "Original files unchanged. Runtime mesh assembly, material overrides, original cloth mantles, medical equipment, and shoulder armor are applied in scripts/character_visual.gd. Studio use only; current battle roster retains procedural placeholders."
+}

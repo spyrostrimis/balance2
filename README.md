@@ -8,6 +8,18 @@ The current creative priority is **visual identity and storytelling**. The appro
 [concept board and art direction](docs/ART_DIRECTION.md) guide the original
 procedural environment studies. Read the [opening story and draft script](docs/STORY.md).
 
+## Character Studio
+
+Double-click `CharacterStudio.bat`, or choose **Character Studio** on the mission
+briefing. Inspect three animated CC0-based character studies: Blue Captain, Blue
+Vanguard, and Red Commander. Drag to turn them, use the wheel to zoom, press
+**1 / 2 / 3** for individual views, and **F** for the full lineup. Buttons preview
+idle, walking, firing, and falling; **Space** pauses animation.
+
+These models are in a separate art review scene; the battle's existing roster
+remains intact. See [the character study](docs/CHARACTER_STUDY.md) for the current
+direction, license records, and remaining work toward the concept art.
+
 ## Play the first prototype
 
 Open `project.godot` with **Godot 4.7.2** and press **F6** with the main scene open,
@@ -73,6 +85,7 @@ Use the installed console executable (or `godot` if available on PATH):
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --editor --import --quit
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_battle.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/visual_smoke.gd
+& C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/test_character_studio.gd
 ```
 
 The tests exercise navigation around the deposit, healing boundaries and cooldown,
@@ -89,8 +102,12 @@ The visual interface also needs a windowed playtest after layout or input change
 | `scripts/scenery.gd` | Decorative cliffs, road, temple, plants, and field equipment |
 | `scripts/hud.gd` | Briefing, command panel, roster, overlays, results |
 | `scripts/shapes.gd` | Shared procedural mesh helpers |
+| `scripts/character_visual.gd` | CC0 character assembly, faction materials, animation playback |
+| `scripts/character_studio.gd` | Interactive lineup, close-ups, and animation review |
 
 Navigation uses Godot's [AStarGrid2D](https://docs.godotengine.org/en/stable/classes/class_astargrid2d.html).
 Original meshes are built with Godot's [SurfaceTool](https://docs.godotengine.org/en/stable/classes/class_surfacetool.html).
-No third-party game code or assets are required. No project distribution license
-has been chosen yet.
+Character Studio includes three CC0 character models and animations by Quaternius;
+their original license and provenance accompany them. No third-party game code or
+additional downloads are required to run the project. No project distribution
+license has been chosen yet.

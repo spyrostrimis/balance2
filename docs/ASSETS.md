@@ -23,7 +23,11 @@ consistent visual language. Before importing any pack, record:
 
 | Pack / author | Original source URL | License / evidence | Imported files | Changes |
 | --- | --- | --- | --- | --- |
-| No third-party packs imported yet | — | — | — | — |
+| Ultimate Modular Men / Quaternius | https://quaternius.com/packs/ultimatemodularcharacters.html | Pack page + original `License.txt`: CC0 1.0; hashes in `PROVENANCE.json` | `assets/third_party/quaternius/modular_men/{Spacesuit,Swat,Adventurer}.gltf` | Original files unchanged; runtime mesh assembly and recoloring in Character Studio |
+
+The external character models are currently used by the separate Character
+Studio scene. First Contact's combat roster still uses the original procedural
+soldiers. See `CHARACTER_STUDY.md` for the visual review and remaining art gaps.
 
 Do not assume “free” means CC0. Retain the license provided with each pack.
 If a suitable pack has another license, discuss that choice before adoption.

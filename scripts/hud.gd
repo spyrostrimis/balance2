@@ -28,6 +28,7 @@ func _ready() -> void:
 	_make_button("pause", "II", func(): game.toggle_pause())
 	_make_button("primary", "DEPLOY EXPEDITION   →", _primary_action)
 	_make_button("restart", "RESTART MISSION", func(): game.get_tree().reload_current_scene())
+	_make_button("studio", "CHARACTER STUDIO", func(): game.get_tree().change_scene_to_file("res://scenes/character_studio.tscn"))
 
 func _make_button(key: String, title: String, action: Callable) -> void:
 	var button := Button.new()
@@ -168,6 +169,7 @@ func _draw() -> void:
 	# Briefing, pause, and result all use the same readable mission panel.
 	buttons.primary.visible = modal
 	buttons.restart.visible = game.phase == "paused"
+	buttons.studio.visible = game.phase == "briefing"
 	if modal:
 		_draw_modal(size)
 
@@ -220,7 +222,9 @@ func _draw_modal(size: Vector2) -> void:
 	text_at(instruction, x + 16, y + 405, 15)
 	text_at(advice, x + 16, y + 427, 13, MUTED)
 	buttons.primary.text = "DEPLOY EXPEDITION   →" if game.phase == "briefing" else ("RESUME   →" if game.phase == "paused" else "REPLAY MISSION   →")
-	_place_button("primary", Rect2(x, y + 460, 684 if game.phase != "paused" else 350, 52))
+	_place_button("primary", Rect2(x, y + 460, 684 if game.phase == "ended" else 350, 52))
 	if game.phase == "paused":
 		_place_button("restart", Rect2(x + 365, y + 460, 319, 52))
+	if game.phase == "briefing":
+		_place_button("studio", Rect2(x + 365, y + 460, 319, 52))
 	text_at("THE SHATTERED BASIN   ·   A STRUGGLE FOR WATER, AND SELF-DETERMINATION", x, y + 546, 10, MUTED)

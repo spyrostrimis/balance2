@@ -56,10 +56,12 @@ The first environment pass uses original procedural rocks, stonework, road,
 plants, shaders, and faction accents. These establish composition and palette.
 They are replaceable production studies, not the final character art solution.
 
-Next, source or create one coherent biological character set, with close-up
-approval of the Blue leader, a regular soldier, and the Red counterpart before
-extending to the full roster. Test candidate CC0 packs side by side against the
-reference. Availability alone is not a reason to import a mismatched pack.
+Character Studio now provides the first coherent CC0-based trio: Blue Captain,
+regular soldier, and Red Commander. It supports close-up rotation, lighting, and
+authored animation review before extending the direction to the full roster.
+See `CHARACTER_STUDY.md` for source provenance and current limitations. These are
+intermediate low-poly studies; the reference remains the desired material and
+character-detail target. Availability alone does not make a pack the final choice.
 
 No specific named hero, gender, species, or voice is locked by the illustration.
 

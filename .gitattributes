@@ -6,3 +6,6 @@
 *.uid text eol=lf
 *.md text eol=lf
 *.bat text eol=crlf
+# Preserve downloaded source bytes so provenance hashes survive checkout.
+assets/third_party/quaternius/modular_men/*.gltf -text
+assets/third_party/quaternius/modular_men/License.txt -text
