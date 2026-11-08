@@ -3,6 +3,18 @@
 Working design record, 8 November 2026. This separates the creator's direction
 from temporary prototype choices. Names, stats, and mission rules remain tunable.
 
+## Current creative priority
+
+The creator has played the first prototype and considers the gameplay adequate
+as a starting point. Focus next on **visuals, aesthetics, and storyline**.
+Develop the world's visual identity, environments, faction designs, characters,
+and opening story before expanding mechanics. The next useful milestone is one
+convincing, atmospheric mission scene with a narrative purpose.
+
+Concept images and proposed story beats are explorations, not approved canon,
+final character designs, or evidence of implemented graphics. Select asset packs
+to serve an agreed art direction rather than letting available packs define it.
+
 ## Agreed direction
 
 - A mostly RTS game with RPG elements, made in Godot with stylized 3D art.
@@ -58,10 +70,11 @@ Temporary rules:
 
 ## Development sequence
 
-1. **Current:** a playable 4-versus-4 arena; evaluate controls, readability,
-   movement, combat pacing, healing, capture, and the consequences of losses.
-2. **Next:** player feedback and improved combat feel; select a consistent,
-   verified-license stylized art direction and replace placeholders deliberately.
+1. **Baseline complete:** a playable 4-versus-4 arena with selection, movement,
+   combat, healing, capture, and mission outcomes.
+2. **Current focus:** visual direction and storytelling. Explore environments,
+   faction silhouettes, a compelling opening, and biological character designs;
+   then select coherent verified-license art and replace placeholders deliberately.
 3. **Economy slice:** one robotic harvester, Korali extraction, refinery return,
    repair, and a small production loop.
 4. **RTS expansion:** a few buildings and unit types, base objectives, fog of war;
