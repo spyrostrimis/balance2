@@ -11,9 +11,17 @@ Develop the world's visual identity, environments, faction designs, characters,
 and opening story before expanding mechanics. The next useful milestone is one
 convincing, atmospheric mission scene with a narrative purpose.
 
-Concept images and proposed story beats are explorations, not approved canon,
-final character designs, or evidence of implemented graphics. Select asset packs
-to serve an agreed art direction rather than letting available packs define it.
+The creator approved the first concept board and the opening story proposal.
+The approved direction is ancient worlds with modern machinery, expressive
+biological characters, branching iridescent Korali in rock, and beauty alongside
+danger. The opening concerns a storm-damaged settlement's water system, a Red
+offer of aid conditional on permanent military administration, and worked stone
+beneath the deposit bearing markings associated with the Clergy.
+
+See `ART_DIRECTION.md` and `STORY.md` for the production direction and opening
+script. The concept board is an approved visual reference, not a screenshot or
+a finished 3D asset. Exact faces, names, and newly drafted dialogue remain
+editable. Select asset packs to serve this direction rather than define it.
 
 ## Agreed direction
 

@@ -90,7 +90,7 @@ func _draw() -> void:
 	draw_rect(Rect2(0, 0, size.x, 78), Color("101e27"))
 	draw_rect(Rect2(0, 77, size.x, 1), Color("3b555f"))
 	text_at("B A L A N C E", 28, 38, 25)
-	text_at("TACTICAL PROTOTYPE  /  0.1", 30, 60, 11, MUTED)
+	text_at("FIRST CONTACT  /  0.2", 30, 60, 11, MUTED)
 	text_at("01   /   FIRST CONTACT", 300, 34, 17)
 	text_at("KORALI EXPEDITION     ·     THE SHATTERED BASIN", 300, 56, 11, MUTED)
 	var minutes := int(game.elapsed / 60)
@@ -173,36 +173,54 @@ func _draw() -> void:
 
 func _draw_modal(size: Vector2) -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0.015, 0.035, 0.05, 0.76))
-	var origin := (size - Vector2(650, 482)) / 2
-	draw_rect(Rect2(origin, Vector2(650, 482)), Color("142832"))
-	draw_rect(Rect2(origin, Vector2(650, 3)), MINT)
+	var origin := (size - Vector2(760, 570)) / 2
+	draw_rect(Rect2(origin, Vector2(760, 570)), Color("142832"))
+	draw_rect(Rect2(origin, Vector2(760, 3)), Color("b69c6e"))
 	var x := origin.x + 38
 	var y := origin.y
 	var title := "First Contact"
-	var kicker := "MISSION 01   /   THE SHATTERED BASIN"
+	var kicker := "MISSION 01   /   THE SHATTERED BASIN   /   BEFORE NIGHTFALL"
 	var lines: Array[String] = [
-		"A Korali deposit has surfaced in the basin. A Red patrol",
-		"is approaching. Lead your four-person expedition to secure it.",
-		"Hold the marked ring uncontested for 40 cumulative seconds,",
-		"or defeat the enemy squad. Contested time does not count.",
-		"Keep your Captain close. Q heals injured allies nearby.",
-		"Every soldier matters. There are no reinforcements."]
+		"The storm destroyed the settlement's water regulator.",
+		"Korali from this basin can help restore it before nightfall.",
+		"",
+		"A Red patrol offers supplies and protection—if the settlement",
+		"accepts permanent military administration. Your command orders",
+		"restraint. The people waiting for water cannot wait."]
+	var quote := "“For as long as order requires.” — Red commander"
+	var objective := "SECURE THE DEPOSIT"
+	var instruction := "Hold the ring for 40 uncontested seconds, or defeat the Red patrol."
+	var advice := "Q heals nearby allies. Right-click moves or attacks. Every soldier matters."
 	if game.phase == "paused":
 		kicker = "TACTICAL PAUSE"
 		title = "Take a breath."
 		lines = ["The battle is paused.", "", "Right-click ground to move; right-click an enemy to focus fire.", "A then left-click advances while engaging enemies.", "Q heals around your Captain. H holds your selected troops.", "Scroll to zoom. Arrows pan. F returns to your squad."]
+		quote = ""
+		advice = "Preserve your expedition. There are no reinforcements."
 	elif game.phase == "ended":
 		kicker = "MISSION COMPLETE" if game.winner == 0 else "MISSION FAILED"
-		title = "The basin is yours." if game.winner == 0 else "The expedition fell."
-		lines = [game.result_reason, "", "Expedition survivors: %d / 4" % game.living(0).size(), "Blue control: %ds     /     Red control: %ds" % [int(game.scores[0]), int(game.scores[1])], "", "Try a different approach. Keep wounded troops behind the line."]
+		title = "Beneath the Korali" if game.winner == 0 else "The basin is lost."
+		if game.winner == 0:
+			lines = ["The deposit is secure. The recovery crew can now reach it.", "The settlement's repair is still ahead.", "", "A survey finds worked stone beneath the Korali.", "Its markings match the sealed Clergy monuments.", "Who built this place—and why was it buried?"]
+			quote = "The monument remains silent."
+		else:
+			lines = ["The Red patrol controls the deposit.", "Your expedition could not secure the Korali for the settlement.", "", "The water system still needs repair.", "The offer of supplies still carries its price:", "permanent military administration."]
+			quote = "The settlement's future remains uncertain."
+		objective = "EXPEDITION REPORT  /  %d OF 4 SURVIVED" % game.living(0).size()
+		instruction = game.result_reason
+		advice = "Blue control: %ds   /   Red control: %ds" % [int(game.scores[0]), int(game.scores[1])]
 	text_at(kicker, x, y + 43, 12, MINT)
 	text_at(title, x, y + 95, 38)
-	line(x, y + 119, 574)
+	line(x, y + 119, 684)
 	for i in range(lines.size()):
 		text_at(lines[i], x, y + 154 + i * 29, 16, INK if i < 2 else MUTED)
-	text_at("SELECT → MOVE → ENGAGE → PRESERVE", x, y + 356, 12, MINT)
+	text_at(quote, x, y + 335, 15, Color("d3bc91"))
+	draw_rect(Rect2(x, y + 358, 684, 84), Color("1c343e"))
+	text_at(objective, x + 16, y + 380, 12, MINT)
+	text_at(instruction, x + 16, y + 405, 15)
+	text_at(advice, x + 16, y + 427, 13, MUTED)
 	buttons.primary.text = "DEPLOY EXPEDITION   →" if game.phase == "briefing" else ("RESUME   →" if game.phase == "paused" else "REPLAY MISSION   →")
-	_place_button("primary", Rect2(x, y + 386, 574 if game.phase != "paused" else 300, 52))
+	_place_button("primary", Rect2(x, y + 460, 684 if game.phase != "paused" else 350, 52))
 	if game.phase == "paused":
-		_place_button("restart", Rect2(x + 315, y + 386, 259, 52))
-	text_at("ORIGINAL PLACEHOLDER ART  ·  EARLY GAMEPLAY BUILD", x, y + 462, 10, MUTED)
+		_place_button("restart", Rect2(x + 365, y + 460, 319, 52))
+	text_at("THE SHATTERED BASIN   ·   A STRUGGLE FOR WATER, AND SELF-DETERMINATION", x, y + 546, 10, MUTED)

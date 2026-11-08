@@ -3,6 +3,7 @@ extends Node3D
 ## by Battle, so pause, victory, and headless tests share the same behavior.
 
 const Art = preload("res://scripts/shapes.gd")
+const Scenery = preload("res://scripts/scenery.gd")
 var game: Node3D
 var team := 0
 var leader := false
@@ -43,30 +44,50 @@ func configure(battle: Node3D, faction: int, index: int) -> void:
 	attack_timer = index * 0.17
 
 func _ready() -> void:
-	var color := Color("499ce0") if team == 0 else Color("c94f49")
+	var color := Color("286eac") if team == 0 else Color("a33d37")
 	var armor := Art.material(color)
-	var dark := Art.material(Color("283c49"))
-	var skin := Art.material(Color("c89471"))
-	var accent := Art.material(Color("b5ebff") if team == 0 else Color("ffdba3"), 0.5)
+	var dark := Art.material(Color("29343b"))
+	var skin := Art.material(Color("be8a65") if role != "SCOUT" else Color("896247"))
+	var bronze := Art.material(Color("b19460") if team == 0 else Color("9e6550"))
+	var cloth := Art.material(Color("cebd99") if team == 0 else Color("584242"))
+	var accent := Art.material(Color("77d4df") if team == 0 else Color("e6a164"), 0.2)
 	actor = Node3D.new()
 	add_child(actor)
 	var bulk := 1.17 if role == "HEAVY" else 1.0
-	Art.box(actor, Vector3(0, 0.97, 0), Vector3(0.57 * bulk, 0.65, 0.36), armor)
+	var torso := Art.cylinder(actor, Vector3(0, 1.0, 0), 0.27 * bulk, 0.34 * bulk, 0.63, armor, 6)
+	torso.scale.z = 0.7
 	Art.box(actor, Vector3(0, 0.87, 0.22), Vector3(0.38, 0.47, 0.18), dark)
-	Art.box(actor, Vector3(0, 1.47, 0), Vector3(0.36, 0.36, 0.34), skin)
-	Art.box(actor, Vector3(0, 1.65, 0.02), Vector3(0.42, 0.14, 0.4), armor)
-	Art.box(actor, Vector3(0, 1.5, -0.18), Vector3(0.32, 0.1, 0.04), dark)
+	Art.sphere(actor, Vector3(0, 1.49, 0), Vector3(0.35, 0.43, 0.34), skin)
+	Art.sphere(actor, Vector3(0, 1.65, 0.035), Vector3(0.37, 0.18, 0.35), Art.material(Color("40372e")) if leader else armor)
+	Art.box(actor, Vector3(0, 1.52, -0.165), Vector3(0.24, 0.035, 0.025), dark)
+	Art.sphere(actor, Vector3(0, 1.45, -0.17), Vector3(0.075, 0.09, 0.07), skin)
+	var collar := Art.cylinder(actor, Vector3(0, 1.32, 0), 0.22, 0.23, 0.13, cloth, 8)
+	collar.scale.z = 0.8
+	Art.box(actor, Vector3(0, 0.7, -0.02), Vector3(0.57, 0.1, 0.37), bronze)
+	Art.box(actor, Vector3(-0.16, 0.55, -0.11), Vector3(0.14, 0.26, 0.12), cloth)
 	for side in [-1, 1]:
-		Art.box(actor, Vector3(side * 0.4 * bulk, 1.14, 0), Vector3(0.25, 0.3, 0.4), armor)
-		Art.box(actor, Vector3(side * 0.4 * bulk, 0.88, -0.13), Vector3(0.19, 0.36, 0.21), dark)
-		legs.append(Art.box(actor, Vector3(side * 0.18, 0.39, 0), Vector3(0.23, 0.65, 0.25), dark))
+		if team == 0:
+			Art.sphere(actor, Vector3(side * 0.36 * bulk, 1.18, 0), Vector3(0.31, 0.29, 0.43), armor)
+		else:
+			var pauldron := Art.box(actor, Vector3(side * 0.38 * bulk, 1.18, 0), Vector3(0.31, 0.23, 0.43), armor)
+			pauldron.rotation.z = side * -0.2
+		Art.box(actor, Vector3(side * 0.36 * bulk, 1.07, -0.03), Vector3(0.28, 0.045, 0.37), bronze)
+		Art.sphere(actor, Vector3(side * 0.39 * bulk, 0.92, -0.1), Vector3(0.21, 0.4, 0.22), dark)
+		Art.sphere(actor, Vector3(side * 0.38 * bulk, 0.77, -0.19), Vector3(0.16, 0.2, 0.16), skin)
+		legs.append(Art.cylinder(actor, Vector3(side * 0.18, 0.4, 0), 0.11, 0.14, 0.62, dark, 8))
+		Art.sphere(actor, Vector3(side * 0.18, 0.41, -0.1), Vector3(0.24, 0.25, 0.16), armor)
 		Art.box(actor, Vector3(side * 0.18, 0.12, -0.08), Vector3(0.27, 0.2, 0.43), armor)
 	Art.box(actor, Vector3(0.38, 0.93, -0.5), Vector3(0.15 if role != "HEAVY" else 0.25, 0.18, 0.75), dark)
 	Art.box(actor, Vector3(0.38, 0.93, -0.9), Vector3(0.1, 0.1, 0.08), accent)
 	Art.box(actor, Vector3(0, 1.12, -0.2), Vector3(0.19, 0.12, 0.04), accent)
 	if leader:
-		Art.box(actor, Vector3(-0.2, 1.35, 0.24), Vector3(0.12, 0.72, 0.08), accent)
-		Art.box(actor, Vector3(0, 0.75, 0.29), Vector3(0.5, 0.7, 0.06), armor)
+		Scenery.banner(actor, Vector3(-0.05, 0.83, 0.28), Vector2(0.64, 0.97), Color("d1c19c") if team == 0 else Color("6c282d"))
+		Art.box(actor, Vector3(-0.42, 0.92, -0.14), Vector3(0.27, 0.22, 0.24), bronze)
+		if team == 0:
+			Art.box(actor, Vector3(-0.42, 0.92, -0.27), Vector3(0.08, 0.15, 0.025), accent)
+			Art.box(actor, Vector3(-0.42, 0.92, -0.27), Vector3(0.17, 0.06, 0.03), accent)
+		else:
+			Art.box(actor, Vector3(0.38, 0.93, -0.5), Vector3(0.27, 0.28, 0.6), armor)
 		actor.scale = Vector3.ONE * 1.12
 	selection_ring = Art.ring(self, 0.7, Color("b2efff"), 0.04)
 	selection_ring.visible = false

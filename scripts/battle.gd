@@ -23,7 +23,7 @@ var attack_armed := false
 var dragging := false
 var drag_origin := Vector2.ZERO
 var drag_position := Vector2.ZERO
-var camera_focus := Vector3(6.0, 0, 0)
+var camera_focus := Vector3(6.0, 0, -2.8)
 var effects: Array[Dictionary] = []
 var status_message := "Select your squad. Secure the Korali."
 var notification_timer := 8.0
@@ -53,22 +53,22 @@ func _setup_environment() -> void:
 	var environment := WorldEnvironment.new()
 	environment.environment = Environment.new()
 	environment.environment.background_mode = Environment.BG_COLOR
-	environment.environment.background_color = Color("18292e")
+	environment.environment.background_color = Color("858178")
 	environment.environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	environment.environment.ambient_light_color = Color("bddeec")
-	environment.environment.ambient_light_energy = 0.3
+	environment.environment.ambient_light_color = Color("a3c0d8")
+	environment.environment.ambient_light_energy = 0.4
 	environment.environment.tonemap_mode = Environment.TONE_MAPPER_LINEAR
 	add_child(environment)
 	var light := DirectionalLight3D.new()
-	light.rotation_degrees = Vector3(-52, -32, 0)
-	light.light_color = Color("ffeacb")
-	light.light_energy = 0.8
+	light.rotation_degrees = Vector3(-42, -36, 0)
+	light.light_color = Color("ffdeaf")
+	light.light_energy = 0.85
 	light.shadow_enabled = true
 	light.directional_shadow_max_distance = 95
 	add_child(light)
 	camera = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 36
+	camera.size = 39
 	camera.far = 180
 	add_child(camera)
 	_update_camera()

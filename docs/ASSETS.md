@@ -1,13 +1,22 @@
 # Asset provenance
 
-The current build uses original procedural geometric meshes and flat materials
-defined in `scripts/shapes.gd`, `scripts/arena.gd`, and `scripts/unit.gd`,
-plus an original procedural sand shader in `shaders/sand.gdshader`.
-No downloaded models, textures, sounds, logos, or franchise assets are included.
+The current build uses original procedural geometric meshes and materials in
+`scripts/shapes.gd`, `scripts/arena.gd`, `scripts/scenery.gd`, and `scripts/unit.gd`.
+Original shaders in `shaders/` provide sand, stratified stone, Korali seams,
+and subtly moving cloth. No downloaded models, textures, sounds, logos, or
+franchise assets are included in gameplay.
 Text uses Godot's bundled fallback font. No local proprietary fonts are copied.
 
-These are gameplay placeholders, not a claim of finished stylized-realism art.
+These are environment and character studies, not finished stylized-realism art.
 There is no sound or music yet.
+
+## Generated concept reference
+
+`assets/concepts/first-contact-v1.png` is the original concept board generated
+with the built-in image generation tool in this project conversation and approved
+by the creator. The full prompt is retained beside it. It is used in the art
+direction document, not as a 3D gameplay asset or a screenshot of the build.
+It is not a third-party CC0 pack, and no CC0 license is asserted for it.
 
 The preference for future external art is free CC0 stylized 3D packs with a
 consistent visual language. Before importing any pack, record:

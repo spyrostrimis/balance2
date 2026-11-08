@@ -4,6 +4,10 @@ A small-scale science-fiction RTS with RPG ambitions, built with Godot.
 Scarce **Korali**, valuable troops, biological leaders, and a future transforming
 robotic harvester form the core direction.
 
+The current creative priority is **visual identity and storytelling**. The approved
+[concept board and art direction](docs/ART_DIRECTION.md) guide the original
+procedural environment studies. Read the [opening story and draft script](docs/STORY.md).
+
 ## Play the first prototype
 
 Open `project.godot` with **Godot 4.7.2** and press **F6** with the main scene open,
@@ -15,6 +19,8 @@ The launcher uses the installed Godot under `C:\Godot`; if installed elsewhere,
 set the `GODOT_EXE` environment variable or launch the project from Godot.
 
 **First Contact:** four Blue soldiers versus four Red soldiers in a desert basin.
+The settlement's water system has been damaged by a storm. Blue needs the Korali
+to help repair it; Red offers aid conditional on permanent military administration.
 Secure the central Korali deposit for **40 cumulative uncontested seconds**, or
 defeat the opposing squad. Both sides can win. The AI advances after seven seconds.
 The briefing pauses the simulation until deployment.
@@ -43,13 +49,17 @@ cannot heal. There are no reinforcements.
 
 ## What exists, and what does not
 
-Implemented: original 3D placeholder arena and soldiers, rock-aware grid paths,
-selection and group orders, ranged combat, simple objective AI, healing,
-capture and elimination outcomes, pause, restart, and a command sidebar.
+Implemented: original 3D environment study with sandstone cliffs, a broken
+processional road, a sealed Clergy entrance, desert plants, Korali veins in stone,
+and biological soldier placeholders with faction armor and cloth accents;
+story briefing and outcome text; rock-aware grid paths, selection and group orders,
+ranged combat, simple objective AI, healing, capture and elimination outcomes,
+pause, restart, and a command sidebar.
 
 Not yet implemented: harvesting, transformation, construction, repair of machines,
 campaigns, hero progression, additional factions/species, wildlife, storms,
-radar, fog of war, sound, multiplayer, or final art assets. Obstacles block
+radar, fog of war, voice acting, cutscenes, sound, multiplayer, or final art assets.
+The concept image is a visual target, not a screenshot of implemented graphics. Obstacles block
 movement but **do not block gunfire** in this first combat model. Unit avoidance
 is lightweight steering, suitable for this eight-unit prototype.
 
@@ -76,9 +86,11 @@ The visual interface also needs a windowed playtest after layout or input change
 | `scripts/battle.gd` | Mission simulation, commands, AI, camera, outcomes |
 | `scripts/unit.gd` | Soldier stats, movement, targeting, combat, placeholder mesh |
 | `scripts/arena.gd` | Terrain, obstacles, AStarGrid2D paths |
+| `scripts/scenery.gd` | Decorative cliffs, road, temple, plants, and field equipment |
 | `scripts/hud.gd` | Briefing, command panel, roster, overlays, results |
 | `scripts/shapes.gd` | Shared procedural mesh helpers |
 
 Navigation uses Godot's [AStarGrid2D](https://docs.godotengine.org/en/stable/classes/class_astargrid2d.html).
+Original meshes are built with Godot's [SurfaceTool](https://docs.godotengine.org/en/stable/classes/class_surfacetool.html).
 No third-party game code or assets are required. No project distribution license
 has been chosen yet.

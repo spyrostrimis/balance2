@@ -21,8 +21,9 @@ void vertex() {
 
 void fragment() {
 	vec2 p = ground_position.xz;
-	float variation = noise(p * 0.4) * 0.7 + noise(p * 2.2) * 0.3;
-	float grain = noise(p * 26.0) * 0.035;
-	ALBEDO = mix(vec3(0.40, 0.32, 0.23), vec3(0.56, 0.45, 0.31), variation) + grain;
+	float variation = noise(p * 0.17) * 0.7 + noise(p * 1.4) * 0.3;
+	float grain = noise(p * 28.0) * 0.025;
+	float ripples = sin(p.y * 19.0 + noise(p * 0.35) * 7.0) * 0.014;
+	ALBEDO = mix(vec3(0.40, 0.28, 0.17), vec3(0.60, 0.45, 0.28), variation) + grain + ripples;
 	ROUGHNESS = 1.0;
 }
