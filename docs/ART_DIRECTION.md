@@ -56,6 +56,19 @@ The first environment pass uses original procedural rocks, stonework, road,
 plants, shaders, and faction accents. These establish composition and palette.
 They are replaceable production studies, not the final character art solution.
 
+First Contact 0.4 develops the basin as a storm-damaged oasis outpost around an
+older sacred site. A breached cistern, torn pipe, and remnant water connect the
+scene to the settlement's need. Broken aqueduct supports extend the ancient
+architecture. Teal desert trees and grasses occupy border pockets, leaving the
+central combat area open. Sand has silt and runoff variation; stone uses softer
+weathering instead of uniform stripes. Physical ledges break up the northern
+cliffs, and the landscape rises outside the flat navigation area.
+
+Water and foliage have restrained ambient shader animation. These are visual
+details, not a weather simulation. New solid props have navigation footprints;
+the navigation check verifies that every remaining walkable cell is connected.
+The opening camera frames the sanctuary, and close zoom remains available.
+
 Character Studio now provides the first coherent CC0-based trio: Blue Captain,
 regular soldier, and Red Commander. It supports close-up rotation, lighting, and
 authored animation review. Following the creator's positive review, the same

@@ -91,7 +91,7 @@ func _draw() -> void:
 	draw_rect(Rect2(0, 0, size.x, 78), Color("101e27"))
 	draw_rect(Rect2(0, 77, size.x, 1), Color("3b555f"))
 	text_at("B A L A N C E", 28, 38, 25)
-	text_at("FIRST CONTACT  /  0.3", 30, 60, 11, MUTED)
+	text_at("FIRST CONTACT  /  0.4", 30, 60, 11, MUTED)
 	text_at("01   /   FIRST CONTACT", 300, 34, 17)
 	text_at("KORALI EXPEDITION     ·     THE SHATTERED BASIN", 300, 56, 11, MUTED)
 	var minutes := int(game.elapsed / 60)

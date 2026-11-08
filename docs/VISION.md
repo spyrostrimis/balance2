@@ -28,6 +28,11 @@ asked to continue. First Contact 0.3 now uses that assembly for both squads, wit
 role equipment and animation. This accepts it as a production starting point;
 the provisional shared faces and lower detail do not replace the concept target.
 
+At the creator's request, 0.4 next develops the environment: storm-damaged water
+infrastructure, older aqueduct ruins, vegetation pockets, and terrain/material
+variation. These support the existing opening story; they do not introduce a
+working economy, repairs, or additional mission objectives.
+
 ## Agreed direction
 
 - A mostly RTS game with RPG elements, made in Godot with stylized 3D art.

@@ -1,10 +1,14 @@
 # Asset provenance
 
 The current build uses original procedural geometric meshes and materials in
-`scripts/shapes.gd`, `scripts/arena.gd`, `scripts/scenery.gd`, and the equipment
+`scripts/shapes.gd`, `scripts/arena.gd`, `scripts/scenery.gd`,
+`scripts/basin_details.gd`, and the equipment
 additions in `scripts/character_visual.gd`.
 Original shaders in `shaders/` provide sand, stratified stone, Korali seams,
-and subtly moving cloth. Gameplay character meshes and animations come from the
+water ripples, wind-stirred foliage, and subtly moving cloth. The cistern,
+aqueduct, desert trees, and border terrain are original procedural geometry;
+no additional downloaded assets were introduced for the 0.4 environment pass.
+Gameplay character meshes and animations come from the
 verified CC0 pack below. No franchise assets are included.
 Text uses Godot's bundled fallback font. No local proprietary fonts are copied.
 

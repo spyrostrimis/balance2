@@ -9,9 +9,9 @@ static func stone(color: Color) -> ShaderMaterial:
 	return material
 
 static func build(parent: Node3D) -> void:
-	var sandstone := stone(Color("a56841"))
-	var pale := stone(Color("b39b77"))
-	var dark := stone(Color("76513a"))
+	var sandstone := stone(Color("a17d62"))
+	var pale := stone(Color("b5a489"))
+	var dark := stone(Color("766454"))
 	var rng := RandomNumberGenerator.new()
 	rng.seed = 19921994
 	# A continuous landscape beyond the navigable basin, with overlapping mesas.
@@ -23,6 +23,9 @@ static func build(parent: Node3D) -> void:
 		Art.rock(parent, Vector3(x, height * 0.38, z), Vector3(10, height, 10), sandstone, 200 + i)
 		Art.rock(parent, Vector3(x + 1, height * 0.75, z - 2), Vector3(8, height * 0.55, 8), pale, 240 + i)
 		Art.rock(parent, Vector3(x - 1.2, 0.8, z + 4.5), Vector3(6, 2.8, 5), dark, 270 + i)
+		for tier in range(3):
+			var ledge := Art.rock(parent, Vector3(x + sin(i + tier) * 0.7, height * (0.22 + tier * 0.22), z + 0.5), Vector3(10.0 - tier * 0.7, 0.45, 8.8 - tier * 0.6), sandstone, 810 + i * 3 + tier)
+			ledge.rotation.z = sin(i) * 0.035
 	for side in [-1, 1]:
 		for i in range(6):
 			var z := -15.0 + i * 6.0
@@ -50,14 +53,14 @@ static func build(parent: Node3D) -> void:
 	_build_field_equipment(parent)
 
 static func _build_road(parent: Node3D, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
-	var paving := stone(Color("9b896a"))
+	var paving := stone(Color("9e967e"))
 	for row in range(23):
 		var z := -16.0 + row * 1.45
 		for column in range(3):
-			if rng.randf() < 0.16 or (absf(z) < 2 and column == 1): continue
+			if rng.randf() < 0.27 or (absf(z) < 2 and column == 1): continue
 			var x := (column - 1) * 1.35 + sin(z * 0.18) * 0.35
-			var slab := Art.paving(parent, Vector3(x, -0.03, z), Vector2(1.32, 1.4), paving, row * 3 + column)
-			slab.rotation.y = rng.randf_range(-0.05, 0.05)
+			var slab := Art.paving(parent, Vector3(x, -0.04, z), Vector2(rng.randf_range(1.05, 1.3), rng.randf_range(1.1, 1.4)), paving, row * 3 + column)
+			slab.rotation.y = rng.randf_range(-0.13, 0.13)
 	# Broken surveying marks suggest a modern expedition using an ancient site.
 	for side in [-1, 1]:
 		for z in [-11.0, 10.5]:

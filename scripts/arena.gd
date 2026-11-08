@@ -4,6 +4,7 @@ extends Node3D
 
 const Art = preload("res://scripts/shapes.gd")
 const Scenery = preload("res://scripts/scenery.gd")
+const Details = preload("res://scripts/basin_details.gd")
 const HALF_WIDTH := 21
 const HALF_DEPTH := 14
 const CAPTURE_RADIUS := 5.2
@@ -20,8 +21,11 @@ func _build_terrain() -> void:
 	sand.shader = preload("res://shaders/sand.gdshader")
 	var sandstone := Scenery.stone(Color("a8794d"))
 	var dark_stone := Art.material(Color("414b4c"))
-	Art.box(self, Vector3(0, -0.16, 0), Vector3(110, 0.3, 100), sand)
+	Details.terrain(self, sand)
 	Scenery.build(self)
+	Details.build(self)
+	# Register all substantial new props before building the navigation grid.
+	obstacles.append_array(Details.obstacle_footprints())
 	capture_ring = Art.ring(self, CAPTURE_RADIUS, Color("80bca9"), 0.025)
 	for i in range(12):
 		var angle := i * TAU / 12

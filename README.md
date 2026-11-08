@@ -8,6 +8,13 @@ The current creative priority is **visual identity and storytelling**. The appro
 [concept board and art direction](docs/ART_DIRECTION.md) guide the original
 procedural environment studies. Read the [opening story and draft script](docs/STORY.md).
 
+**First Contact 0.4** adds a breached cistern, damaged pipes, aqueduct ruins,
+desert trees, wind-stirred grasses, softer stone weathering, and varied ground
+tones. The wider opening view frames the sealed sanctuary. Deploy, then use the
+arrow keys to explore and the wheel to inspect details. Space pauses combat;
+camera movement remains available. The water station is scenery, not a repair
+or harvesting system.
+
 ## Character Studio
 
 Double-click `CharacterStudio.bat`, or choose **Character Studio** on the mission
@@ -89,6 +96,7 @@ Use the installed console executable (or `godot` if available on PATH):
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --editor --import --quit
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_battle.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_unit_visuals.gd
+& C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_environment.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/visual_smoke.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/test_character_studio.gd
 ```
@@ -105,6 +113,7 @@ The visual interface also needs a windowed playtest after layout or input change
 | `scripts/unit.gd` | Soldier stats, movement, targeting, combat, animation states |
 | `scripts/arena.gd` | Terrain, obstacles, AStarGrid2D paths |
 | `scripts/scenery.gd` | Decorative cliffs, road, temple, plants, and field equipment |
+| `scripts/basin_details.gd` | Raised border terrain, cistern, aqueduct, trees, and obstacle footprints |
 | `scripts/hud.gd` | Briefing, command panel, roster, overlays, results |
 | `scripts/shapes.gd` | Shared procedural mesh helpers |
 | `scripts/character_visual.gd` | CC0 character assembly, faction materials, animation playback |
