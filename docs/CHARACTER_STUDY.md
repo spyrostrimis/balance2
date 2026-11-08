@@ -1,6 +1,6 @@
 # Character study 01
 
-This is a playable art review room, separate from First Contact's battle roster.
+This is a playable art review room for the assembly now used in First Contact.
 It replaces abstract body-part previews with actual skinned character meshes and
 authored animations. It is an intermediate asset direction, not the final fidelity
 of the approved concept board.
@@ -64,6 +64,20 @@ distinct final characters. The source weapon is a pistol; final rifles and the
 Red leader's signature weapon are later art work. The approved reference calls
 for richer materials and more expressive character detail than these models.
 
-The battle retains its existing procedural soldiers while this trio is reviewed.
-After the visual direction is chosen, the reusable assembly can feed the mission
-roster and animation states without rewriting the combat simulation.
+## Mission integration: First Contact 0.3
+
+Following the creator's positive review, all eight soldiers now use this assembly.
+Leaders retain their mantle and face; regular troops wear enclosed helmets in
+their faction colors. Scouts have lighter proportions and a compact radio pack;
+heavies have broader armor, shoulder plates, and a larger pack. These accessories
+are original procedural meshes attached to the shared skeleton.
+
+Movement drives the running clip, scaled to each role's speed. Soldiers aim
+between shots, play recoil when an actual shot occurs, and play a non-looping fall
+when defeated. Weapon flashes and tracers originate at the animated pistol muzzle.
+Pause freezes skeletal animation. The last casualty may finish falling behind the
+result panel while the simulation and surviving soldiers remain frozen.
+
+The closer default camera and expanded zoom range make the new models easier to
+inspect in the environment. Select the squad, zoom in, then press F to center it.
+Combat values, order behavior, and mission objectives are unchanged.

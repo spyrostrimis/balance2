@@ -32,5 +32,5 @@
       "sha256": "e8dbf915a2b82229913e301a0787696611241bdefec4832bc084f54161db1efe"
     }
   ],
-  "modifications": "Original files unchanged. Runtime mesh assembly, material overrides, original cloth mantles, medical equipment, and shoulder armor are applied in scripts/character_visual.gd. Studio use only; current battle roster retains procedural placeholders."
+  "modifications": "Original files unchanged. Runtime mesh assembly, material overrides, original cloth mantles, medical equipment, shoulder armor, and scout/heavy packs are applied in scripts/character_visual.gd. Used in Character Studio and all eight First Contact soldiers. Source skeleton and authored clips drive mission animation; the pistol bind pose supplies the muzzle position for shot effects."
 }

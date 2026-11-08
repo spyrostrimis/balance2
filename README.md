@@ -16,9 +16,10 @@ Vanguard, and Red Commander. Drag to turn them, use the wheel to zoom, press
 **1 / 2 / 3** for individual views, and **F** for the full lineup. Buttons preview
 idle, walking, firing, and falling; **Space** pauses animation.
 
-These models are in a separate art review scene; the battle's existing roster
-remains intact. See [the character study](docs/CHARACTER_STUDY.md) for the current
-direction, license records, and remaining work toward the concept art.
+The same character assembly now powers all eight soldiers in First Contact,
+with scout and heavy equipment variants. The studio remains available for close
+inspection. See [the character study](docs/CHARACTER_STUDY.md) for license records
+and remaining work toward the concept art.
 
 ## Play the first prototype
 
@@ -50,7 +51,7 @@ The briefing pauses the simulation until deployment.
 | Click a roster card | Select that soldier |
 | F | Focus camera on selection |
 | Arrows / IJKL | Pan camera |
-| Mouse wheel | Zoom |
+| Mouse wheel | Zoom, including closer views of the animated soldiers |
 | Space / Escape | Pause / resume; Escape first cancels armed attack-move |
 | R while paused or after a result | Restart at the briefing |
 
@@ -63,7 +64,8 @@ cannot heal. There are no reinforcements.
 
 Implemented: original 3D environment study with sandstone cliffs, a broken
 processional road, a sealed Clergy entrance, desert plants, Korali veins in stone,
-and biological soldier placeholders with faction armor and cloth accents;
+and animated biological soldiers with faction armor, leader mantles, scout
+equipment, and heavy armor; running, aiming, firing, and falling animations;
 story briefing and outcome text; rock-aware grid paths, selection and group orders,
 ranged combat, simple objective AI, healing, capture and elimination outcomes,
 pause, restart, and a command sidebar.
@@ -74,6 +76,8 @@ radar, fog of war, voice acting, cutscenes, sound, multiplayer, or final art ass
 The concept image is a visual target, not a screenshot of implemented graphics. Obstacles block
 movement but **do not block gunfire** in this first combat model. Unit avoidance
 is lightweight steering, suitable for this eight-unit prototype.
+The leaders still share a provisional source face, and all roles currently carry
+the source pistol. Distinct rifles, heavy weapons, and final faces remain art work.
 
 See [the design record](docs/VISION.md) and [asset provenance](docs/ASSETS.md).
 
@@ -84,6 +88,7 @@ Use the installed console executable (or `godot` if available on PATH):
 ```powershell
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --editor --import --quit
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_battle.gd
+& C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_unit_visuals.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/visual_smoke.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/test_character_studio.gd
 ```
@@ -97,7 +102,7 @@ The visual interface also needs a windowed playtest after layout or input change
 | File | Responsibility |
 | --- | --- |
 | `scripts/battle.gd` | Mission simulation, commands, AI, camera, outcomes |
-| `scripts/unit.gd` | Soldier stats, movement, targeting, combat, placeholder mesh |
+| `scripts/unit.gd` | Soldier stats, movement, targeting, combat, animation states |
 | `scripts/arena.gd` | Terrain, obstacles, AStarGrid2D paths |
 | `scripts/scenery.gd` | Decorative cliffs, road, temple, plants, and field equipment |
 | `scripts/hud.gd` | Briefing, command panel, roster, overlays, results |

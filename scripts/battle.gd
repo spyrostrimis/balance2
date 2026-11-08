@@ -23,7 +23,7 @@ var attack_armed := false
 var dragging := false
 var drag_origin := Vector2.ZERO
 var drag_position := Vector2.ZERO
-var camera_focus := Vector3(6.0, 0, -2.8)
+var camera_focus := Vector3(4.9, 0, -2.8)
 var effects: Array[Dictionary] = []
 var status_message := "Select your squad. Secure the Korali."
 var notification_timer := 8.0
@@ -68,7 +68,7 @@ func _setup_environment() -> void:
 	add_child(light)
 	camera = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 39
+	camera.size = 32
 	camera.far = 180
 	add_child(camera)
 	_update_camera()
@@ -103,6 +103,11 @@ func step_simulation(delta: float) -> void:
 		finish(0, "The opposing patrol has been defeated.")
 
 func _process(delta: float) -> void:
+	# Let a last casualty finish falling behind the result panel. No orders,
+	# damage, timers, or living-unit animations continue after the mission ends.
+	if phase == "ended":
+		for unit in units:
+			if not unit.alive: unit.actor.advance_animation(delta)
 	if phase == "playing" or phase == "paused":
 		var pan := Vector3.ZERO
 		if Input.is_physical_key_pressed(KEY_LEFT) or Input.is_physical_key_pressed(KEY_J): pan.x -= 1
@@ -168,12 +173,14 @@ func nearest_enemy(unit: Node3D, within: float) -> Node3D:
 	return closest
 
 func fire(shooter: Node3D, victim: Node3D) -> void:
-	var start: Vector3 = shooter.position + Vector3(0, 1.1, 0)
+	var start: Vector3 = shooter.actor.muzzle_position()
 	var end: Vector3 = victim.position + Vector3(0, 1.0, 0)
 	var color := Color("9edfff") if shooter.team == 0 else Color("ffc28c")
 	var beam := Art.box(self, (start + end) / 2, Vector3(0.055, 0.055, start.distance_to(end)), Art.material(color, 1))
 	beam.look_at(end)
 	effects.append({"node": beam, "time": 0.09, "total": 0.09, "expand": false})
+	var flash := Art.sphere(self, start, Vector3.ONE * 0.16, Art.material(color, 1.5))
+	effects.append({"node": flash, "time": 0.06, "total": 0.06, "expand": false})
 	victim.take_damage(shooter.damage)
 
 func heal() -> bool:
@@ -289,7 +296,7 @@ func focus_squad() -> void:
 	var center := Vector3.ZERO
 	for unit in group:
 		center += unit.position
-	camera_focus = center / group.size() + Vector3(6, 0, 0)
+	camera_focus = center / group.size() + Vector3(camera.size * 0.154, 0, 0)
 	_update_camera()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -339,7 +346,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if phase != "playing" or hud.over_ui(event.position):
 			return
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
-			camera.size = maxf(20, camera.size - 2)
+			camera.size = maxf(14, camera.size - 2)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
 			camera.size = minf(48, camera.size + 2)
 		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

@@ -1,9 +1,9 @@
 extends Node3D
-## Biological soldier under removable prototype armor. Simulation is stepped
+## Biological soldier with a shared animated character rig. Simulation is stepped
 ## by Battle, so pause, victory, and headless tests share the same behavior.
 
 const Art = preload("res://scripts/shapes.gd")
-const Scenery = preload("res://scripts/scenery.gd")
+const Character = preload("res://scripts/character_visual.gd")
 var game: Node3D
 var team := 0
 var leader := false
@@ -25,9 +25,10 @@ var path := PackedVector3Array()
 var repath_timer := 0.0
 var actor: Node3D
 var selection_ring: MeshInstance3D
-var legs: Array[MeshInstance3D] = []
-var stride := 0.0
-var flash_timer := 0.0
+var faction_ring: MeshInstance3D
+var moving := false
+var aiming := false
+var shot_timer := 0.0
 
 func configure(battle: Node3D, faction: int, index: int) -> void:
 	game = battle
@@ -45,54 +46,14 @@ func configure(battle: Node3D, faction: int, index: int) -> void:
 
 func _ready() -> void:
 	var color := Color("286eac") if team == 0 else Color("a33d37")
-	var armor := Art.material(color)
-	var dark := Art.material(Color("29343b"))
-	var skin := Art.material(Color("be8a65") if role != "SCOUT" else Color("896247"))
-	var bronze := Art.material(Color("b19460") if team == 0 else Color("9e6550"))
-	var cloth := Art.material(Color("cebd99") if team == 0 else Color("584242"))
-	var accent := Art.material(Color("77d4df") if team == 0 else Color("e6a164"), 0.2)
-	actor = Node3D.new()
+	actor = Character.new()
+	actor.style = ("blue" if team == 0 else "red") + ("_leader" if leader else "_trooper")
+	actor.role = role
 	add_child(actor)
-	var bulk := 1.17 if role == "HEAVY" else 1.0
-	var torso := Art.cylinder(actor, Vector3(0, 1.0, 0), 0.27 * bulk, 0.34 * bulk, 0.63, armor, 6)
-	torso.scale.z = 0.7
-	Art.box(actor, Vector3(0, 0.87, 0.22), Vector3(0.38, 0.47, 0.18), dark)
-	Art.sphere(actor, Vector3(0, 1.49, 0), Vector3(0.35, 0.43, 0.34), skin)
-	Art.sphere(actor, Vector3(0, 1.65, 0.035), Vector3(0.37, 0.18, 0.35), Art.material(Color("40372e")) if leader else armor)
-	Art.box(actor, Vector3(0, 1.52, -0.165), Vector3(0.24, 0.035, 0.025), dark)
-	Art.sphere(actor, Vector3(0, 1.45, -0.17), Vector3(0.075, 0.09, 0.07), skin)
-	var collar := Art.cylinder(actor, Vector3(0, 1.32, 0), 0.22, 0.23, 0.13, cloth, 8)
-	collar.scale.z = 0.8
-	Art.box(actor, Vector3(0, 0.7, -0.02), Vector3(0.57, 0.1, 0.37), bronze)
-	Art.box(actor, Vector3(-0.16, 0.55, -0.11), Vector3(0.14, 0.26, 0.12), cloth)
-	for side in [-1, 1]:
-		if team == 0:
-			Art.sphere(actor, Vector3(side * 0.36 * bulk, 1.18, 0), Vector3(0.31, 0.29, 0.43), armor)
-		else:
-			var pauldron := Art.box(actor, Vector3(side * 0.38 * bulk, 1.18, 0), Vector3(0.31, 0.23, 0.43), armor)
-			pauldron.rotation.z = side * -0.2
-		Art.box(actor, Vector3(side * 0.36 * bulk, 1.07, -0.03), Vector3(0.28, 0.045, 0.37), bronze)
-		Art.sphere(actor, Vector3(side * 0.39 * bulk, 0.92, -0.1), Vector3(0.21, 0.4, 0.22), dark)
-		Art.sphere(actor, Vector3(side * 0.38 * bulk, 0.77, -0.19), Vector3(0.16, 0.2, 0.16), skin)
-		legs.append(Art.cylinder(actor, Vector3(side * 0.18, 0.4, 0), 0.11, 0.14, 0.62, dark, 8))
-		Art.sphere(actor, Vector3(side * 0.18, 0.41, -0.1), Vector3(0.24, 0.25, 0.16), armor)
-		Art.box(actor, Vector3(side * 0.18, 0.12, -0.08), Vector3(0.27, 0.2, 0.43), armor)
-	Art.box(actor, Vector3(0.38, 0.93, -0.5), Vector3(0.15 if role != "HEAVY" else 0.25, 0.18, 0.75), dark)
-	Art.box(actor, Vector3(0.38, 0.93, -0.9), Vector3(0.1, 0.1, 0.08), accent)
-	Art.box(actor, Vector3(0, 1.12, -0.2), Vector3(0.19, 0.12, 0.04), accent)
-	if leader:
-		Scenery.banner(actor, Vector3(-0.05, 0.83, 0.28), Vector2(0.64, 0.97), Color("d1c19c") if team == 0 else Color("6c282d"))
-		Art.box(actor, Vector3(-0.42, 0.92, -0.14), Vector3(0.27, 0.22, 0.24), bronze)
-		if team == 0:
-			Art.box(actor, Vector3(-0.42, 0.92, -0.27), Vector3(0.08, 0.15, 0.025), accent)
-			Art.box(actor, Vector3(-0.42, 0.92, -0.27), Vector3(0.17, 0.06, 0.03), accent)
-		else:
-			Art.box(actor, Vector3(0.38, 0.93, -0.5), Vector3(0.27, 0.28, 0.6), armor)
-		actor.scale = Vector3.ONE * 1.12
+	actor.scale = Vector3.ONE * (1.12 if leader else 1.0)
 	selection_ring = Art.ring(self, 0.7, Color("b2efff"), 0.04)
 	selection_ring.visible = false
-	# Ground faction badge remains visible without selection.
-	Art.ring(self, 0.46, color, 0.024)
+	faction_ring = Art.ring(self, 0.46, color, 0.024)
 	rotation.y = -PI / 2 if team == 0 else PI / 2
 
 func set_selected(value: bool) -> void:
@@ -121,6 +82,17 @@ func stop() -> void:
 	path.clear()
 
 func step(delta: float) -> void:
+	moving = false
+	aiming = false
+	shot_timer = maxf(0, shot_timer - delta)
+	_step_orders(delta)
+	if alive:
+		var next_clip := "Run" if moving else ("Idle_Gun_Shoot" if shot_timer > 0 else ("Idle_Gun_Pointing" if aiming else "Idle_Gun"))
+		if actor.clip != next_clip: actor.play_clip(next_clip)
+		actor.animation_player.speed_scale = speed / 3.1 if moving else 1.0
+	actor.advance_animation(delta)
+
+func _step_orders(delta: float) -> void:
 	if not alive:
 		return
 	attack_timer = maxf(0, attack_timer - delta)
@@ -135,9 +107,13 @@ func step(delta: float) -> void:
 		if is_instance_valid(target):
 			var distance := position.distance_to(target.position)
 			if distance <= weapon_range:
+				aiming = true
 				_face(target.position, delta)
 				if attack_timer <= 0:
 					attack_timer = attack_interval
+					shot_timer = 0.24
+					actor.play_clip("Idle_Gun_Shoot", 0.0)
+					actor.advance_animation(0)
 					game.fire(self, target)
 				return
 			elif order == "attack" or order == "advance":
@@ -160,6 +136,8 @@ func step(delta: float) -> void:
 	var waypoint := path[0]
 	if position.distance_to(waypoint) < 0.2:
 		path.remove_at(0)
+		# Advancing a path cursor is not a stop; keep the gait across waypoints.
+		moving = not path.is_empty()
 		return
 	var direction := position.direction_to(waypoint)
 	var separation := Vector3.ZERO
@@ -178,10 +156,7 @@ func step(delta: float) -> void:
 	else:
 		position = position.move_toward(waypoint, speed * delta)
 	_face(waypoint, delta)
-	stride += delta * speed * 3.5
-	actor.position.y = absf(sin(stride)) * 0.045
-	for i in range(legs.size()):
-		legs[i].rotation.x = sin(stride + i * PI) * 0.35
+	moving = movement.length_squared() > 0.000001
 
 func _face(point: Vector3, delta: float) -> void:
 	var difference := point - position
@@ -195,7 +170,8 @@ func take_damage(amount: float) -> void:
 	if health <= 0:
 		alive = false
 		set_selected(false)
-		actor.rotation.z = PI * 0.48
-		actor.position.y = 0.15
+		faction_ring.hide()
+		actor.animation_player.speed_scale = 1.0
+		actor.play_clip("Death")
 		path.clear()
 		game.on_unit_lost(self)

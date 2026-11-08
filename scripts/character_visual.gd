@@ -6,19 +6,22 @@ const Swat = preload("res://assets/third_party/quaternius/modular_men/Swat.gltf"
 const Adventurer = preload("res://assets/third_party/quaternius/modular_men/Adventurer.gltf")
 const Art = preload("res://scripts/shapes.gd")
 var style := "blue_leader"
+var role := "RIFLEMAN"
 var rig: Skeleton3D
 var animation_player: AnimationPlayer
 var model: Node3D
 var clip := "Idle_Gun"
+var muzzle_bone := -1
+var muzzle_local := Vector3.ZERO
 
 func _ready() -> void:
-	model = (Swat if style == "blue_trooper" else SpaceSuit).instantiate()
+	model = (SpaceSuit if style.ends_with("_leader") else Swat).instantiate()
 	add_child(model)
 	# Imported characters face +Z; game units use -Z.
 	model.rotation.y = PI
 	rig = find_type(model, "Skeleton3D")
 	animation_player = find_type(model, "AnimationPlayer")
-	if style != "blue_trooper":
+	if style.ends_with("_leader"):
 		model.find_child("SpaceSuit_Head", true, false).hide()
 		var donor := Adventurer.instantiate()
 		_copy_part(donor, "Adventurer_Head")
@@ -32,6 +35,8 @@ func _ready() -> void:
 		_build_mantle(mantle)
 	_recolor(model)
 	_add_faction_equipment()
+	_add_role_equipment()
+	_setup_muzzle()
 	# Local libraries prevent loop settings from mutating imported shared assets.
 	var library: AnimationLibrary = animation_player.get_animation_library("").duplicate(true)
 	animation_player.remove_animation_library("")
@@ -43,7 +48,7 @@ func _ready() -> void:
 	animation_player.advance(0)
 
 func _add_faction_equipment() -> void:
-	if style == "blue_trooper": return
+	if not style.ends_with("_leader"): return
 	var harness := BoneAttachment3D.new()
 	harness.bone_name = "Chest"
 	rig.add_child(harness)
@@ -64,6 +69,28 @@ func _add_faction_equipment() -> void:
 			plate.rotation.z = side * -0.2
 			Art.box(harness, Vector3(side * 0.235, 0.065, 0.13), Vector3(0.21, 0.025, 0.018), copper)
 
+func _add_role_equipment() -> void:
+	if style.ends_with("_leader"): return
+	var blue := style.begins_with("blue")
+	var armor := Art.material(Color("325f83") if blue else Color("80383d"))
+	var trim := Art.material(Color("b8a477") if blue else Color("b17b59"))
+	var pack := Art.material(Color("303e46"))
+	var equipment := BoneAttachment3D.new()
+	equipment.name = "RoleEquipment"
+	equipment.bone_name = "Chest"
+	rig.add_child(equipment)
+	if role == "HEAVY":
+		model.scale = Vector3(1.2, 1.04, 1.12)
+		Art.box(equipment, Vector3(0, -0.05, -0.19), Vector3(0.3, 0.38, 0.16), pack)
+		for side in [-1, 1]:
+			Art.rock(equipment, Vector3(side * 0.24, 0.08, 0), Vector3(0.28, 0.2, 0.3), armor, 90 + side)
+			Art.box(equipment, Vector3(side * 0.24, 0.04, 0.14), Vector3(0.22, 0.035, 0.025), trim)
+	elif role == "SCOUT":
+		model.scale = Vector3(0.9, 1.0, 0.92)
+		Art.box(equipment, Vector3(0, -0.03, -0.18), Vector3(0.22, 0.25, 0.12), pack)
+		Art.cylinder(equipment, Vector3(-0.095, 0.27, -0.19), 0.009, 0.006, 0.45, pack)
+		Art.box(equipment, Vector3(0, 0.05, 0.14), Vector3(0.24, 0.045, 0.025), trim)
+
 func _copy_part(donor: Node, part_name: String) -> void:
 	var source: MeshInstance3D = donor.find_child(part_name, true, false)
 	assert(source != null, "Missing modular part: " + part_name)
@@ -76,9 +103,10 @@ func _copy_part(donor: Node, part_name: String) -> void:
 	rig.add_child(part)
 
 func _recolor(node: Node) -> void:
-	var primary := Color("245c8d") if style != "red_leader" else Color("8d3039")
-	var secondary := Color("bfb498") if style != "red_leader" else Color("353d45")
-	var trim := Color("9e8155") if style != "red_leader" else Color("a56e52")
+	var blue := style.begins_with("blue")
+	var primary := Color("245c8d") if blue else Color("8d3039")
+	var secondary := Color("bfb498") if blue else Color("353d45")
+	var trim := Color("9e8155") if blue else Color("a56e52")
 	if node is MeshInstance3D and node.mesh:
 		for i in range(node.mesh.get_surface_count()):
 			var source: Material = node.mesh.surface_get_material(i)
@@ -88,7 +116,7 @@ func _recolor(node: Node) -> void:
 			material.roughness = 0.72
 			match source.resource_name:
 				"Swat", "SciFi_Light": material.albedo_color = primary
-				"SciFi_Main": material.albedo_color = Color("35434c") if style != "red_leader" else secondary
+				"SciFi_Main": material.albedo_color = Color("35434c") if blue else secondary
 				"SciFi_Light_Accent":
 					material.albedo_color = trim
 					material.metallic = 0.45
@@ -97,7 +125,7 @@ func _recolor(node: Node) -> void:
 				"Skin": material.albedo_color = Color("bc8b6c") if style != "red_leader" else Color("a5795c")
 				"Hair", "Eyebrows": material.albedo_color = Color("342d28") if style != "red_leader" else Color("635a51")
 				"Visor":
-					material.albedo_color = Color("587c8d")
+					material.albedo_color = Color("587c8d") if blue else Color("9a6957")
 					material.metallic = 0.3
 					material.roughness = 0.35
 			node.set_surface_override_material(i, material)
@@ -127,10 +155,23 @@ func _build_mantle(parent: Node3D) -> void:
 	instance.material_override = material
 	parent.add_child(instance)
 
-func play_clip(name: String) -> void:
+func _setup_muzzle() -> void:
+	# The source pistol is rigidly weighted to Middle1.R. This point is the
+	# barrel opening in its original bind-space mesh, not a torso offset.
+	var weapon: MeshInstance3D = rig.get_node("Pistol")
+	muzzle_bone = rig.find_bone("Middle1.R")
+	for bind in range(weapon.skin.get_bind_count()):
+		if weapon.skin.get_bind_name(bind) == &"Middle1.R":
+			muzzle_local = weapon.skin.get_bind_pose(bind) * Vector3(-0.921, 1.431, 0.186)
+			break
+
+func muzzle_position() -> Vector3:
+	return rig.to_global(rig.get_bone_global_pose(muzzle_bone) * muzzle_local)
+
+func play_clip(name: String, blend: float = 0.16) -> void:
 	if not animation_player.has_animation(name): return
 	clip = name
-	animation_player.play(name, 0.16)
+	animation_player.play(name, blend)
 
 func advance_animation(delta: float) -> void:
 	animation_player.advance(delta)

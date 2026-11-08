@@ -58,7 +58,10 @@ They are replaceable production studies, not the final character art solution.
 
 Character Studio now provides the first coherent CC0-based trio: Blue Captain,
 regular soldier, and Red Commander. It supports close-up rotation, lighting, and
-authored animation review before extending the direction to the full roster.
+authored animation review. Following the creator's positive review, the same
+assembly now supplies the full mission roster, with lighter scouts, broader
+heavies, faction materials, and simulation-driven animation. The mission camera
+starts closer and permits tighter inspection while retaining an overview zoom.
 See `CHARACTER_STUDY.md` for source provenance and current limitations. These are
 intermediate low-poly studies; the reference remains the desired material and
 character-detail target. Availability alone does not make a pack the final choice.

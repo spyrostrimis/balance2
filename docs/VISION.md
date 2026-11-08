@@ -23,6 +23,11 @@ script. The concept board is an approved visual reference, not a screenshot or
 a finished 3D asset. Exact faces, names, and newly drafted dialogue remain
 editable. Select asset packs to serve this direction rather than define it.
 
+The creator subsequently reviewed the animated character trio positively and
+asked to continue. First Contact 0.3 now uses that assembly for both squads, with
+role equipment and animation. This accepts it as a production starting point;
+the provisional shared faces and lower detail do not replace the concept target.
+
 ## Agreed direction
 
 - A mostly RTS game with RPG elements, made in Godot with stylized 3D art.
