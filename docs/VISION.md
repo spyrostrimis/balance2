@@ -33,6 +33,11 @@ infrastructure, older aqueduct ruins, vegetation pockets, and terrain/material
 variation. These support the existing opening story; they do not introduce a
 working economy, repairs, or additional mission objectives.
 
+The creator approved a short, skippable narrative presentation next. Version
+0.5 adds the opening confrontation and a survivor-aware victory discovery,
+with subtitles, existing-character portraits, and camera movement. Voice acting,
+lip sync, and during-combat radio dialogue remain deferred.
+
 ## Agreed direction
 
 - A mostly RTS game with RPG elements, made in Godot with stylized 3D art.

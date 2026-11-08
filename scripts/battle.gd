@@ -4,6 +4,7 @@ const Arena = preload("res://scripts/arena.gd")
 const Soldier = preload("res://scripts/unit.gd")
 const HUD = preload("res://scripts/hud.gd")
 const Art = preload("res://scripts/shapes.gd")
+const Story = preload("res://scripts/mission_story.gd")
 const CAPTURE_SECONDS := 40.0
 const HEAL_COOLDOWN := 16.0
 const HEAL_RADIUS := 6.5
@@ -11,6 +12,7 @@ const HEAL_AMOUNT := 45.0
 var arena: Node3D
 var camera: Camera3D
 var hud: Control
+var story: Node
 var units: Array[Node3D] = []
 var selected: Array[Node3D] = []
 var phase := "briefing"
@@ -47,6 +49,9 @@ func _ready() -> void:
 	hud = HUD.new()
 	hud.game = self
 	layer.add_child(hud)
+	story = Story.new()
+	story.game = self
+	add_child(story)
 	select_all()
 
 func _setup_environment() -> void:
@@ -77,7 +82,11 @@ func _update_camera() -> void:
 	camera.position = camera_focus + Vector3(0, 33, 26)
 	camera.look_at(camera_focus)
 
+func begin_mission() -> void:
+	story.begin_opening()
+
 func start_battle() -> void:
+	# Simulation entry point, also used by deterministic gameplay tests.
 	phase = "playing"
 	notify("Red patrol approaching. Right-click to move; A + click to advance.")
 
@@ -103,6 +112,11 @@ func step_simulation(delta: float) -> void:
 		finish(0, "The opposing patrol has been defeated.")
 
 func _process(delta: float) -> void:
+	if is_instance_valid(story) and story.active:
+		for unit in units:
+			if not story.held and (phase == "intro" or not unit.alive): unit.actor.advance_animation(delta)
+		story.advance(delta)
+		return
 	# Let a last casualty finish falling behind the result panel. No orders,
 	# damage, timers, or living-unit animations continue after the mission ends.
 	if phase == "ended":
@@ -233,6 +247,7 @@ func finish(faction: int, reason: String) -> void:
 	phase = "ended"
 	dragging = false
 	attack_armed = false
+	if faction == 0: story.begin_discovery()
 
 func select_all() -> void:
 	selected = living(0)
@@ -300,10 +315,14 @@ func focus_squad() -> void:
 	_update_camera()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if story.active:
+		story.handle_input(event)
+		get_viewport().set_input_as_handled()
+		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
 			KEY_ENTER:
-				if phase == "briefing": start_battle()
+				if phase == "briefing": begin_mission()
 			KEY_SPACE, KEY_ESCAPE:
 				if attack_armed:
 					attack_armed = false

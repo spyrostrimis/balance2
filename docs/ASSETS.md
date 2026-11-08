@@ -15,6 +15,10 @@ Text uses Godot's bundled fallback font. No local proprietary fonts are copied.
 These are environment and character studies, not finished stylized-realism art.
 There is no sound or music yet.
 
+The 0.5 dialogue portraits are rendered at runtime from the same character
+assemblies in a separate 3D viewport. Remote-link graphics are original UI
+geometry. No new external or generated image assets are introduced.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated

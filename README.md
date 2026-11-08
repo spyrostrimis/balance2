@@ -8,7 +8,14 @@ The current creative priority is **visual identity and storytelling**. The appro
 [concept board and art direction](docs/ART_DIRECTION.md) guide the original
 procedural environment studies. Read the [opening story and draft script](docs/STORY.md).
 
-**First Contact 0.4** adds a breached cistern, damaged pipes, aqueduct ruins,
+**First Contact 0.5** adds a short opening and victory discovery sequence, with
+camera moves, subtitles, and portraits rendered from the game characters.
+During a sequence: **Enter** advances, **Space** holds/resumes for reading, and
+**Escape** skips it. The battle timer starts only after the opening finishes or
+is skipped. If the Captain falls, a surviving soldier delivers the ending lines.
+There is no voice acting yet.
+
+The environment includes a breached cistern, damaged pipes, aqueduct ruins,
 desert trees, wind-stirred grasses, softer stone weathering, and varied ground
 tones. The wider opening view frames the sealed sanctuary. Deploy, then use the
 arrow keys to explore and the wheel to inspect details. Space pauses combat;
@@ -43,7 +50,7 @@ The settlement's water system has been damaged by a storm. Blue needs the Korali
 to help repair it; Red offers aid conditional on permanent military administration.
 Secure the central Korali deposit for **40 cumulative uncontested seconds**, or
 defeat the opposing squad. Both sides can win. The AI advances after seven seconds.
-The briefing pauses the simulation until deployment.
+The briefing and opening pause the simulation until command passes to the player.
 
 | Input | Action |
 | --- | --- |
@@ -73,13 +80,14 @@ Implemented: original 3D environment study with sandstone cliffs, a broken
 processional road, a sealed Clergy entrance, desert plants, Korali veins in stone,
 and animated biological soldiers with faction armor, leader mantles, scout
 equipment, and heavy armor; running, aiming, firing, and falling animations;
-story briefing and outcome text; rock-aware grid paths, selection and group orders,
+story briefing, skippable opening and discovery sequences, and outcome text;
+rock-aware grid paths, selection and group orders,
 ranged combat, simple objective AI, healing, capture and elimination outcomes,
 pause, restart, and a command sidebar.
 
 Not yet implemented: harvesting, transformation, construction, repair of machines,
 campaigns, hero progression, additional factions/species, wildlife, storms,
-radar, fog of war, voice acting, cutscenes, sound, multiplayer, or final art assets.
+radar, fog of war, voice acting, lip sync, sound, multiplayer, or final art assets.
 The concept image is a visual target, not a screenshot of implemented graphics. Obstacles block
 movement but **do not block gunfire** in this first combat model. Unit avoidance
 is lightweight steering, suitable for this eight-unit prototype.
@@ -99,6 +107,7 @@ Use the installed console executable (or `godot` if available on PATH):
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --headless --path . --script res://tests/test_environment.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/visual_smoke.gd
 & C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/test_character_studio.gd
+& C:\Godot\Godot_v4.7.2-stable_win64_console.exe --path . --script res://tests/test_story.gd
 ```
 
 The tests exercise navigation around the deposit, healing boundaries and cooldown,
@@ -115,6 +124,8 @@ The visual interface also needs a windowed playtest after layout or input change
 | `scripts/scenery.gd` | Decorative cliffs, road, temple, plants, and field equipment |
 | `scripts/basin_details.gd` | Raised border terrain, cistern, aqueduct, trees, and obstacle footprints |
 | `scripts/hud.gd` | Briefing, command panel, roster, overlays, results |
+| `scripts/mission_story.gd` | Dialogue, camera shots, opening/discovery lifecycle, survivor-aware ending |
+| `scripts/story_panel.gd` | Subtitles, hold/next/skip controls, live 3D portraits |
 | `scripts/shapes.gd` | Shared procedural mesh helpers |
 | `scripts/character_visual.gd` | CC0 character assembly, faction materials, animation playback |
 | `scripts/character_studio.gd` | Interactive lineup, close-ups, and animation review |

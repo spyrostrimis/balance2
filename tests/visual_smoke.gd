@@ -57,7 +57,9 @@ func run() -> void:
 	# Real GUI event dispatch, rather than directly invoking button callbacks.
 	var deploy: Button = battle.hud.buttons.primary
 	await click(deploy.get_global_rect().get_center(), MOUSE_BUTTON_LEFT)
-	check(battle.phase == "playing", "Deploy button starts mission through GUI input")
+	check(battle.phase == "intro" and battle.story.active, "Deploy button starts the opening through GUI input")
+	await key(KEY_ESCAPE)
+	check(battle.phase == "playing" and not battle.story.active, "Escape skips the opening and hands over command")
 	await click(battle.hud.card_rects[1].get_center(), MOUSE_BUTTON_LEFT)
 	check(battle.selected.size() == 1 and battle.selected[0] == battle.units[1], "Roster card selects the intended soldier")
 	await key(KEY_1)
@@ -112,6 +114,7 @@ func run() -> void:
 	check(battle.units[0].health == battle.units[0].max_health and battle.heal_cooldown > 0, "Healing button restores health and starts cooldown")
 	for enemy in battle.living(1): enemy.take_damage(1000)
 	battle.step_simulation(0.02)
+	await key(KEY_ESCAPE)
 	await capture("victory")
 	await click(battle.hud.buttons.primary.get_global_rect().get_center(), MOUSE_BUTTON_LEFT)
 	await process_frame

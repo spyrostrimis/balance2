@@ -1,8 +1,29 @@
 # Balance — opening story
 
 The premise and thematic direction below were approved on 8 November 2026.
-The dialogue is a first writing pass. Character names, specific species,
-settlement and planet names, and performance remain open.
+The dialogue remains editable. First Contact 0.5 implements the short opening
+and victory discovery described below using subtitles, camera movement, and
+in-engine portraits. Character names, specific species, settlement and planet
+names, and performance remain open.
+
+## Implemented presentation
+
+Deploy starts a seven-line opening: damaged intake, Korali, the Red offer,
+its indefinite duration, distant Blue orders, and the Captain's response.
+It advances automatically, with Enter for the next line, Space to hold/resume,
+and Escape to skip the sequence. The simulation is frozen throughout; command
+begins at time zero. The gameplay camera, HUD, and markers return on completion
+or skip. The briefing and opening replay on each mission restart.
+
+Blue victory starts a four-line discovery before the result report. It frames
+the worked stone's divided-circle symbol and then the sealed monument. The
+first surviving Blue soldier replaces the Captain if the Captain has fallen.
+Defeat goes straight to its report and never claims the discovery or repair.
+
+Character portraits are live renders of the existing models. Off-screen
+technician and command lines use a remote-link graphic; their identities are
+not established by an invented portrait. There is no voice acting or lip sync.
+This is camera-and-dialogue staging, not a choreographed patrol arrival.
 
 ## The dramatic promise
 
@@ -30,7 +51,7 @@ administration. This is an offer made under pressure, not a free choice.
 but gives the people on the ground no timely way to repair the water system.
 The Captain must own the consequences of acting.
 
-## Opening sequence — draft
+## Opening sequence — script reference
 
 The camera follows a damaged water conduit away from the settlement road.
 Wind carries sand across old paving. The expedition reaches the newly exposed ore.
@@ -69,7 +90,9 @@ The player receives control. No branching dialogue or morality meter is needed.
 **FIELD TECHNICIAN:** "There's paving under the ore. Older than the road on our charts."
 
 Use sparingly, with space between lines. Tactical messages should not erase them.
-No spoken voice performance or cutscene system is implemented yet.
+These during-combat radio exchanges are still deferred; the implemented
+opening and ending have their own panel and cannot overwrite tactical messages.
+No spoken voice performance is implemented yet.
 
 ## Victory
 
