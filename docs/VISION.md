@@ -17,6 +17,10 @@ rock formation is the next separate review candidate. These studies do not
 migrate the mission's renderer. See `KORALI_STUDY.md`, `TREE_STUDY.md` and
 `ROCK_STUDY.md`.
 
+The creator found the first sandstone formation insufficient compared with
+Korali. Revision 02 follows Korali's generated stone texture plus Blender
+fracture-mesh and PBR bake workflow. It remains pending visual review.
+
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.
 Develop the world's visual identity, environments, faction designs, characters,

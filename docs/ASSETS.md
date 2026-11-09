@@ -50,11 +50,15 @@ See `TREE_STUDY.md` for the review workflow and known limitations.
 
 ## Sandstone formation study (9 November 2026)
 
-`assets/rock_study/sandstone_formation.glb` and its baked maps are original
-project art. Geometry, layered surface color, normal detail and roughness are
-authored in `art_source/rocks/build_formation.py` with Blender 5.2.3 LTS. The
-editable source is `art_source/rocks/sandstone_authoring.blend`. No third-party
-files or generated images are used. No CC0 license is asserted for project art.
+`assets/rock_study/sandstone_formation.glb` revision 02 uses original fracture
+geometry and a generated sandstone surface image, UV-baked in Blender 5.2.3 LTS
+with `art_source/rocks/build_formation.py`. The editable source is
+`art_source/rocks/sandstone_authoring.blend`, with the source image packed inside.
+`art_source/rocks/sandstone_basecolor_source.png` was generated with the built-in
+image tool. Exact prompt and provenance: `art_source/rocks/TEXTURE_SOURCE.md`.
+It is generated project art, not a CC0 pack; no CC0 license is asserted.
+The rejected all-procedural first version is retained as
+`assets/rock_study/previous/sandstone_v1.glb` for comparison.
 Godot extracts embedded GLB textures alongside the original bake outputs.
 See `ROCK_STUDY.md` for the workflow and review scope.
 

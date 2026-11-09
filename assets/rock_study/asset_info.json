@@ -1,7 +1,8 @@
 {
   "blender": "5.2.3 LTS",
-  "triangles": 16766,
+  "revision": 2,
+  "triangles": 17182,
   "texture_resolution": 2048,
   "source": "art_source/rocks/sandstone_authoring.blend",
-  "provenance": "Original geometry and procedural baked surfaces; no third-party files."
+  "provenance": "Original geometry; generated sandstone basecolor source baked with authored surface relief. See TEXTURE_SOURCE.md."
 }

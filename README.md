@@ -46,8 +46,10 @@ See [source and limitations](docs/TREE_STUDY.md).
 ## Rock formation study
 
 Double-click **`RockStudy.bat`** to review the next asset: a warm sandstone
-formation with broken faces, sediment layers and fallen slabs. The controls
-match the other studies. **B** compares it with the original mission formation.
+formation with irregular fracture faces, textured stone and fallen slabs. The
+second revision follows the Korali texture-and-bake workflow. **B** compares it
+with the first sandstone attempt; **K** compares the approved Korali under the
+same camera and lighting. Other controls match the earlier studies.
 This candidate is separate from the mission pending visual review.
 See [source and limitations](docs/ROCK_STUDY.md).
 
