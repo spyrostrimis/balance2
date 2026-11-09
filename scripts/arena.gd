@@ -19,7 +19,6 @@ func _ready() -> void:
 func _build_terrain() -> void:
 	var sand := ShaderMaterial.new()
 	sand.shader = preload("res://shaders/sand.gdshader")
-	var sandstone := Scenery.stone(Color("a8794d"))
 	var dark_stone := Art.material(Color("414b4c"))
 	Details.terrain(self, sand)
 	Scenery.build(self)
@@ -41,8 +40,11 @@ func _build_terrain() -> void:
 	obstacles.append(Vector3(0, 1.8, 0))
 	for p in [Vector3(-8, 1.7, -6), Vector3(8, 1.7, 6), Vector3(-12, 1.5, 7), Vector3(12, 1.5, -7)]:
 		obstacles.append(p)
-		var rock := Art.rock(self, Vector3(p.x, 0.72, p.z), Vector3(p.y * 1.8, 1.8, p.y * 1.6), sandstone, int(absf(p.x) * 3))
+		var rock := preload("res://assets/rock_study/sandstone_formation.glb").instantiate()
+		rock.position = Vector3(p.x, 0, p.z)
+		rock.scale = Vector3.ONE * (0.9 * p.y / 1.7)
 		rock.rotation.y = p.x
+		add_child(rock)
 	# Faction survey lamps make the deployment zones readable.
 	for side in [-1, 1]:
 		var faction_color := Color("62baff") if side < 0 else Color("ff7666")

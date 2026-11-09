@@ -1,5 +1,8 @@
 # Working on Balance
 
+- For a new asset chat, read `docs/ASSET_HANDOFF.md` first for current state,
+  accepted workflow, deferred feedback and the next asset's reference paths.
+
 - Read `docs/VISION.md` before changing game direction. Distinguish agreed
   design from proposed features and temporary prototype mechanics.
 - This is a Godot 4.7 GDScript project. Keep a runnable small mission at all times.

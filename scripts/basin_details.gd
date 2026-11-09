@@ -61,7 +61,7 @@ static func _branch(parent: Node3D, start: Vector3, end: Vector3, radius: float,
 	limb.quaternion = Quaternion(Vector3.UP, start.direction_to(end))
 
 static func _tree(parent: Node3D, pos: Vector3, height: float, seed_value: int) -> void:
-	var tree := preload("res://assets/tree_study/desert_tree.glb").instantiate()
+	var tree := preload("res://assets/tree_study/v2/desert_tree.glb").instantiate()
 	tree.name = "BasinTree"
 	tree.position = pos
 	tree.scale = Vector3.ONE * (height / 3.6)

@@ -8,15 +8,16 @@ tiered mesh with irregular cut masses and uses the same generated stone surface
 and Blender PBR bake approach that worked for Korali. A smaller broken shoulder,
 two fallen blocks and five chips complete the silhouette. This
 revision was approved by the creator, who requested the same workflow for the
-tree. It remains in its study; the mission's rock formations have not been
-replaced.
+tree. At the user's subsequent request it now replaces the four mission rock
+formations, retaining their positions and navigation footprints. Redundant old
+pebble rings were removed because the new asset includes its own debris.
 
 Run `RockStudy.bat` to open its Forward+ study. **1 / 2 / 3** select close,
 RTS inspection and mission camera distance. **B** compares revision 01;
 **K** compares the approved Korali under the same camera and lighting.
 **L** switches warm/neutral lighting; **Space** turns it. Drag to rotate, wheel
 to zoom, **R** reset, **Esc** close. Revision 01 is preserved under
-`assets/rock_study/previous/`; the mission rocks are still unchanged.
+`assets/rock_study/previous/` for comparison.
 
 ## Authoring
 
@@ -51,4 +52,4 @@ Fine relief is carried by a normal map, not deep sculpted cracks. The generated
 albedo can contain some illustrated relief despite the flat-lighting prompt;
 it should not be treated as physically measured base color.
 No foliage, collision, gameplay mechanics or changes to surrounding terrain
-are part of this candidate. The mission retains its renderer and current rocks.
+are part of this asset. The mission retains its renderer and navigation rules.

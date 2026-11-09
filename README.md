@@ -39,8 +39,9 @@ See [source, workflow, and limitations](docs/KORALI_STUDY.md).
 Double-click **`TreeStudy.bat`** to inspect revision 02: the branching desert
 tree with generated bark and leaf surface textures, baked normal detail and
 small orange-gold flowers at its roots. **B** compares the previous approved
-tree currently used in the mission; **1 / 2 / 3** changes camera distance.
-The revision is separate for review. Foliage is static, with no wind animation.
+tree revision; **1 / 2 / 3** changes camera distance. Revision 02 is now in the
+mission. Foliage is static; leaf attachment/orientation and bud/petal shapes
+remain unfinished and are deferred until after the next asset work.
 See [source and limitations](docs/TREE_STUDY.md).
 
 ## Rock formation study
@@ -50,10 +51,13 @@ formation with irregular fracture faces, textured stone and fallen slabs. The
 second revision follows the Korali texture-and-bake workflow. **B** compares it
 with the first sandstone attempt; **K** compares the approved Korali under the
 same camera and lighting. Other controls match the earlier studies.
-The second sandstone revision is approved and remains separate from the mission.
+The second sandstone revision now replaces the four mission rock formations.
 See [source and limitations](docs/ROCK_STUDY.md).
 
 ## Character Studio
+
+Next art targets: **Gate**, then **Blue Leader**. New asset chats start from
+[the current handoff](docs/ASSET_HANDOFF.md).
 
 Double-click `CharacterStudio.bat`, or choose **Character Studio** on the mission
 briefing. Inspect three animated CC0-based character studies: Blue Captain, Blue

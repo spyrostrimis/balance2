@@ -3,13 +3,17 @@
 After approving the textured sandstone revision, the creator requested the same
 generated-source/Blender-bake workflow for this tree. Revision 02 adds detailed
 weathered bark, veined green leaves and textured blue-green root rosettes while
-preserving the branching silhouette and small flowers. It lives separately in
-`assets/tree_study/v2/`; the mission keeps the approved revision 01 for now.
+preserving the branching silhouette and small flowers. The user requested
+integration of revision 02 from `assets/tree_study/v2/`; it is now in the mission.
+The bark is acceptable, but foliage still looks artificial, some leaves appear
+inverted or unattached, and buds/petals need genuine geometry improvements.
+These are acknowledged unfinished areas, explicitly deferred while work moves
+to the Gate and then Blue Leader. See `ASSET_HANDOFF.md` for the screenshots.
 
 Revision 01 was approved after Korali and integrated into the four mission tree
 positions, with height and rotation variation. Its root flowers replaced the
 old scattered prototype plants. Navigation footprints remain unchanged. That
-approved asset remains in the mission and supplies the before view here.
+older asset supplies the before view here; revision 02 now occupies its places.
 
 ## View
 
@@ -20,7 +24,7 @@ antialiasing and uses a smaller sun angle to stabilize fine foliage shadows.
 - **1:** close view, orthographic size 8.
 - **2:** RTS inspection, size 18.
 - **3:** mission default distance, size 36, camera offset (0, 33, 26).
-- **B:** revision 01 (current mission) / revision 02.
+- **B:** revision 01 / revision 02 (current mission).
 - **L:** warm/neutral lighting.
 - **Space:** turntable; drag to rotate; wheel to zoom.
 - **R:** reset; **Esc:** close.

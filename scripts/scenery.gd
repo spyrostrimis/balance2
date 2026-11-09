@@ -36,10 +36,7 @@ static func build(parent: Node3D) -> void:
 	_build_temple(parent, pale, dark)
 	# Pebbles and small plants reinforce existing rock silhouettes, not paths.
 	for obstacle in [Vector3(-8, 0, -6), Vector3(8, 0, 6), Vector3(-12, 0, 7), Vector3(12, 0, -7)]:
-		for i in range(6):
-			var angle := i * TAU / 6
-			var p: Vector3 = obstacle + Vector3(cos(angle), 0, sin(angle)) * 1.3
-			Art.rock(parent, p + Vector3.UP * 0.12, Vector3(0.42, 0.32, 0.5), pale, i * 7)
+		# The approved formation includes its own fallen slabs and chips.
 		plant(parent, obstacle + Vector3(0.8, 0, 0.5), 0.9, int(absf(obstacle.x)))
 	for i in range(42):
 		var x := rng.randf_range(-24, 24)

@@ -1,10 +1,10 @@
 extends "res://scripts/korali_study.gd"
-## Revision 02 uses generated surface sources; revision 01 remains in the mission.
+## Revision 02 is in the mission; revision 01 is retained for comparison.
 
 func _init() -> void:
 	study_title = "B A S I N   T R E E   /   0 2"
 	new_label = "Weathered bark · veined leaves · root flowers"
-	old_label = "Previous tree study — revision 01 (current mission)"
+	old_label = "Previous tree study — revision 01"
 	close_size = 8.0
 	close_focus = 1.7
 

@@ -22,7 +22,11 @@ Korali. Revision 02 follows Korali's generated stone texture plus Blender
 fracture-mesh and PBR bake workflow. The creator approved revision 02 and asked
 to apply that same workflow to the tree. Tree revision 02 now uses generated
 bark and leaf sources baked in Blender; it is the current review candidate.
-The mission still uses the previously approved tree revision 01.
+The user subsequently requested all current revisions be integrated: sandstone
+02 and tree 02 are now in the mission alongside Korali. Tree bark is acceptable;
+leaf realism, orientation/attachment and bud/petal geometry remain deficient.
+Further tree improvements are explicitly deferred. **Next: Gate, then Blue
+Leader**, each in a focused asset chat using `ASSET_HANDOFF.md`.
 
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.
