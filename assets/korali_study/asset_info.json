@@ -1,0 +1,8 @@
+{
+  "triangles": 17824,
+  "vertices": 8920,
+  "texture_resolution": 2048,
+  "blender": "5.2.3 LTS",
+  "source": "art_source/korali/korali_authoring.blend",
+  "export": "assets/korali_study/korali_study.glb"
+}

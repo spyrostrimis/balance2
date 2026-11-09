@@ -22,6 +22,17 @@ arrow keys to explore and the wheel to inspect details. Space pauses combat;
 camera movement remains available. The water station is scenery, not a repair
 or harvesting system.
 
+## Korali visual study
+
+Double-click **`KoraliStudy.bat`** for the isolated Blender-to-Godot rock study.
+It uses Forward+ while the mission retains its existing renderer and deposit.
+**1 / 2 / 3** select close, RTS inspection, and mission camera distance; **B**
+compares the old rock; **L** changes lighting; **Space** turns the rock.
+Drag to rotate, wheel to zoom, **R** reset, **Esc** close. Requires a device
+supporting Godot Forward+. Blender is only needed to rebuild the asset.
+This is a visual proposal for review; no new gameplay is included.
+See [source, workflow, and limitations](docs/KORALI_STUDY.md).
+
 ## Character Studio
 
 Double-click `CharacterStudio.bat`, or choose **Character Studio** on the mission

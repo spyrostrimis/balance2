@@ -19,6 +19,23 @@ The 0.5 dialogue portraits are rendered at runtime from the same character
 assemblies in a separate 3D viewport. Remote-link graphics are original UI
 geometry. No new external or generated image assets are introduced.
 
+## Korali study (9 November 2026)
+
+`assets/korali_study/` contains the original Blender-authored rock and baked PBR
+maps. Mesh construction, fracture planes, mineral masks, UVs and baking are
+reproducible with `art_source/korali/build_korali.py`. The editable `.blend`
+packs the generated stone source texture. No third-party mesh or franchise art
+was imported for this study.
+
+`art_source/korali/stone_basecolor_source.png` was generated using the built-in
+image generation tool specifically for this asset. It is a base-color source,
+not a game screenshot, photographed material or downloaded CC0 texture. Its
+exact prompt and provenance are in `art_source/korali/TEXTURE_SOURCE.md`.
+No CC0 license is asserted for generated or original project art. Blender and
+Godot are authoring/runtime tools, not the source of third-party art here.
+
+See `KORALI_STUDY.md` for baked channel meanings, regeneration, and limitations.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated
