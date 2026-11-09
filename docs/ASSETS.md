@@ -85,6 +85,24 @@ generated and original project art. See `GATE_STUDY.md` for scope and limits.
 The creator approved the candidate; it now replaces the mission gate at scale
 0.78. The source study retains the old procedural gate for comparison.
 
+## Woman Blue Leader study (9 November 2026)
+
+`assets/blue_leader_study/blue_leader.glb` is a separate review candidate. All
+visible meshes are original Blender-authored project geometry, including the
+woman's head, body, hair, armor, cloth, equipment and pistol. The existing
+Quaternius Spacesuit 62-bone armature and 24 animation actions are reused under
+the verified CC0 pack license recorded above; its original files are unchanged.
+No downloaded character, donor male head or donor armor mesh is included in
+the candidate. This does not relabel the original project geometry as CC0.
+
+The material atlas and neutral facial source were generated with built-in
+imagegen. Exact prompts and provenance are preserved in
+`art_source/blue_leader/TEXTURE_SOURCES.md`. The reproducible build script and
+packed editable `leader_authoring.blend` are in the same directory. Blender
+bakes portable albedo, normal and roughness maps and embeds them in the GLB.
+See `BLUE_LEADER_STUDY.md` for actual validation and limitations. Mission
+integration awaits visual acceptance; the current leader remains unchanged.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated

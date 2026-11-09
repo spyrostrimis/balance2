@@ -34,6 +34,12 @@ with its discovery shot reframed for the taller facade. The Blue Leader is the
 next focused asset, following the concept portrait; animation and healing must
 be preserved. Tree improvements remain deferred.
 
+The woman Blue Leader now has a separate animated review candidate, launched
+with `BlueLeaderStudy.bat`. All visible geometry is original; the licensed
+skeleton/actions are reused. Its appearance awaits creator review, so the
+mission leader and healing implementation remain unchanged. Details and limits
+are in `BLUE_LEADER_STUDY.md`.
+
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.
 Develop the world's visual identity, environments, faction designs, characters,

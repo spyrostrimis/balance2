@@ -1,5 +1,10 @@
 # Character study 01
 
+**9 November update:** the separately reviewable woman Blue Leader candidate is
+available through `BlueLeaderStudy.bat`. See `BLUE_LEADER_STUDY.md` for its
+original geometry, source materials, skinning, verification and limits. It is
+not yet integrated; the trio and mission described below remain unchanged.
+
 This is a playable art review room for the assembly now used in First Contact.
 It replaces abstract body-part previews with actual skinned character meshes and
 authored animations. It is an intermediate asset direction, not the final fidelity

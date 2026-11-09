@@ -1,0 +1,9 @@
+Use case: stylized-concept
+Asset type: original PBR base-color material source atlas for a Blender-authored woman Blue Leader in the original RTS game Balance.
+Primary request: create a square 2048 by 2048 texture sheet with EXACTLY FOUR equal square material swatches arranged as a seamless edge-to-edge 2 by 2 grid. No margins, labels, letters, objects, clothing silhouettes, or dividers.
+TOP LEFT quadrant: worn deep cobalt blue painted protective steel. Mostly intact cobalt enamel, small irregular abrasions exposing desaturated warm steel, fine scratches and faint dusty accumulation. No bolts or panel seams. Purposeful restrained wear; no large bare patches.
+TOP RIGHT quadrant: weathered warm ivory woven linen, very fine tactile weave, subtle dusty tan variations, tiny fiber irregularities. Flat fabric surface without folds, seams, borders or embroidery.
+BOTTOM LEFT quadrant: charcoal brown practical leather, fine natural grain, restrained weathering, subtle creases, not reptile skin.
+BOTTOM RIGHT quadrant: warm olive tan adult human skin material, very subtle pores and natural mottling, restrained freckles. A flat skin surface swatch, NOT a face or body part.
+Style: richly detailed stylized realism, credible natural materials for a game character, no franchise references.
+Lighting: flat neutral diffuse unlit albedo, no directional light, no highlights, no cast shadows, no vignette. Each quadrant fills its entire exact quarter of the image.

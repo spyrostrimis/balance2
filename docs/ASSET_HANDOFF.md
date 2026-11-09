@@ -13,6 +13,26 @@ new chat at our discretion. A focused new character chat is authorized to begin.
 Work one asset at a time. Tree foliage/flower improvements are explicitly deferred; do not resume
 them while working on the Gate or Leader.
 
+**Leader candidate 01 is now authored as a separate review asset.** Open
+`BlueLeaderStudy.bat`; read `BLUE_LEADER_STUDY.md` before continuing. The user
+has not accepted its appearance or authorized its substitution into the mission.
+The next step is visual feedback on this candidate, not another asset.
+All visible geometry is original; only the verified CC0 62-bone skeleton and
+24 actions are reused. Exact built-in imagegen prompts, two source images,
+packed authoring `.blend` and rebuild script are under `art_source/blue_leader/`.
+The GLB and PBR maps are under `assets/blue_leader_study/`.
+
+The candidate includes a modeled woman head with projected generated facial
+detail, swept dark hair/braid, curved cobalt armor, folded ivory scarf/split
+coat, original pistol and medical equipment. It is visibly simpler than the
+approved concept and must not be described as concept parity. No facial rig,
+blink/lip sync, cloth/hair simulation or healing animation has been added.
+It is a dense review mesh; optimize only after design acceptance.
+The source rig's 62 bones, all exported skin weights and six clips across 24
+poses are checked by `tests/test_blue_leader.gd`. The native review provides
+portrait, full-body, RTS/mission distance and motion buttons. Existing mission
+code, healing, scenery and accepted integrations remain unchanged.
+
 The user authorized opening a new Gate chat with this handoff and beginning
 work. Do not ask them to re-explain the project or repeat approval to start.
 Create a separate review asset first, as with previous studies. A finished

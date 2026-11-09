@@ -1,0 +1,48 @@
+{
+  "revision": 1,
+  "status": "Separate review candidate; visual acceptance pending",
+  "blender": "5.2.3 LTS",
+  "triangles": 135396,
+  "materials": 14,
+  "bones": 62,
+  "source_rig": "Quaternius Spacesuit.gltf (CC0); visible geometry entirely original",
+  "source_sha256": "33e0e0fbc6140ffc936a099fd84a274be406115c4b32aa0a697641710b67392a",
+  "front": "Godot +Z",
+  "muzzle_bind_position_godot": [
+    -0.964,
+    1.465,
+    0.149
+  ],
+  "muzzle_bone": "Middle1.R",
+  "animations": [
+    "Death",
+    "Gun_Shoot",
+    "HitRecieve",
+    "HitRecieve_2",
+    "Idle",
+    "Idle_Gun",
+    "Idle_Gun_Pointing",
+    "Idle_Gun_Shoot",
+    "Idle_Neutral",
+    "Idle_Sword",
+    "Interact",
+    "Kick_Left",
+    "Kick_Right",
+    "Punch_Left",
+    "Punch_Right",
+    "Roll",
+    "Run",
+    "Run_Back",
+    "Run_Left",
+    "Run_Right",
+    "Run_Shoot",
+    "Sword_Slash",
+    "Walk",
+    "Wave"
+  ],
+  "limits": [
+    "No facial rig or speech animation",
+    "Hair and split cloth are bone-skinned, not simulated",
+    "Healing equipment is visual only; mission integration awaits acceptance"
+  ]
+}
