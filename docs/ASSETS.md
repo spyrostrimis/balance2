@@ -48,6 +48,16 @@ Godot extracts identical copies with a `desert_tree_` prefix on import.
 
 See `TREE_STUDY.md` for the review workflow and known limitations.
 
+## Sandstone formation study (9 November 2026)
+
+`assets/rock_study/sandstone_formation.glb` and its baked maps are original
+project art. Geometry, layered surface color, normal detail and roughness are
+authored in `art_source/rocks/build_formation.py` with Blender 5.2.3 LTS. The
+editable source is `art_source/rocks/sandstone_authoring.blend`. No third-party
+files or generated images are used. No CC0 license is asserted for project art.
+Godot extracts embedded GLB textures alongside the original bake outputs.
+See `ROCK_STUDY.md` for the workflow and review scope.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated

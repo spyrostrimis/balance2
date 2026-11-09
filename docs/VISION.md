@@ -12,8 +12,10 @@ review: the tree with small flowers, then the rock formation. Previous prototype
 art is not accepted as matching the concept or Warcraft III Reforged benchmark.
 The creator subsequently approved the Korali improvement and requested its
 replacement in the mission; that substitution is complete. The tree with small
-flowers is now the next separate review candidate. These studies do not migrate
-the mission's renderer. See `KORALI_STUDY.md` and `TREE_STUDY.md`.
+flowers was also approved and now replaces the mission trees. The sandstone
+rock formation is the next separate review candidate. These studies do not
+migrate the mission's renderer. See `KORALI_STUDY.md`, `TREE_STUDY.md` and
+`ROCK_STUDY.md`.
 
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.
