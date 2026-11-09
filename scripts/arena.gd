@@ -32,11 +32,12 @@ func _build_terrain() -> void:
 		var marker := Art.box(self, Vector3(cos(angle) * 5.65, 0.04, sin(angle) * 5.65), Vector3(0.35, 0.08, 0.13), Art.material(Color("b6c2ad")))
 		marker.rotation.y = -angle
 	# Korali is metal in stone, rather than exposed crystal spikes.
-	var ore := ShaderMaterial.new()
-	ore.shader = preload("res://shaders/korali.gdshader")
-	var deposit := Art.rock(self, Vector3(0, 0.92, 0), Vector3(2.85, 2.15, 2.3), ore, 47)
-	deposit.rotation_degrees = Vector3(-9, 18, 12)
-	Art.rock(self, Vector3(0.95, 0.35, 0.6), Vector3(1.1, 0.8, 1.0), ore, 53)
+	var deposit := preload("res://assets/korali_study/korali_study.glb").instantiate()
+	for child in deposit.find_children("*", "MeshInstance3D"):
+		var material: StandardMaterial3D = child.get_active_material(0).duplicate()
+		material.albedo_color = Color(0.72, 0.75, 0.78)
+		child.material_override = material
+	add_child(deposit)
 	obstacles.append(Vector3(0, 1.8, 0))
 	for p in [Vector3(-8, 1.7, -6), Vector3(8, 1.7, 6), Vector3(-12, 1.5, 7), Vector3(12, 1.5, -7)]:
 		obstacles.append(p)
