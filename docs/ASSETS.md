@@ -103,6 +103,20 @@ bakes portable albedo, normal and roughness maps and embeds them in the GLB.
 See `BLUE_LEADER_STUDY.md` for actual validation and limitations. Mission
 integration awaits visual acceptance; the current leader remains unchanged.
 
+## Blue Leader revision 02 anatomical foundation
+
+Revision 01 was rejected by the creator. Revision 02 begins with a separate
+head/shoulders checkpoint using MPFB 2.0.18 and MakeHuman core assets, rather
+than reusing revision 01 anatomy or its old animation-fitting assumptions.
+The base mesh, morph targets, fitted default rig/weights, core skin, high-poly
+eyes, eyebrow005, eyelashes01 and ponytail01 are CC0 under the official split
+license and system-pack manifest. Evidence is preserved under
+`art_source/blue_leader/v2/provenance/`; pinned commit, source URLs, pack SHA-256,
+rebuild steps and limits are in `BLUE_LEADER_REBUILD.md` and `fetch_sources.ps1`.
+These third-party inputs are acknowledged explicitly; revision 02 is not
+described as wholly original geometry. Its framing armor/scarf is original
+project geometry and reuses the project's generated material atlas.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated

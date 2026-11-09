@@ -1,5 +1,11 @@
 # Woman Blue Leader — review candidate 01
 
+**Rejected by the creator.** The face looked hollow and lifeless, the armor
+looked like assembled toy parts, and the motion was awkward. Technical checks
+below established valid playback, not acceptable art or natural movement.
+Revision 02 must use a better anatomical foundation and a body-fitted rig;
+see `ASSET_HANDOFF.md`. Do not integrate this candidate.
+
 This is a separate, complete animated character study. It does not replace the
 mission leader until visual acceptance. The approved concept's lower-left
 portrait and Blue squad guide the palette and equipment; this candidate is a

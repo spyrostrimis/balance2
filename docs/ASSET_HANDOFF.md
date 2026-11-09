@@ -13,10 +13,38 @@ new chat at our discretion. A focused new character chat is authorized to begin.
 Work one asset at a time. Tree foliage/flower improvements are explicitly deferred; do not resume
 them while working on the Gate or Leader.
 
-**Leader candidate 01 is now authored as a separate review asset.** Open
+**Leader candidate 01 was rejected by the creator.** The user described the
+face as hollow-cheeked and zombie-like, the armor as Lego-like, and the
+animations as awkward. They want the reference woman's beauty, vitality,
+determination, confidence and strength. Do not call v1 accepted or merely
+awaiting review. Do not integrate it. They explicitly requested a process
+review and a substantially better attempt, and are open to installing a tool
+if it would materially improve the result.
+
+The audit found inappropriate analytic face topology, projected portrait
+shadows and eyes sharing the skin shader, repetitive tubular hair/armor, and
+proportions forced onto the old placeholder rig. Valid weights/finite bone
+transforms did not establish animation quality. Keep the export/viewer tooling,
+but retire those geometry and rig-fitting assumptions.
+
+Revision 02 is testing an anatomical MakeHuman/MPFB foundation before outfit
+construction. MPFB v2.0.18 at commit
+`d0a32e57a7f915cb2f2b95410e2117648c7bbb7e` and its CC0 core system assets are
+available in ignored `artifacts/tooling/`. The add-on runs from that isolated
+checkout with Blender 5.2.3; no global install or purchase is required from
+the user. `art_source/blue_leader/v2/build_foundation.py` and `build_bust.py`
+produce the current static anatomy/presence checkpoint. Open
+`BlueLeaderFaceStudy.bat`; use 1/2/3 for angles and C for clay. Read
+`BLUE_LEADER_REBUILD.md` for source setup, licenses and limits. Packed editable
+anatomy and bust source files live beside the scripts; the review GLB is in
+`assets/blue_leader_study/v2/`. Renders/logs stay in `artifacts/blue_leader/v2/`.
+This is a head/shoulders proof, not a full animated unit. Final hair, outfit,
+retargeted motion and user acceptance are pending.
+
+Historical candidate 01: Open
 `BlueLeaderStudy.bat`; read `BLUE_LEADER_STUDY.md` before continuing. The user
-has not accepted its appearance or authorized its substitution into the mission.
-The next step is visual feedback on this candidate, not another asset.
+rejected its appearance and has not authorized its substitution into the mission.
+The next step is the redesigned leader, not another asset.
 All visible geometry is original; only the verified CC0 62-bone skeleton and
 24 actions are reused. Exact built-in imagegen prompts, two source images,
 packed authoring `.blend` and rebuild script are under `art_source/blue_leader/`.

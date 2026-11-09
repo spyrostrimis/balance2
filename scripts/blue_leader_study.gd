@@ -51,7 +51,7 @@ func _build_ui() -> void:
 	column.position = Vector2(30, 110)
 	layer.add_child(column)
 	animation_caption = Label.new()
-	animation_caption.text = "REVIEW CANDIDATE · Identity and visual acceptance pending"
+	animation_caption.text = "REJECTED STUDY 01 · Retained for comparison · New anatomy study: BlueLeaderFaceStudy.bat"
 	column.add_child(animation_caption)
 	var row := HBoxContainer.new()
 	column.add_child(row)

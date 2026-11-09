@@ -84,11 +84,12 @@ The creator subsequently requested the next character asset explicitly as the
 exact facial identity and voice remain open. This does not fix other characters'
 genders, species or identities.
 
-Woman Blue Leader candidate 01 is now available as a separate native review
-scene. Its visible geometry is original, with generated/baked surface and facial
-detail, and the existing licensed skeleton/actions. It remains a simpler study
-than the concept, with a static expression and bone-skinned hair/cloth. Visual
-acceptance and mission substitution are pending. See `BLUE_LEADER_STUDY.md`.
+Woman Blue Leader candidate 01 was rejected: the hollow/lifeless face, toy-like
+armor and awkward animation did not communicate the reference's beauty,
+vitality, strength or confidence. Revision 02 begins with an anatomical MPFB
+foundation and a separate static face/shoulders checkpoint. Costume and motion
+must follow that foundation, not force the body to an old placeholder rig.
+See `BLUE_LEADER_REBUILD.md`; mission substitution remains unapproved.
 
 ## Concept generation record
 

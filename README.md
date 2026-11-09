@@ -139,11 +139,16 @@ is lightweight steering, suitable for this eight-unit prototype.
 The leaders still share a provisional source face, and all roles currently carry
 the source pistol. Distinct rifles, heavy weapons, and final faces remain art work.
 
-`BlueLeaderStudy.bat` opens the separate woman Blue Leader review candidate:
+`BlueLeaderFaceStudy.bat` opens revision 02's static head-and-shoulders checkpoint,
+using an anatomical MakeHuman/MPFB base. Use 1/2/3 for angles and C for clay.
+The final outfit, hair and animations remain in development. See
+[the revised workflow](docs/BLUE_LEADER_REBUILD.md).
+
+`BlueLeaderStudy.bat` retains the **rejected** first woman Blue Leader candidate:
 original geometry, generated/baked materials and the existing licensed animation
 rig. Use P for a portrait, 1/2/3 for character/RTS/mission views, the motion
 buttons for animation, A to pause, and drag/wheel to rotate/zoom. It awaits visual
-acceptance and is not substituted into the mission. See
+redesign and is not substituted into the mission. See
 [the study notes](docs/BLUE_LEADER_STUDY.md) for source, controls and limits.
 
 See [the design record](docs/VISION.md) and [asset provenance](docs/ASSETS.md).
