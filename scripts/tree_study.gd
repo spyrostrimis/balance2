@@ -1,5 +1,5 @@
 extends "res://scripts/korali_study.gd"
-## One candidate tree with small flowering root plants; no mission replacement yet.
+## Approved tree and root flowers; retains the old geometry for comparison.
 
 func _init() -> void:
 	study_title = "B A S I N   T R E E   /   0 1"
@@ -20,7 +20,7 @@ func _create_study() -> Node3D:
 func _create_previous() -> void:
 	var details = preload("res://scripts/basin_details.gd")
 	var scenery = preload("res://scripts/scenery.gd")
-	details._tree(previous, Vector3.ZERO, 3.6, 47)
+	details.prototype_tree(previous, Vector3.ZERO, 3.6, 47)
 	scenery.plant(previous, Vector3(-0.7, 0, 0.65), 0.65, 0)
 	scenery.plant(previous, Vector3(0.35, 0, 0.9), 0.5, 3)
 	scenery.plant(previous, Vector3(0.85, 0, -0.3), 0.4, 6)

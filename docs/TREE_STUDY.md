@@ -3,7 +3,11 @@
 The next asset after the approved Korali rock: a desert shade tree with a bowed,
 tapering trunk, visible branching structure and roots, a layered sage canopy,
 and three blue-green succulent rosettes carrying small orange-gold flowers.
-This is a review candidate. The mission's original trees are unchanged.
+The creator approved the improvement and requested integration. The four mission
+trees now use this asset, with height and rotation variation at their existing
+positions. The root flowers replace the previous scattered prototype plants
+around each tree. Navigation footprints remain unchanged. The old tree generator
+is retained only for the review scene's comparison.
 
 ## View
 

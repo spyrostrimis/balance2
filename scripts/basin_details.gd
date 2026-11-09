@@ -47,9 +47,6 @@ static func build(parent: Node3D) -> void:
 	# Solid foliage and architecture are also registered by Arena.
 	for p in TREE_POSITIONS:
 		_tree(parent, p, rng.randf_range(2.7, 3.8), rng.randi_range(0, 100))
-		for i in range(8):
-			var q: Vector3 = p + Vector3(rng.randf_range(-1.3, 1.3), 0, rng.randf_range(-1.0, 1.0))
-			Scenery.plant(parent, q, rng.randf_range(0.2, 0.65), i)
 	for i in range(30):
 		var p := Vector3(rng.randf_range(-23, 23), 0, rng.randf_range(-16.7, -14.8))
 		if absf(p.x) < 7: continue
@@ -64,6 +61,15 @@ static func _branch(parent: Node3D, start: Vector3, end: Vector3, radius: float,
 	limb.quaternion = Quaternion(Vector3.UP, start.direction_to(end))
 
 static func _tree(parent: Node3D, pos: Vector3, height: float, seed_value: int) -> void:
+	var tree := preload("res://assets/tree_study/desert_tree.glb").instantiate()
+	tree.name = "BasinTree"
+	tree.position = pos
+	tree.scale = Vector3.ONE * (height / 3.6)
+	tree.rotation.y = seed_value * 0.37
+	parent.add_child(tree)
+
+static func prototype_tree(parent: Node3D, pos: Vector3, height: float, seed_value: int) -> void:
+	# Retained only for the review scene's before/after comparison.
 	var tree := Node3D.new()
 	tree.position = pos
 	tree.name = "BasinTree"
