@@ -140,3 +140,5 @@ Do not assume “free” means CC0. Retain the license provided with each pack.
 If a suitable pack has another license, discuss that choice before adoption.
 The repository's own code and original art have no distribution license selected
 yet; a public repository does not automatically license reuse.
+
+Revision 02 is now used by the mission Blue Leader via scripts/blue_leader_mission.gd, with rigid Head/Chest attachments and the existing Quaternius limbs/animations. Original source assets and the reviewed bust are unchanged; only the overlapping old torso triangles are filtered in the runtime copy. Likeness work is deferred at the creator's request.

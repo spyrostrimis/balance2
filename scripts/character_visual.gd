@@ -5,6 +5,7 @@ const SpaceSuit = preload("res://assets/third_party/quaternius/modular_men/Space
 const Swat = preload("res://assets/third_party/quaternius/modular_men/Swat.gltf")
 const Adventurer = preload("res://assets/third_party/quaternius/modular_men/Adventurer.gltf")
 const Art = preload("res://scripts/shapes.gd")
+const LeaderRevisionTwo = preload("res://scripts/blue_leader_mission.gd")
 var style := "blue_leader"
 var role := "RIFLEMAN"
 var rig: Skeleton3D
@@ -23,9 +24,10 @@ func _ready() -> void:
 	animation_player = find_type(model, "AnimationPlayer")
 	if style.ends_with("_leader"):
 		model.find_child("SpaceSuit_Head", true, false).hide()
-		var donor := Adventurer.instantiate()
-		_copy_part(donor, "Adventurer_Head")
-		donor.free()
+		if style != "blue_leader":
+			var donor := Adventurer.instantiate()
+			_copy_part(donor, "Adventurer_Head")
+			donor.free()
 		var weapon_donor := Swat.instantiate()
 		_copy_part(weapon_donor, "Pistol")
 		weapon_donor.free()
@@ -36,6 +38,7 @@ func _ready() -> void:
 	_recolor(model)
 	_add_faction_equipment()
 	_add_role_equipment()
+	if style == "blue_leader": LeaderRevisionTwo.attach(rig)
 	_setup_muzzle()
 	# Local libraries prevent loop settings from mutating imported shared assets.
 	var library: AnimationLibrary = animation_player.get_animation_library("").duplicate(true)

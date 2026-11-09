@@ -1,5 +1,29 @@
 # Asset chat handoff — 9 November 2026
 
+## Latest decision — integrated interim leader (9 November 2026)
+
+The creator explicitly requested keeping revision 02 and adding her to the game,
+while deferring all further appearance changes. This is acceptance for interim
+use, not approval of the likeness or final art quality.
+
+Deferred feedback, compared with the generated mission Leader reference:
+- Candidate still feels generic and is not the intended woman.
+- Reference face is more angular, with less fullness in face and neck.
+- Reference eyebrows are thicker and the nose more pointed.
+- Reference ears differ.
+- Eye color differs; candidate eyes have an unwanted brown/red appearance.
+  The desired exact eye color has not been specified; consult the reference.
+
+Integration uses the unchanged revision 02 bust, attached by separate head and
+chest bone attachments to the existing mission skeleton. The old male head and
+overlapping central chest/collar are removed. Existing arms, legs, weapon,
+animations, mantle and medical equipment remain. This is an interim composite,
+not a newly authored full-body character or an animation redesign. Head/hair and
+armor are rigid attachments; cloth, hair and facial animation remain absent.
+The shared character factory also updates story portraits and Character Studio.
+Do not resume facial/costume refinement until requested. Revision 01 remains rejected.
+
+
 Read this first in a new asset chat, then `VISION.md`, `ART_DIRECTION.md`, and
 the relevant asset study. Update this handoff at the end of each asset's work.
 
@@ -38,8 +62,7 @@ produce the current static anatomy/presence checkpoint. Open
 `BLUE_LEADER_REBUILD.md` for source setup, licenses and limits. Packed editable
 anatomy and bust source files live beside the scripts; the review GLB is in
 `assets/blue_leader_study/v2/`. Renders/logs stay in `artifacts/blue_leader/v2/`.
-This is a head/shoulders proof, not a full animated unit. Final hair, outfit,
-retargeted motion and user acceptance are pending.
+This is a head/shoulders proof, not a full animated unit. Final hair, outfit and retargeted motion are deferred; interim integration is authorized above.
 
 Historical candidate 01: Open
 `BlueLeaderStudy.bat`; read `BLUE_LEADER_STUDY.md` before continuing. The user

@@ -3,7 +3,7 @@
 **9 November update:** woman Blue Leader candidate 01 was rejected. Its
 anatomy, toy-like costume and awkward motion need a new foundation.
 `BlueLeaderFaceStudy.bat` now opens revision 02's static anatomical checkpoint;
-see `BLUE_LEADER_REBUILD.md`. The trio and mission below remain unchanged.
+see `BLUE_LEADER_REBUILD.md`. The creator has now requested interim integration: the Blue Leader uses that bust on the existing animated body in both mission and studio; further appearance work is deferred.
 
 This is a playable art review room for the assembly now used in First Contact.
 It replaces abstract body-part previews with actual skinned character meshes and

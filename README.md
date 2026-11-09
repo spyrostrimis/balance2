@@ -139,7 +139,7 @@ is lightweight steering, suitable for this eight-unit prototype.
 The leaders still share a provisional source face, and all roles currently carry
 the source pistol. Distinct rifles, heavy weapons, and final faces remain art work.
 
-`BlueLeaderFaceStudy.bat` opens revision 02's static head-and-shoulders checkpoint,
+The mission Blue Leader now uses revision 02's head and armor on the existing animated body. Facial likeness improvements are deferred; arms, legs and animation remain provisional. `BlueLeaderFaceStudy.bat` opens the static head-and-shoulders source study,
 using an anatomical MakeHuman/MPFB base. Use 1/2/3 for angles and C for clay.
 The final outfit, hair and animations remain in development. See
 [the revised workflow](docs/BLUE_LEADER_REBUILD.md).

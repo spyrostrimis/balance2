@@ -38,7 +38,7 @@ The creator rejected the first woman Blue Leader for its hollow/lifeless face,
 toy-like armor and awkward movement. Revision 02 uses an anatomical MPFB base
 and a staged face/shoulders checkpoint (`BlueLeaderFaceStudy.bat`) before the
 final costume and motion work. See `BLUE_LEADER_REBUILD.md`. The mission leader
-and healing implementation remain unchanged.
+now uses the revision 02 bust on the existing animated body at the creator's request. Further appearance work is deferred; healing is unchanged.
 
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.

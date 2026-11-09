@@ -39,10 +39,11 @@ func run() -> void:
 	check(valid_rigs, "Each character has the shared skeleton and all review animations")
 	var blue: Node3D = studio.characters[0]
 	var red: Node3D = studio.characters[2]
-	var blue_face: MeshInstance3D = blue.rig.get_node("Adventurer_Head")
+	var blue_head: BoneAttachment3D = blue.rig.get_node("LeaderV2_Leader_anatomical_foundation")
+	var blue_face: MeshInstance3D = blue_head.get_child(0)
 	var red_face: MeshInstance3D = red.rig.get_node("Adventurer_Head")
-	check(blue_face.skin.get_bind_count() == blue.rig.get_bone_count() and blue_face.get_node(blue_face.skeleton) == blue.rig, "Modular face is bound to the active skeleton")
-	check(blue_face.get_surface_override_material(0) != red_face.get_surface_override_material(0), "Faction material edits are instance-local")
+	check(blue_head.bone_name == "Head" and not blue.rig.has_node("Adventurer_Head"), "Revision 02 replaces the male head and follows the animated head bone")
+	check(blue_face.get_active_material(0) != red_face.get_active_material(0), "Leader retains revision 02 skin independently of faction recoloring")
 	var hand: int = blue.rig.find_bone("Wrist.R")
 	blue.advance_animation(0.25)
 	var idle_hand: Transform3D = blue.rig.get_bone_global_pose(hand)

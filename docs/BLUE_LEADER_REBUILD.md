@@ -1,5 +1,29 @@
 # Blue Leader revision 02 — anatomy checkpoint
 
+## Latest decision — integrated interim leader (9 November 2026)
+
+The creator explicitly requested keeping revision 02 and adding her to the game,
+while deferring all further appearance changes. This is acceptance for interim
+use, not approval of the likeness or final art quality.
+
+Deferred feedback, compared with the generated mission Leader reference:
+- Candidate still feels generic and is not the intended woman.
+- Reference face is more angular, with less fullness in face and neck.
+- Reference eyebrows are thicker and the nose more pointed.
+- Reference ears differ.
+- Eye color differs; candidate eyes have an unwanted brown/red appearance.
+  The desired exact eye color has not been specified; consult the reference.
+
+Integration uses the unchanged revision 02 bust, attached by separate head and
+chest bone attachments to the existing mission skeleton. The old male head and
+overlapping central chest/collar are removed. Existing arms, legs, weapon,
+animations, mantle and medical equipment remain. This is an interim composite,
+not a newly authored full-body character or an animation redesign. Head/hair and
+armor are rigid attachments; cloth, hair and facial animation remain absent.
+The shared character factory also updates story portraits and Character Studio.
+Do not resume facial/costume refinement until requested. Revision 01 remains rejected.
+
+
 The creator rejected revision 01: hollow/lifeless face, toy-like armor and
 awkward animation. The approved reference communicates beauty, vitality,
 strength, determination and confidence. Those are the target, not merely
