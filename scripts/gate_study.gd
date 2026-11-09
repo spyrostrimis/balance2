@@ -1,10 +1,10 @@
 extends "res://scripts/korali_study.gd"
-## Standalone review only. Mission scenery remains unchanged until acceptance.
+## Approved Gate source review, with the old mission assembly for comparison.
 
 func _init() -> void:
 	study_title = "S A N C T U A R Y   G A T E   /   0 1"
 	new_label = "Carved limestone · recessed seal and portal · embroidered palatinate cloth"
-	old_label = "Current mission gate — original scale"
+	old_label = "Previous mission gate — original scale"
 	close_size = 18.7
 	close_focus = 5.5
 
@@ -21,7 +21,7 @@ func _create_study() -> Node3D:
 func _create_previous() -> void:
 	var pale := Art.material(Color("d3c2a0"))
 	var dark := Art.material(Color("8c7962"))
-	preload("res://scripts/scenery.gd")._build_temple(previous, pale, dark)
+	preload("res://scripts/scenery.gd")._build_temple_previous(previous, pale, dark)
 	previous.position.z = 18.6
 
 func set_distance(mode: int) -> void:

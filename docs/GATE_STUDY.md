@@ -1,8 +1,8 @@
 # Sanctuary Gate — study 01
 
-Separate review candidate based on the sanctuary in the approved concept board,
-especially its lower-right panel. The mission still uses its previous gate at
-(0, 0, -18.6). Visual acceptance is required before replacing that assembly.
+The creator approved study 01 ("Very nice") and requested its integration.
+It now replaces the mission gate at (0, 0, -18.6), with uniform scale 0.78.
+The design follows the approved concept board, especially its lower-right panel.
 
 The facade has a tall split central spire, three sweeping ribs on each wing,
 flared buttresses, coursed limestone, four nested pointed archivolts, recessed
@@ -13,15 +13,18 @@ split hem. A narrow violet seam is the only emissive surface.
 Run `GateStudy.bat` for the native Godot Forward+ review scene:
 
 - **1** close view; **2** RTS inspection; **3** mission camera distance.
-- **B** current mission gate comparison, at its original scale.
+- **B** previous mission gate comparison, at its original scale.
 - **L** warm/neutral light; **Space** turntable; drag to rotate; wheel to zoom.
 - **R** reset; **Esc** close.
 
 The new facade is about 16.8 metres wide and 12.3 metres tall. It deliberately
 recovers the concept's vertical silhouette; the old prototype is about 6 metres
-tall. Both use the same world units. Future integration must review cliff fit,
-the opening camera and the approach footprint; no mission transforms or
-navigation are changed by this study.
+tall. The viewer shows the authored asset at full size; in the mission it is
+about 9.6 metres high and 13.1 metres wide. Its lowest step stays beyond the
+walkable z = -14 boundary. Two flanking rocks overlap the outer wing ends;
+the old entrance geometry is retained only for the viewer's comparison.
+The final discovery camera targets the taller facade at height 4.2, with
+orthographic size 15. Navigation, interactions and the renderer are unchanged.
 
 ## Source and rebuild
 
@@ -52,12 +55,15 @@ distance and against the old gate. Sloping top courses and staggered step joints
 were corrected after inspection, then the revised asset was reimported and
 viewed again. Import and runtime logs contained no script errors. No gameplay
 code changed, so the gameplay suite was not rerun for this isolated art study.
+After acceptance, a brief native mission check confirmed the fitted gate renders
+in the existing Compatibility renderer with its approach clear and without
+script errors. No lengthy gameplay or screenshot suite was run for the swap.
 
 This is a facade asset, with a closed rear and sealed door, not an explorable
 interior. The ring and needle are visual motifs drawn from the approved
 reference, not newly established lore. Banners are static. There is no collision,
-door interaction, animated opening or new gameplay. Cliff blending, accumulated
-sand and the wider sanctuary environment belong to a later integration pass.
+door interaction, animated opening or new gameplay. The surrounding prototype
+cliffs and accumulated sand still need later environment art work.
 Generated albedo has some illustrated relief; these are not measured material
 scans. The isolated Forward+ review does not establish mission-renderer parity
 or whole-map performance.

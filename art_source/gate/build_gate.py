@@ -251,6 +251,6 @@ for obj in assets.values():
     mod=obj.modifiers.new('Portable triangles','TRIANGULATE'); bpy.ops.object.modifier_apply(modifier=mod.name)
     obj.data.calc_loop_triangles(); triangles+=len(obj.data.loop_triangles)
 bpy.ops.export_scene.gltf(filepath=str(OUT/'sanctuary_gate.glb'),export_format='GLB',use_selection=True,export_tangents=True,export_animations=False,export_cameras=False,export_lights=False)
-stats={'revision':1,'blender':bpy.app.version_string,'triangles':triangles,'materials':5,'stone_texture_resolution':4096,'cloth_door_texture_resolution':1024,'height_m':12.3,'facade_width_m':16.8,'front':'Godot +Z','status':'Review candidate; not integrated','source':'art_source/gate/gate_authoring.blend'}
+stats={'revision':1,'blender':bpy.app.version_string,'triangles':triangles,'materials':5,'stone_texture_resolution':4096,'cloth_door_texture_resolution':1024,'height_m':12.3,'facade_width_m':16.8,'front':'Godot +Z','status':'Approved; integrated at scale 0.78 in the mission','source':'art_source/gate/gate_authoring.blend'}
 (OUT/'asset_info.json').write_text(json.dumps(stats,indent=2)+'\n')
 print('GATE COMPLETE',stats,flush=True)

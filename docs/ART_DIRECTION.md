@@ -79,7 +79,10 @@ See `CHARACTER_STUDY.md` for source provenance and current limitations. These ar
 intermediate low-poly studies; the reference remains the desired material and
 character-detail target. Availability alone does not make a pack the final choice.
 
-No specific named hero, gender, species, or voice is locked by the illustration.
+The creator subsequently requested the next character asset explicitly as the
+**woman Blue Leader**, following the concept's lower-left portrait. Her name,
+exact facial identity and voice remain open. This does not fix other characters'
+genders, species or identities.
 
 ## Concept generation record
 

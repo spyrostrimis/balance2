@@ -82,7 +82,8 @@ built-in imagegen tool. Exact prompts and mapping notes are retained in
 normal and roughness maps; the GLB embeds them. No downloaded mesh, texture,
 add-on or franchise artwork was used. No CC0 license is asserted for this
 generated and original project art. See `GATE_STUDY.md` for scope and limits.
-The candidate is separate from the current mission gate pending user review.
+The creator approved the candidate; it now replaces the mission gate at scale
+0.78. The source study retains the old procedural gate for comparison.
 
 ## Generated concept reference
 

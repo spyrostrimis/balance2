@@ -67,6 +67,21 @@ static func _build_road(parent: Node3D, pale: Material, dark: Material, rng: Ran
 	sigil(parent, Vector3(0.9, 0.045, 1.45), 0.32, false)
 
 static func _build_temple(parent: Node3D, pale: Material, dark: Material) -> void:
+	var temple := preload("res://assets/gate_study/sanctuary_gate.glb").instantiate()
+	temple.name = "SanctuaryGate"
+	temple.position = Vector3(0, 0, -18.6)
+	# Fit the approved facade to the northern opening. The lowest step stays
+	# beyond the walkable z = -14 edge; the taller crown retains its silhouette.
+	temple.scale = Vector3.ONE * 0.78
+	parent.add_child(temple)
+	for side in [-1, 1]:
+		# Overlap only the outer wing ends, leaving the buttresses and cloth clear.
+		Art.rock(parent, Vector3(side * 8.1, 1.6, -18.9), Vector3(4.4, 4.2, 5.8), dark, 780 + side)
+		Art.rock(parent, Vector3(side * 8, 1.1, -15.4), Vector3(1.1, 2.5, 0.85), pale, 791 + side)
+		sigil(parent, Vector3(side * 8, 1.4, -14.9), 0.25, true)
+
+static func _build_temple_previous(parent: Node3D, pale: Material, dark: Material) -> void:
+	# Retained only for the Gate study's before/after comparison.
 	var temple := Node3D.new()
 	temple.position = Vector3(0, 0, -18.6)
 	parent.add_child(temple)

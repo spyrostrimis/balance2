@@ -28,6 +28,12 @@ leaf realism, orientation/attachment and bud/petal geometry remain deficient.
 Further tree improvements are explicitly deferred. **Next: Gate, then Blue
 Leader**, each in a focused asset chat using `ASSET_HANDOFF.md`.
 
+The creator approved Gate study 01 ("Very nice") and requested its integration,
+then the **woman Blue Leader**. The Gate is now in the mission at scale 0.78,
+with its discovery shot reframed for the taller facade. The Blue Leader is the
+next focused asset, following the concept portrait; animation and healing must
+be preserved. Tree improvements remain deferred.
+
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.
 Develop the world's visual identity, environments, faction designs, characters,

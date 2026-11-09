@@ -8,6 +8,6 @@
   "height_m": 12.3,
   "facade_width_m": 16.8,
   "front": "Godot +Z",
-  "status": "Review candidate; not integrated",
+  "status": "Approved; integrated at scale 0.78 in the mission",
   "source": "art_source/gate/gate_authoring.blend"
 }

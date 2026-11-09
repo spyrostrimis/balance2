@@ -6,9 +6,11 @@ the relevant asset study. Update this handoff at the end of each asset's work.
 ## Current request and sequence
 
 The user requested all completed new art be put in the game, then moving on.
-Korali, sandstone revision 02 and tree revision 02 are now integrated.
-**Current review: Gate study 01. After acceptance: Blue Leader.** Work one asset at a time in a focused
-chat. Tree foliage/flower improvements are explicitly deferred; do not resume
+Korali, sandstone revision 02, tree revision 02 and Gate study 01 are now integrated.
+**Next: the woman Blue Leader.** The user approved the Gate ("Very nice") and
+asked to add it to the game, then continue the woman Blue Leader in this or a
+new chat at our discretion. A focused new character chat is authorized to begin.
+Work one asset at a time. Tree foliage/flower improvements are explicitly deferred; do not resume
 them while working on the Gate or Leader.
 
 The user authorized opening a new Gate chat with this handoff and beginning
@@ -71,7 +73,7 @@ from the recorded Quaternius CC0 pack; they are placeholders for final design.
   recoloring and leaf texturing were not a flower redesign. Later do real
   botanical bud/petal shape work. User explicitly says postpone it now.
 
-## Gate — review candidate completed in the focused Gate chat
+## Gate — approved and integrated
 
 Gate study 01 is built as a separate Blender-to-Godot review asset. Launch
 `GateStudy.bat`; source, controls and limits are in `GATE_STUDY.md`. The export
@@ -82,11 +84,15 @@ PBR, original swept stone ribs, nested pointed arches, a circular seal, tall
 split crown, steps and draped banners. The top masonry follows the curved
 silhouette after a first native-view correction. No downloaded art was used.
 
-This is **pending user visual acceptance**, not permission to integrate.
-The mission gate, renderer, navigation and story remain unchanged. The new
-facade is 12.3 metres high versus roughly 6 for the old prototype, so later
-integration needs deliberate scale/cliff/approach and story-camera fitting.
-The native viewer compares them at their real scales. Banners are static;
+The user approved it and explicitly requested integration. `_build_temple`
+now instantiates the GLB at (0, 0, -18.6), scale 0.78: about 9.6 metres high,
+13.1 wide, with the lowest step beyond the walkable z = -14 edge. Two side
+rocks overlap the outer wing ends. The final discovery shot is centered at
+height 4.2, size 15; dialogue, gameplay, navigation and renderer are unchanged.
+The old geometry remains in `_build_temple_previous` for the viewer only.
+A brief native mission check passed in Compatibility with no script errors.
+The viewer shows the candidate at full authored size, not its mission scale.
+Banners are static;
 interior exploration, opening animation and collision are not part of the asset.
 Tree work remains deferred. Do not begin the Blue Leader in parallel.
 
@@ -98,17 +104,13 @@ dark door, carved circular emblem, worn pale stone, steps, purple banners and
 restrained violet interior light. These are visual references; no new gate
 interaction, dungeon, building economy or story mechanics are requested.
 
-Current gate is procedural `scripts/scenery.gd::_build_temple`, centered at
-(0, 0, -18.6), outside the combat arena. It is visibly boxy and lacks the
-concept's shape/material quality. Preserve the mission/story for review.
-Build a proper Blender-authored Gate study with generated surface sources and
-appropriate geometry, using Korali/sandstone quality as the practical minimum.
-Review facade silhouette and materials together. Do not merely texture the
-existing boxes and call it finished. No engine migration requested.
+Do not redo the Gate or earlier integrations. Surrounding distant cliffs remain
+prototype art and are not the next task. No engine migration was requested.
 
 ## Blue Leader — following asset, not parallel work
 
-The concept's lower-left portrait and Blue squad are the visual reference:
+The user explicitly requested a **woman** Blue Leader. The concept's lower-left
+portrait and Blue squad are the visual reference:
 biological woman, dark hair, expressive face, cobalt armor, weathered ivory
 cloth, muted bronze details, practical weapon/medical equipment. Current
 model proportions, face, materials and equipment are provisional. Preserve
@@ -117,6 +119,18 @@ Relevant files: `scripts/character_visual.gd`, `scripts/unit.gd`,
 `scripts/character_studio.gd`, `docs/CHARACTER_STUDY.md`, `docs/ART_DIRECTION.md`.
 Character work requires modeling/rigging/animation decisions beyond texture
 generation; be candid about limits and prove one character first.
+
+Rig inspection: `character_visual.gd` assembles the CC0 Spacesuit body/limbs,
+Adventurer male placeholder head and SWAT pistol on a shared 62-bone skeleton.
+All imported originals stay unchanged. Runtime mantle/equipment attach to Chest.
+Current clips include Idle_Gun, running/aim/fire and Death; the animation player
+advances manually. Muzzle location derives from the pistol's Middle1.R bind.
+Create a separately reviewable woman character with credible face/anatomy/hair,
+armor, ivory cloth and practical equipment, preserving an animation-compatible
+route. A texture-painted male head or new face pasted on the old low-detail body
+does not meet the requested concept direction. Review actual geometry/animation,
+not just a generated character illustration. Integrate the future character only
+after visual acceptance, as with previous asset studies.
 
 ## User reference images
 
