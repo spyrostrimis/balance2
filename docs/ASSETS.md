@@ -48,6 +48,16 @@ Godot extracts identical copies with a `desert_tree_` prefix on import.
 
 See `TREE_STUDY.md` for the review workflow and known limitations.
 
+Tree revision 02 is under `assets/tree_study/v2/`, built by
+`art_source/tree/build_tree_v2.py`. It uses original geometry and two generated
+source images: `art_source/tree/bark_basecolor_source.png` and
+`art_source/tree/leaf_basecolor_source.png`, produced with the built-in image
+tool. Exact prompts and provenance are in `art_source/tree/TEXTURE_SOURCES.md`.
+The root rosette texture is adapted from the leaf source in Blender. Both
+sources and baked maps are packed in `tree_authoring_v2.blend`. These are
+generated project materials, not a third-party CC0 pack. Revision 01 and its
+entirely procedural texture workflow remain intact for the mission/comparison.
+
 ## Sandstone formation study (9 November 2026)
 
 `assets/rock_study/sandstone_formation.glb` revision 02 uses original fracture

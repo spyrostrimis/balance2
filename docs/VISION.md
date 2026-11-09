@@ -19,7 +19,10 @@ migrate the mission's renderer. See `KORALI_STUDY.md`, `TREE_STUDY.md` and
 
 The creator found the first sandstone formation insufficient compared with
 Korali. Revision 02 follows Korali's generated stone texture plus Blender
-fracture-mesh and PBR bake workflow. It remains pending visual review.
+fracture-mesh and PBR bake workflow. The creator approved revision 02 and asked
+to apply that same workflow to the tree. Tree revision 02 now uses generated
+bark and leaf sources baked in Blender; it is the current review candidate.
+The mission still uses the previously approved tree revision 01.
 
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.

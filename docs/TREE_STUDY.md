@@ -1,13 +1,15 @@
-# Basin tree and root flowers — study 01
+# Basin tree and root flowers — study 02
 
-The next asset after the approved Korali rock: a desert shade tree with a bowed,
-tapering trunk, visible branching structure and roots, a layered sage canopy,
-and three blue-green succulent rosettes carrying small orange-gold flowers.
-The creator approved the improvement and requested integration. The four mission
-trees now use this asset, with height and rotation variation at their existing
-positions. The root flowers replace the previous scattered prototype plants
-around each tree. Navigation footprints remain unchanged. The old tree generator
-is retained only for the review scene's comparison.
+After approving the textured sandstone revision, the creator requested the same
+generated-source/Blender-bake workflow for this tree. Revision 02 adds detailed
+weathered bark, veined green leaves and textured blue-green root rosettes while
+preserving the branching silhouette and small flowers. It lives separately in
+`assets/tree_study/v2/`; the mission keeps the approved revision 01 for now.
+
+Revision 01 was approved after Korali and integrated into the four mission tree
+positions, with height and rotation variation. Its root flowers replaced the
+old scattered prototype plants. Navigation footprints remain unchanged. That
+approved asset remains in the mission and supplies the before view here.
 
 ## View
 
@@ -18,16 +20,35 @@ antialiasing and uses a smaller sun angle to stabilize fine foliage shadows.
 - **1:** close view, orthographic size 8.
 - **2:** RTS inspection, size 18.
 - **3:** mission default distance, size 36, camera offset (0, 33, 26).
-- **B:** old/new tree and flowering plants.
+- **B:** revision 01 (current mission) / revision 02.
 - **L:** warm/neutral lighting.
 - **Space:** turntable; drag to rotate; wheel to zoom.
 - **R:** reset; **Esc:** close.
 
-The stage is a neutral review surface, not a completed terrain scene. The old
-tree uses the existing mission generator, height 3.6 and seed 47. Its scale and
-shape vary slightly among instances in the mission.
+The stage is a neutral review surface, not a completed terrain scene. Both
+versions use the same branching silhouette and scale for material comparison.
 
-## Source
+## Revision 02 source
+
+Run `art_source/tree/build_tree_v2.py` with Blender to rebuild the candidate.
+It writes `art_source/tree/tree_authoring_v2.blend` and
+`assets/tree_study/v2/desert_tree.glb`. Both generated images are packed in the
+Blend file. Exact prompts and provenance: `art_source/tree/TEXTURE_SOURCES.md`.
+
+The bark source follows the curved trunk and branches using a dedicated source
+UV layout, then bakes into a unique 2048-pixel albedo/normal atlas. The shared
+leaf color and normal maps are 1024 pixels; the blue-green root rosette map is
+512 pixels. The same folded leaf geometry and per-spray vertex colors remain.
+Flower geometry and colors are preserved. Normal detail is derived from image
+luminance, not a physical scan. Some illustrated shading may remain in the
+source textures despite the flat-illumination prompts.
+
+This revision still has **38,976 triangles, 1,320 canopy leaves and six material
+groups**. The change primarily improves the surfaces, without adding geometry.
+It introduces generated project art, not a CC0 asset pack. No add-on or runtime
+Blender dependency is needed. Native Forward+ close and RTS views were inspected.
+
+## Preserved revision 01 source
 
 All geometry and maps are original and reproducible with:
 

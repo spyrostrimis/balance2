@@ -36,11 +36,11 @@ See [source, workflow, and limitations](docs/KORALI_STUDY.md).
 
 ## Tree and flowers study
 
-Double-click **`TreeStudy.bat`** to inspect the approved asset: a branching desert
-tree with layered sage leaves and small orange-gold flowers at its roots.
-It uses the same controls as the Korali study, including **B** for the original
-tree and **1 / 2 / 3** for camera distance. The mission now uses these trees and
-their root flowers. Foliage is static, with no wind animation.
+Double-click **`TreeStudy.bat`** to inspect revision 02: the branching desert
+tree with generated bark and leaf surface textures, baked normal detail and
+small orange-gold flowers at its roots. **B** compares the previous approved
+tree currently used in the mission; **1 / 2 / 3** changes camera distance.
+The revision is separate for review. Foliage is static, with no wind animation.
 See [source and limitations](docs/TREE_STUDY.md).
 
 ## Rock formation study
@@ -50,7 +50,7 @@ formation with irregular fracture faces, textured stone and fallen slabs. The
 second revision follows the Korali texture-and-bake workflow. **B** compares it
 with the first sandstone attempt; **K** compares the approved Korali under the
 same camera and lighting. Other controls match the earlier studies.
-This candidate is separate from the mission pending visual review.
+The second sandstone revision is approved and remains separate from the mission.
 See [source and limitations](docs/ROCK_STUDY.md).
 
 ## Character Studio

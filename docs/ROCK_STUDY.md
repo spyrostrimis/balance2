@@ -7,8 +7,9 @@ asset's rich fracture texture and natural shape. Revision 02 replaces the
 tiered mesh with irregular cut masses and uses the same generated stone surface
 and Blender PBR bake approach that worked for Korali. A smaller broken shoulder,
 two fallen blocks and five chips complete the silhouette. This
-candidate is isolated for visual review; the mission's rock formations have not
-been replaced.
+revision was approved by the creator, who requested the same workflow for the
+tree. It remains in its study; the mission's rock formations have not been
+replaced.
 
 Run `RockStudy.bat` to open its Forward+ study. **1 / 2 / 3** select close,
 RTS inspection and mission camera distance. **B** compares revision 01;

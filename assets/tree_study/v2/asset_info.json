@@ -1,0 +1,9 @@
+{
+  "blender": "5.2.3 LTS",
+  "revision": 2,
+  "triangles": 38976,
+  "canopy_leaves": 1320,
+  "materials": 6,
+  "source": "art_source/tree/tree_authoring_v2.blend",
+  "license_note": "Original mesh; generated bark and leaf surface sources. See TEXTURE_SOURCES.md."
+}
