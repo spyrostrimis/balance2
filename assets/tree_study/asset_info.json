@@ -1,0 +1,8 @@
+{
+  "blender": "5.2.3 LTS",
+  "triangles": 38976,
+  "canopy_leaves": 1320,
+  "materials": 6,
+  "source": "art_source/tree/tree_authoring.blend",
+  "license_note": "Original project art; no third-party or AI-generated textures used."
+}

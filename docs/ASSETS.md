@@ -36,6 +36,18 @@ Godot are authoring/runtime tools, not the source of third-party art here.
 
 See `KORALI_STUDY.md` for baked channel meanings, regeneration, and limitations.
 
+## Tree and flowers study (9 November 2026)
+
+`assets/tree_study/desert_tree.glb` and its baked surface maps are original
+project art, built with `art_source/tree/build_tree.py` in Blender 5.2.3 LTS.
+The editable source is `art_source/tree/tree_authoring.blend`. Branches, leaves,
+roots, flower geometry, bark and leaf textures are all authored procedurally in
+that script. No downloaded assets, franchise art or generated images are used
+for this study, and no CC0 license is asserted. The GLB embeds its textures;
+Godot extracts identical copies with a `desert_tree_` prefix on import.
+
+See `TREE_STUDY.md` for the review workflow and known limitations.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated

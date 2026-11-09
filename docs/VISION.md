@@ -10,8 +10,10 @@ one asset at a time. First: a Blender-authored Korali rock, reviewed in Godot
 close-up and at the real gameplay camera distance. Next, only after visual
 review: the tree with small flowers, then the rock formation. Previous prototype
 art is not accepted as matching the concept or Warcraft III Reforged benchmark.
-The separate Forward+ Korali study is a proposal for review, not approved final
-art or a renderer migration for the mission. See `KORALI_STUDY.md`.
+The creator subsequently approved the Korali improvement and requested its
+replacement in the mission; that substitution is complete. The tree with small
+flowers is now the next separate review candidate. These studies do not migrate
+the mission's renderer. See `KORALI_STUDY.md` and `TREE_STUDY.md`.
 
 The creator has played the first prototype and considers the gameplay adequate
 as a starting point. Focus next on **visuals, aesthetics, and storyline**.

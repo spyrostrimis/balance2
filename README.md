@@ -25,13 +25,23 @@ or harvesting system.
 ## Korali visual study
 
 Double-click **`KoraliStudy.bat`** for the isolated Blender-to-Godot rock study.
-It uses Forward+ while the mission retains its existing renderer and deposit.
+It uses Forward+ while the mission retains its existing renderer. The approved
+new Korali rock now replaces the mission's original deposit.
 **1 / 2 / 3** select close, RTS inspection, and mission camera distance; **B**
 compares the old rock; **L** changes lighting; **Space** turns the rock.
 Drag to rotate, wheel to zoom, **R** reset, **Esc** close. Requires a device
 supporting Godot Forward+. Blender is only needed to rebuild the asset.
-This is a visual proposal for review; no new gameplay is included.
+No new gameplay is included.
 See [source, workflow, and limitations](docs/KORALI_STUDY.md).
+
+## Tree and flowers study
+
+Double-click **`TreeStudy.bat`** to inspect the next asset: a branching desert
+tree with layered sage leaves and small orange-gold flowers at its roots.
+It uses the same controls as the Korali study, including **B** for the original
+tree and **1 / 2 / 3** for camera distance. This is a separate review candidate;
+the mission's trees are unchanged. Foliage is static, with no wind animation.
+See [source and limitations](docs/TREE_STUDY.md).
 
 ## Character Studio
 

@@ -1,9 +1,10 @@
 # Korali study 01
 
 This isolated art test follows the creator's request to pause feature work and
-evaluate one rock before the tree/flowers and rock formation. It is a candidate
-for visual review, not an approved final asset or a claim to match the concept.
-The First Contact mission still uses its existing deposit and renderer.
+evaluate one rock before the tree/flowers and rock formation. The creator
+approved the improvement and asked to put it in the game. First Contact now uses
+the new deposit with its slate tint; the mission renderer remains unchanged.
+The original rock remains available for comparison in this review scene.
 
 ## Inspect
 

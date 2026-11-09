@@ -1,6 +1,11 @@
 extends Node3D
-## Isolated material review. Does not replace the mission deposit.
+## Asset review stage; tree study reuses its camera, lighting and controls.
 const Art = preload("res://scripts/shapes.gd")
+var study_title := "K O R A L I   /   0 1"
+var new_label := "New baked stone + embedded Korali"
+var old_label := "Original mission rock"
+var close_size := 6.3
+var close_focus := 0.85
 var camera: Camera3D
 var pivot := Node3D.new()
 var study: Node3D
@@ -16,18 +21,10 @@ var rotating := false
 func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color("171d22"))
 	add_child(pivot)
-	study = preload("res://assets/korali_study/korali_study.glb").instantiate()
-	# A restrained slate tint keeps the pale source texture from washing out in sun.
-	for child in study.find_children("*", "MeshInstance3D"):
-		var material: StandardMaterial3D = child.get_active_material(0).duplicate()
-		material.albedo_color = Color(0.72, 0.75, 0.78)
-		child.material_override = material
+	study = _create_study()
 	pivot.add_child(study)
 	pivot.add_child(previous)
-	var old_material := ShaderMaterial.new()
-	old_material.shader = preload("res://shaders/korali.gdshader")
-	Art.rock(previous, Vector3(0, 0.92, 0), Vector3(2.85, 2.15, 2.3), old_material, 47)
-	Art.rock(previous, Vector3(0.95, 0.35, 0.6), Vector3(1.1, 0.8, 1), old_material, 53)
+	_create_previous()
 	previous.visible = false
 	var ground := PlaneMesh.new()
 	ground.size = Vector2(200, 200)
@@ -84,6 +81,21 @@ func _ready() -> void:
 	_build_ui()
 	set_distance(0)
 
+func _create_study() -> Node3D:
+	var asset := preload("res://assets/korali_study/korali_study.glb").instantiate()
+	# A restrained slate tint keeps the pale source texture from washing out in sun.
+	for child in asset.find_children("*", "MeshInstance3D"):
+		var material: StandardMaterial3D = child.get_active_material(0).duplicate()
+		material.albedo_color = Color(0.72, 0.75, 0.78)
+		child.material_override = material
+	return asset
+
+func _create_previous() -> void:
+	var old_material := ShaderMaterial.new()
+	old_material.shader = preload("res://shaders/korali.gdshader")
+	Art.rock(previous, Vector3(0, 0.92, 0), Vector3(2.85, 2.15, 2.3), old_material, 47)
+	Art.rock(previous, Vector3(0.95, 0.35, 0.6), Vector3(1.1, 0.8, 1), old_material, 53)
+
 func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
@@ -97,7 +109,7 @@ func _build_ui() -> void:
 	column.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	margin.add_child(column)
 	var title := Label.new()
-	title.text = "K O R A L I   /   0 1"
+	title.text = study_title
 	title.add_theme_font_size_override("font_size", 25)
 	title.add_theme_color_override("font_color", Color("b9e2d6"))
 	column.add_child(title)
@@ -129,14 +141,14 @@ func _build_ui() -> void:
 
 func set_distance(mode: int) -> void:
 	distance_mode = mode
-	camera.size = [6.3, 18.0, 36.0][mode]
-	var target := Vector3(0, 0.85 if mode == 0 else 0.0, 0)
+	camera.size = [close_size, 18.0, 36.0][mode]
+	var target := Vector3(0, close_focus if mode == 0 else 0.0, 0)
 	camera.position = target + (Vector3(5, 4.5, 7) if mode == 0 else Vector3(0, 33, 26))
 	camera.look_at(target)
 	_update_caption()
 
 func _update_caption() -> void:
-	caption.text = "%s   /   %s   /   %s" % ["Original mission rock" if show_previous else "New baked stone + embedded Korali", ["Close inspection", "RTS inspection", "Mission distance"][distance_mode], "Neutral daylight" if neutral else "Warm desert light"]
+	caption.text = "%s   /   %s   /   %s" % [old_label if show_previous else new_label, ["Close inspection", "RTS inspection", "Mission distance"][distance_mode], "Neutral daylight" if neutral else "Warm desert light"]
 
 func toggle_previous() -> void:
 	show_previous = not show_previous
