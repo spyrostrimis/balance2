@@ -7,7 +7,7 @@ the relevant asset study. Update this handoff at the end of each asset's work.
 
 The user requested all completed new art be put in the game, then moving on.
 Korali, sandstone revision 02 and tree revision 02 are now integrated.
-**Next: Gate. After that: Blue Leader.** Work one asset at a time in a focused
+**Current review: Gate study 01. After acceptance: Blue Leader.** Work one asset at a time in a focused
 chat. Tree foliage/flower improvements are explicitly deferred; do not resume
 them while working on the Gate or Leader.
 
@@ -71,7 +71,24 @@ from the recorded Quaternius CC0 pack; they are placeholders for final design.
   recoloring and leaf texturing were not a flower redesign. Later do real
   botanical bud/petal shape work. User explicitly says postpone it now.
 
-## Gate — immediate next asset
+## Gate — review candidate completed in the focused Gate chat
+
+Gate study 01 is built as a separate Blender-to-Godot review asset. Launch
+`GateStudy.bat`; source, controls and limits are in `GATE_STUDY.md`. The export
+is `assets/gate_study/sanctuary_gate.glb`; editable packed authoring source,
+rebuild script and exact built-in imagegen prompts are under `art_source/gate/`.
+It uses generated limestone and embroidered purple cloth sources, mapped/baked
+PBR, original swept stone ribs, nested pointed arches, a circular seal, tall
+split crown, steps and draped banners. The top masonry follows the curved
+silhouette after a first native-view correction. No downloaded art was used.
+
+This is **pending user visual acceptance**, not permission to integrate.
+The mission gate, renderer, navigation and story remain unchanged. The new
+facade is 12.3 metres high versus roughly 6 for the old prototype, so later
+integration needs deliberate scale/cliff/approach and story-camera fitting.
+The native viewer compares them at their real scales. Banners are static;
+interior exploration, opening animation and collision are not part of the asset.
+Tree work remains deferred. Do not begin the Blue Leader in parallel.
 
 The reference is the tall, ancient sanctuary entrance embedded in warm desert
 rock in `assets/concepts/first-contact-v1.png`, especially the lower-right panel

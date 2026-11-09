@@ -54,9 +54,19 @@ same camera and lighting. Other controls match the earlier studies.
 The second sandstone revision now replaces the four mission rock formations.
 See [source and limitations](docs/ROCK_STUDY.md).
 
+## Gate study
+
+Double-click **`GateStudy.bat`** to review the Blender-authored sanctuary facade:
+layered carved limestone, a recessed portal and circular seal, steps and purple
+banners. **1 / 2 / 3** selects close, RTS and mission distance; **B** compares the
+current gate; **L** switches light; **Space** turns it. Drag to rotate, wheel to
+zoom, **R** reset, **Esc** close. This is a separate Forward+ review candidate;
+the mission gate is unchanged pending visual acceptance. Cloth is static and
+the facade has no interactive interior. See [source and limits](docs/GATE_STUDY.md).
+
 ## Character Studio
 
-Next art targets: **Gate**, then **Blue Leader**. New asset chats start from
+Current review: **Gate**. After acceptance: **Blue Leader**. New asset chats start from
 [the current handoff](docs/ASSET_HANDOFF.md).
 
 Double-click `CharacterStudio.bat`, or choose **Character Studio** on the mission

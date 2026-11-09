@@ -1,0 +1,13 @@
+{
+  "revision": 1,
+  "blender": "5.2.3 LTS",
+  "triangles": 109908,
+  "materials": 5,
+  "stone_texture_resolution": 4096,
+  "cloth_door_texture_resolution": 1024,
+  "height_m": 12.3,
+  "facade_width_m": 16.8,
+  "front": "Godot +Z",
+  "status": "Review candidate; not integrated",
+  "source": "art_source/gate/gate_authoring.blend"
+}

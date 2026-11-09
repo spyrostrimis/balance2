@@ -72,6 +72,18 @@ The rejected all-procedural first version is retained as
 Godot extracts embedded GLB textures alongside the original bake outputs.
 See `ROCK_STUDY.md` for the workflow and review scope.
 
+## Sanctuary Gate study (9 November 2026)
+
+`assets/gate_study/sanctuary_gate.glb` is original Blender-authored architecture,
+with the editable source and reproducible recipe under `art_source/gate/`.
+The limestone and embroidered banner source PNGs were generated using the
+built-in imagegen tool. Exact prompts and mapping notes are retained in
+`art_source/gate/TEXTURE_SOURCES.md`. Blender bakes portable albedo, tangent
+normal and roughness maps; the GLB embeds them. No downloaded mesh, texture,
+add-on or franchise artwork was used. No CC0 license is asserted for this
+generated and original project art. See `GATE_STUDY.md` for scope and limits.
+The candidate is separate from the current mission gate pending user review.
+
 ## Generated concept reference
 
 `assets/concepts/first-contact-v1.png` is the original concept board generated
