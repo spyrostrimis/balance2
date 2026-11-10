@@ -199,7 +199,7 @@ license has been chosen yet.
 ## Terrain review 01
 
 Open `TerrainStudy.bat` for the new sandy basin, buried stone courts and canyon
-candidate in native Godot Compatibility. Keys **1–4** change views, **B** compares
-the baseline, arrows/right-drag pan and the wheel zooms. The mission retains its
-current terrain until visual acceptance. The candidate still has repeated cliff
+terrain in native Godot Compatibility. Keys **1–4** change views, **B** compares
+the previous terrain, arrows/right-drag pan and the wheel zooms. Terrain 01 is
+now integrated in the mission at the creator's request. It still has repeated cliff
 forms and stylized burial edges; see [terrain study](docs/TERRAIN_STUDY.md).

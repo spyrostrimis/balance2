@@ -1,9 +1,9 @@
 # Terrain study 01 — 10 November 2026
 
-Native review candidate for the terrain request following approved Gate 02.
+Approved for mission integration after native review following Gate 02.
 Launch `TerrainStudy.bat`. It uses Compatibility and the mission's actual
-lighting, assets and placements. This candidate is not yet visually accepted
-and does not replace the playable mission terrain.
+lighting, assets and placements. The creator requested "Add it to the game";
+Terrain 01 now replaces the playable mission ground, road and canyon borders.
 
 ## Review
 
@@ -52,8 +52,8 @@ mipmaps for close and RTS inspection. Preserve these import settings on rebuild.
 
 ## Preservation and validation
 
-`Arena.terrain_review` defaults to false. The standalone viewer opts in; the
-mission and existing studies continue using the baseline. Shared scenery
+`Arena.terrain_review` defaults to true for the mission and its context studies.
+The standalone viewer explicitly sets false for the previous-terrain comparison. Shared scenery
 construction was split without changing the baseline's RNG call order.
 Gate 02 remains at (0, 0, -18.6), scale .78; its flanking rocks and markers are
 preserved. Resource/deployment positions, story and obstacle footprints remain.
@@ -78,4 +78,5 @@ Normal relief is derived artistically from color, not scanned geometry.
 The candidate has about 0.5 million terrain triangles before Godot LODs; it is
 review art rather than a profiled final production budget. Existing low-detail
 aqueduct/cistern props, Gate flanking rocks, tree feedback and character likeness
-are outside this pass. Aesthetic acceptance and integration remain with the user.
+are outside this pass. Integration was authorized by the creator; these
+limitations remain recorded for any later refinement.

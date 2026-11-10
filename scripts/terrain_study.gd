@@ -44,7 +44,7 @@ func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
 	var top := Label.new()
-	top.text = "TERRAIN / 01     •     Native review candidate"
+	top.text = "TERRAIN / 01     •     Integrated mission terrain"
 	top.position = Vector2(24, 18)
 	top.add_theme_font_size_override("font_size", 24)
 	layer.add_child(top)
@@ -87,12 +87,13 @@ func _update_camera() -> void:
 	camera.look_at(focus)
 
 func _update_caption() -> void:
-	caption.text = "%s  /  %s  /  Mission light · %s" % ["Baseline terrain" if before else "Terrain candidate 01", ["RTS basin", "Canyon and sanctuary", "Sand and buried stone", "Whole basin"][view_mode], RenderingServer.get_current_rendering_method()]
+	caption.text = "%s  /  %s  /  Mission light · %s" % ["Previous terrain" if before else "Integrated Terrain 01", ["RTS basin", "Canyon and sanctuary", "Sand and buried stone", "Whole basin"][view_mode], RenderingServer.get_current_rendering_method()]
 
 func toggle_before() -> void:
 	before = not before
 	if before and not is_instance_valid(baseline):
 		baseline = Arena.new()
+		baseline.terrain_review = false
 		add_child(baseline)
 		baseline.capture_ring.hide()
 	if is_instance_valid(baseline): baseline.visible = before

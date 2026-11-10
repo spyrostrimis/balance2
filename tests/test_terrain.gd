@@ -5,9 +5,10 @@ func _initialize() -> void:
 
 func run() -> void:
 	var baseline := preload("res://scripts/arena.gd").new()
+	baseline.terrain_review = false
 	root.add_child(baseline)
 	var candidate := preload("res://scripts/arena.gd").new()
-	candidate.terrain_review = true
+	assert(candidate.terrain_review, "Mission should use approved Terrain 01 by default")
 	root.add_child(candidate)
 	assert(baseline.obstacles == candidate.obstacles, "Terrain changed obstacle footprints")
 	for x in range(-21, 22):

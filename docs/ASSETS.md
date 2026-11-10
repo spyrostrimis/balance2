@@ -161,5 +161,5 @@ paving reuses the project's generated Gate 02 limestone. These are original
 project art, not CC0 scans. Exact prompts, source PNGs, deterministic authoring
 recipe and packed editable `.blend` are under `art_source/terrain/`. No new
 third-party assets or dependencies. See `TERRAIN_STUDY.md` for provenance,
-rebuilding and limits. Candidate is available in the review only, pending the
-creator's visual acceptance before mission integration.
+rebuilding and limits. The creator requested integration after native review;
+Terrain 01 now supplies the mission ground, paving and canyon borders.

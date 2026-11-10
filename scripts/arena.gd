@@ -11,7 +11,7 @@ const CAPTURE_RADIUS := 5.2
 var grid := AStarGrid2D.new()
 var capture_ring: MeshInstance3D
 var obstacles: Array[Vector3] = [] # x/z = center, y = collision radius.
-var terrain_review := false # Opt-in candidate; the playable mission stays accepted baseline.
+var terrain_review := true # Approved Terrain 01; false retains the old study comparison.
 
 func _ready() -> void:
 	_build_terrain()

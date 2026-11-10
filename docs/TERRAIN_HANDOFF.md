@@ -1,11 +1,11 @@
 # Terrain — next focused chat, 10 November 2026
 
-## Terrain candidate 01 is ready for visual review
+## Terrain 01 is approved for integration and in the mission
 
-This requested terrain chat built a native candidate; launch `TerrainStudy.bat`.
-Read `TERRAIN_STUDY.md` for source, controls, checks and limitations. **No visual
-acceptance or mission integration has been claimed.** The next step is the
-creator's feedback on this actual terrain, not starting it again.
+After native review, the creator requested: "Add it to the game." Terrain 01
+is now the playable mission default. `TerrainStudy.bat` retains the old terrain
+with B for comparison. Read `TERRAIN_STUDY.md` for source, controls and limits.
+No further art revision or next asset has been requested.
 
 The candidate adds original generated sand/cliff material sources, baked PBR,
 three Blender cliff buttresses with detached shoulders/talus, a broken road,
@@ -13,8 +13,9 @@ four buried stone courts and authored sand/earth/runoff transitions. Exact promp
 reproducible recipe and packed editable source are in `art_source/terrain/`.
 The review uses Compatibility and mission lighting, with 1–4 camera views and
 B baseline comparison. It preserves the approved Gate and existing props.
-The playable mission keeps its baseline terrain through `Arena.terrain_review =
-false`; only the viewer opts in. No mechanics or collision footprints changed.
+The playable mission uses `Arena.terrain_review = true`. The viewer explicitly
+sets false only for the old comparison. No mechanics or collision footprints
+changed. Integration was checked in the native Compatibility mission window.
 
 Validation: 30 battle checks pass. All 1,247 navigation cells and obstacle
 footprints match; flat upward-facing playable floor, no new colliders, raised

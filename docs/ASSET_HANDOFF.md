@@ -268,8 +268,9 @@ Original generated sand/cliff sources, packed Blender geometry and baked PBR are
 in `art_source/terrain/` and `assets/terrain_study/`. The candidate covers ground,
 buried courts, processional paving, talus and canyon borders; existing accepted
 assets and mission footprints remain. Compatibility review offers close/RTS/
-overview and B baseline comparison. The mission still uses baseline terrain;
-visual acceptance and integration are pending. No aesthetic parity is claimed.
+overview and B previous-terrain comparison. The creator subsequently requested
+"Add it to the game." Terrain 01 is now the mission default. No aesthetic parity
+with the reference is claimed.
 Repeated cliff forms and some hard shelf shadows/UV seams remain limitations.
 Thirty battle checks and all 1,247 navigation-cell comparisons pass; no new
 colliders, flat walkable floor, raised landforms outside the grid, clean native
