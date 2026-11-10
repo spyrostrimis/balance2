@@ -276,3 +276,15 @@ Thirty battle checks and all 1,247 navigation-cell comparisons pass; no new
 colliders, flat walkable floor, raised landforms outside the grid, clean native
 review logs. The creator's existing HUD work/settings/import changes remain
 uncommitted and were preserved; only this task's doc additions were staged.
+
+## Agreed remaining art plan — 10 November 2026
+
+After Gate 02 and Terrain 01 integration, the creator approved the remaining
+order of impact and requested a new chat to start step 1. Read
+`REFERENCE_COMPLETION_PLAN.md` for the full agreed sequence and
+`WATERWORKS_HANDOFF.md` for the immediate task. This supersedes older next-asset
+lists: **waterworks/ruined structures → vegetation → characters → ground debris/
+transitions → lighting/material cohesion → combat effects/unit presentation →
+final HUD/composition polish**. Start only the first step now. Tree/flower and
+leader likeness feedback is scheduled for later steps, not parallel work.
+The reference's stone guardian/new enemy and new mechanics remain outside scope.

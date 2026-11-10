@@ -5,7 +5,8 @@
 After native review, the creator requested: "Add it to the game." Terrain 01
 is now the playable mission default. `TerrainStudy.bat` retains the old terrain
 with B for comparison. Read `TERRAIN_STUDY.md` for source, controls and limits.
-No further art revision or next asset has been requested.
+The creator subsequently agreed to `REFERENCE_COMPLETION_PLAN.md`: waterworks
+and ruined structures next, in a new chat. Read `WATERWORKS_HANDOFF.md` to begin.
 
 The candidate adds original generated sand/cliff material sources, baked PBR,
 three Blender cliff buttresses with detached shoulders/talus, a broken road,
