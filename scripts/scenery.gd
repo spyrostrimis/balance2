@@ -8,7 +8,7 @@ static func stone(color: Color) -> ShaderMaterial:
 	material.set_shader_parameter("stone_color", color)
 	return material
 
-static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false) -> void:
+static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false, vegetation_review: bool = false) -> void:
 	var sandstone := stone(Color("a17d62"))
 	var pale := stone(Color("b5a489"))
 	var dark := stone(Color("766454"))
@@ -25,7 +25,7 @@ static func build(parent: Node3D, terrain_review: bool = false, waterworks_revie
 	else:
 		_build_road(parent, pale, dark, rng)
 	_build_temple(parent, pale, dark)
-	_build_small_details(parent, dark, rng, waterworks_review)
+	_build_small_details(parent, dark, rng, waterworks_review, vegetation_review)
 
 static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
 	# Retained for the baseline mission and review comparison.
@@ -47,16 +47,16 @@ static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: M
 			Art.rock(parent, Vector3(side * rng.randf_range(27, 29), height * 0.35, z), Vector3(8, height, 8), sandstone, 300 + i + (side + 1) * 20)
 			Art.rock(parent, Vector3(side * 23.5, 0.4, z + 2), Vector3(3.5, 1.8, 3.6), pale, 340 + i)
 
-static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator, waterworks_review: bool = false) -> void:
+static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator, waterworks_review: bool = false, vegetation_review: bool = false) -> void:
 	# Pebbles and small plants reinforce existing rock silhouettes, not paths.
 	for obstacle in [Vector3(-8, 0, -6), Vector3(8, 0, 6), Vector3(-12, 0, 7), Vector3(12, 0, -7)]:
 		# The approved formation includes its own fallen slabs and chips.
-		plant(parent, obstacle + Vector3(0.8, 0, 0.5), 0.9, int(absf(obstacle.x)))
+		plant(parent, obstacle + Vector3(0.8, 0, 0.5), 0.9, int(absf(obstacle.x)), vegetation_review)
 	for i in range(42):
 		var x := rng.randf_range(-24, 24)
 		var z := rng.randf_range(14.9, 19.5) * (-1 if i % 2 == 0 else 1)
 		if absf(x) < 6 and z < 0: continue
-		plant(parent, Vector3(x, 0, z), rng.randf_range(0.5, 1.25), i)
+		plant(parent, Vector3(x, 0, z), rng.randf_range(0.5, 1.25), i, vegetation_review)
 	for i in range(60):
 		var p := Vector3(rng.randf_range(-21, 21), 0.03, rng.randf_range(-14, 14))
 		if p.length() < 6: continue
@@ -148,7 +148,10 @@ static func banner(parent: Node3D, pos: Vector3, size: Vector2, color: Color) ->
 	mat.set_shader_parameter("cloth_color", color)
 	Art.mesh(parent, shape, pos, mat)
 
-static func plant(parent: Node3D, pos: Vector3, height: float, seed_value: int) -> void:
+static func plant(parent: Node3D, pos: Vector3, height: float, seed_value: int, vegetation_review: bool = false) -> void:
+	if vegetation_review:
+		load("res://scripts/vegetation_art.gd").plant(parent, pos, height, seed_value)
+		return
 	var leaf_mat := Art.material(Color("427e75") if seed_value % 2 == 0 else Color("627856"))
 	leaf_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 	for i in range(7):

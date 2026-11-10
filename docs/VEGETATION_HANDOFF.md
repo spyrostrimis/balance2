@@ -1,4 +1,30 @@
-# Vegetation — next focused chat, 10 November 2026
+# Vegetation — review candidate, 10 November 2026
+
+## Current state — candidate ready
+
+Step 2 has a separate native review candidate. Open `VegetationStudy.bat`; read
+`VEGETATION_STUDY.md`. Keys 1–6 select tree/leaves/RTS/flowers/border/specimen,
+B compares the current mission plants (except the flower specimen), V reverses.
+Tree 03 and six ground-cover kits are under `assets/vegetation_study/`; packed
+editable source, exact imagegen prompt, source atlas and deterministic Blender
+recipe are in `art_source/vegetation/`. No downloaded assets or new dependencies.
+
+The old tree audit verified downward leaf front-face normals and different
+leaf/twig paths. New geometry uses connected sampled branches/petioles, correct
+upper winding, smaller leaves, layered canopy, fleshy rosettes and genuinely
+rebuilt buds/corollas/sepals/stamens. The original bark source is reused.
+Ground cover includes three dry grass variants, a woody shrub and crevice plants.
+Native close/RTS/reverse checks caught and fixed missing mipmaps and Godot's
+disabled vertex-color use. Final native logs are clean; 30 battle checks pass,
+all 1,247 navigation cells/four tree transforms/footprints match, no colliders,
+central corridor clear. Captures and logs are ignored in `artifacts/vegetation/`.
+
+The mission default remains `Arena.vegetation_review = false`. **Not accepted or
+integrated.** Leave aesthetic acceptance and substitution to the creator. Static
+foliage, dense meshes (117,198 tree triangles before automatic LOD), repeated
+shoot/ground-cover patterns, some leaf intersections and incomplete reference
+ground-cover density remain limitations. Do not begin step 3 without direction.
+The creator's HUD/settings work is preserved; shared docs use task-only staging.
 
 ## Authorization and immediate task
 

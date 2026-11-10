@@ -1,0 +1,14 @@
+{
+  "source": "art_source/tree/tree_authoring_v2.blend",
+  "leaves": 1320,
+  "leaf_base_to_nearest_wood_surface": {
+    "maximum_metres": 0.010787365958094597,
+    "over_1cm": 17,
+    "over_2cm": 0
+  },
+  "canopy_triangles": 21120,
+  "canopy_triangles_normal_z_negative": 21120,
+  "glb_leaf_double_sided": true,
+  "packed_images": true,
+  "interpretation": "Nearest surface distance alone includes embedded origins. Source path comparison establishes attachment error: leaf origins interpolate straight endpoints while twig centreline curves. Downward canopy face normals are verified; two-sided rendering masks face visibility failure."
+}

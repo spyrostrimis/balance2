@@ -13,6 +13,7 @@ var capture_ring: MeshInstance3D
 var obstacles: Array[Vector3] = [] # x/z = center, y = collision radius.
 var terrain_review := true # Approved Terrain 01; false retains the old study comparison.
 var waterworks_review := true # Accepted for interim use; false retains the old comparison.
+var vegetation_review := false # Separate candidate only; mission retains accepted Tree 02.
 
 func _ready() -> void:
 	_build_terrain()
@@ -26,8 +27,8 @@ func _build_terrain() -> void:
 		load("res://scripts/terrain_art.gd").ground(self)
 	else:
 		Details.terrain(self, sand)
-	Scenery.build(self, terrain_review, waterworks_review)
-	Details.build(self, waterworks_review)
+	Scenery.build(self, terrain_review, waterworks_review, vegetation_review)
+	Details.build(self, waterworks_review, vegetation_review)
 	# Register all substantial new props before building the navigation grid.
 	obstacles.append_array(Details.obstacle_footprints())
 	capture_ring = Art.ring(self, CAPTURE_RADIUS, Color("80bca9"), 0.025)

@@ -1,5 +1,11 @@
 # Basin tree and root flowers — study 02
 
+**10 November update:** Tree 02 remains the mission default. The reopened
+foliage/flower pass now has a separate Tree 03 candidate in `VegetationStudy.bat`.
+See `VEGETATION_STUDY.md` and `VEGETATION_HANDOFF.md` for the measured winding/
+attachment audit, rebuilt geometry, ground-cover kits and native review results.
+This supersedes the historical deferral below; Tree 03 awaits creator acceptance.
+
 After approving the textured sandstone revision, the creator requested the same
 generated-source/Blender-bake workflow for this tree. Revision 02 adds detailed
 weathered bark, veined green leaves and textured blue-green root rosettes while

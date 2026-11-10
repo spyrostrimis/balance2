@@ -21,7 +21,9 @@ leaf/flower feedback reopened for this step. Read `VEGETATION_HANDOFF.md`.
    remnants. Model broken masonry, damaged connections and convincing wear,
    bringing these assets up to the Gate's material/detail standard. See
    `WATERWORKS_HANDOFF.md` for the concrete starting task.
-2. **Trees and ground vegetation — start now in a new chat.** Improve leaf shapes/attachment, canopy
+2. **Trees and ground vegetation — separate candidate ready for review.** Open
+   `VegetationStudy.bat`; read `VEGETATION_STUDY.md`. Mission integration awaits
+   the creator's acceptance. Improve leaf shapes/attachment, canopy
    density and flower geometry; add varied dry grasses, shrubs and crevice plants.
    Resolve the recorded foliage/flower feedback when this step begins. It is
    now part of the agreed sequence, but do not work on it during step 1.

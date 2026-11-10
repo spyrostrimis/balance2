@@ -310,3 +310,29 @@ a new chat to start step 2: trees and ground vegetation. Read
 `VEGETATION_HANDOFF.md`; the previous foliage/flower deferral is now lifted for
 that focused pass. Characters remain step 3. Shared dirty docs were staged by task-only
 index patch; the pre-existing HUD/settings/import work remains uncommitted.
+
+## Vegetation candidate 01 / Tree 03 — 10 November 2026
+
+Step 2 now has a separate native candidate: `VegetationStudy.bat`. Keys 1–6
+select tree/leaves/RTS/flowers/border/specimen; B compares current mission plants
+(except flower specimen), V reverses. Read `VEGETATION_STUDY.md` and the latest
+`VEGETATION_HANDOFF.md`. Sources, exact built-in imagegen prompt, packed Blender
+file and deterministic rebuild/audit scripts are in `art_source/vegetation/`;
+seven exports and shared PBR maps are in `assets/vegetation_study/`.
+
+Tree 02 audit verifies downward leaf-front normals and differing leaf/twig
+curves. New tree has correctly wound smaller leaves, real petioles sharing
+branch paths and layered growth; new buds, flared corollas, petals, sepals and
+stamens replace the old flower construction. Three dry grasses, shrubs and
+crevice plants occupy border pockets. Native inspection caught and fixed
+missing mipmaps and disabled vertex-color use. Final Compatibility review logs
+are clean; 30 battle checks and all 1,247 navigation-cell comparisons pass;
+four tree transforms/footprints are unchanged, no colliders, central corridor clear.
+
+The mission remains on Tree 02: `Arena.vegetation_review = false`. **Not accepted
+or integrated.** Leave aesthetic review and substitution to the creator. Static
+foliage, dense tree mesh, repeated shoots/ground-cover forms, some intersecting
+leaves and incomplete reference ground-cover density remain limitations.
+Step 3/character refinement has not begun. All prior accepted integrations and
+the creator's dirty HUD/settings work are preserved. Only task-owned shared-doc
+additions are staged; captures/logs stay ignored in `artifacts/vegetation/`.

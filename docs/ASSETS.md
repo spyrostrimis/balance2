@@ -175,3 +175,15 @@ Exact prompts, deterministic Blender/export recipes and packed editable source
 are under `art_source/waterworks/`. This is original project art, not CC0 scans.
 See `WATERWORKS_STUDY.md`. The creator accepted this pass for interim use and
 requested integration; Waterworks 01 is now the mission default.
+
+## Vegetation candidate 01 / Tree 03 — original authored art
+
+`assets/vegetation_study/` contains seven original GLB kits: connected tree,
+three dry grasses, woody shrub, flowering crevice plant and fleshy rosette.
+The GLBs use shared sibling albedo/normal/surface PNGs; preserve the folder.
+Built-in imagegen supplied one original four-field botanical surface atlas;
+bark reuses the project's accepted generated Tree 02 source. No third-party
+files or dependencies were introduced, and no CC0 claim is made for generated art.
+Exact prompt, deterministic Blender recipe, source audits and packed editable
+`.blend` are in `art_source/vegetation/`. Native review and limitations are in
+`VEGETATION_STUDY.md`. The candidate is not accepted or integrated.

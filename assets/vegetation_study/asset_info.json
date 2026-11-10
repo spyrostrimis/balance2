@@ -1,0 +1,42 @@
+{
+  "revision": 1,
+  "tree_revision": 3,
+  "status": "Separate review candidate; not integrated or aesthetically accepted",
+  "assets": {
+    "tree": {
+      "triangles": 117198,
+      "blades_including_petals": 1902
+    },
+    "grass_tall": {
+      "triangles": 6192,
+      "blades_including_petals": 72
+    },
+    "grass_low": {
+      "triangles": 1776,
+      "blades_including_petals": 0
+    },
+    "grass_arching": {
+      "triangles": 6192,
+      "blades_including_petals": 72
+    },
+    "shrub": {
+      "triangles": 23078,
+      "blades_including_petals": 352
+    },
+    "crevice_flower": {
+      "triangles": 8826,
+      "blades_including_petals": 111
+    },
+    "rosette": {
+      "triangles": 2016,
+      "blades_including_petals": 21
+    }
+  },
+  "attachment_records": 2236,
+  "max_centerline_attachment_gap": 0.0,
+  "minimum_lamina_normal_dot_local_up": 0.8003003150224686,
+  "collision": false,
+  "animated": false,
+  "source": "art_source/vegetation/vegetation_authoring.blend",
+  "provenance": "Original geometry and built-in imagegen atlas; accepted original bark source reused. See TEXTURE_SOURCES.md."
+}

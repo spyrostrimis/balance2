@@ -39,7 +39,7 @@ static func terrain(parent: Node3D, material: Material) -> void:
 	var ground := Art.mesh(parent, surface.commit(), Vector3.ZERO, material)
 	ground.name = "BasinGround"
 
-static func build(parent: Node3D, waterworks_review: bool = false) -> void:
+static func build(parent: Node3D, waterworks_review: bool = false, vegetation_review: bool = false) -> void:
 	if waterworks_review:
 		load("res://scripts/waterworks_art.gd").structures(parent)
 	else:
@@ -49,21 +49,26 @@ static func build(parent: Node3D, waterworks_review: bool = false) -> void:
 	rng.seed = 4096
 	# Solid foliage and architecture are also registered by Arena.
 	for p in TREE_POSITIONS:
-		_tree(parent, p, rng.randf_range(2.7, 3.8), rng.randi_range(0, 100))
+		_tree(parent, p, rng.randf_range(2.7, 3.8), rng.randi_range(0, 100), vegetation_review)
 	for i in range(30):
 		var p := Vector3(rng.randf_range(-23, 23), 0, rng.randf_range(-16.7, -14.8))
 		if absf(p.x) < 7: continue
-		_grass(parent, p, rng.randf_range(0.35, 0.75), i)
+		_grass(parent, p, rng.randf_range(0.35, 0.75), i, vegetation_review)
 	for side in [-1, 1]:
 		for i in range(20):
 			var p := Vector3(side * rng.randf_range(20.5, 23.0), 0, rng.randf_range(-13, 14))
-			_grass(parent, p, rng.randf_range(0.25, 0.6), i)
+			_grass(parent, p, rng.randf_range(0.25, 0.6), i, vegetation_review)
+	if vegetation_review:
+		load("res://scripts/vegetation_art.gd").border_pockets(parent)
 
 static func _branch(parent: Node3D, start: Vector3, end: Vector3, radius: float, material: Material) -> void:
 	var limb := Art.cylinder(parent, (start + end) * 0.5, radius, radius * 0.58, start.distance_to(end), material, 7)
 	limb.quaternion = Quaternion(Vector3.UP, start.direction_to(end))
 
-static func _tree(parent: Node3D, pos: Vector3, height: float, seed_value: int) -> void:
+static func _tree(parent: Node3D, pos: Vector3, height: float, seed_value: int, vegetation_review: bool = false) -> void:
+	if vegetation_review:
+		load("res://scripts/vegetation_art.gd").tree(parent, pos, height, seed_value)
+		return
 	var tree := preload("res://assets/tree_study/v2/desert_tree.glb").instantiate()
 	tree.name = "BasinTree"
 	tree.position = pos
@@ -87,7 +92,10 @@ static func prototype_tree(parent: Node3D, pos: Vector3, height: float, seed_val
 		Art.rock(tree, end + Vector3.UP * 0.16, Vector3(1.8, 0.65, 1.55), leaves[i % 3], seed_value + i)
 	for side in [-1, 1]: _branch(tree, Vector3(side * 0.43, 0.03, 0.25), Vector3(0, 0.4, 0), 0.075, bark)
 
-static func _grass(parent: Node3D, pos: Vector3, height: float, seed_value: int) -> void:
+static func _grass(parent: Node3D, pos: Vector3, height: float, seed_value: int, vegetation_review: bool = false) -> void:
+	if vegetation_review:
+		load("res://scripts/vegetation_art.gd").grass(parent, pos, height, seed_value)
+		return
 	var material := foliage(Color("8e956c") if seed_value % 3 else Color("557c70"))
 	for i in range(5):
 		var blade := Art.leaf(parent, pos + Vector3(i * 0.045, 0, 0), height * (0.65 + i * 0.1), height * 0.055, material)
