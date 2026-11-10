@@ -195,3 +195,11 @@ Character Studio includes three CC0 character models and animations by Quaterniu
 their original license and provenance accompany them. No third-party game code or
 additional downloads are required to run the project. No project distribution
 license has been chosen yet.
+
+## Terrain review 01
+
+Open `TerrainStudy.bat` for the new sandy basin, buried stone courts and canyon
+candidate in native Godot Compatibility. Keys **1–4** change views, **B** compares
+the baseline, arrows/right-drag pan and the wheel zooms. The mission retains its
+current terrain until visual acceptance. The candidate still has repeated cliff
+forms and stylized burial edges; see [terrain study](docs/TERRAIN_STUDY.md).

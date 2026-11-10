@@ -151,3 +151,15 @@ The repository's own code and original art have no distribution license selected
 yet; a public repository does not automatically license reuse.
 
 Revision 02 is now used by the mission Blue Leader via scripts/blue_leader_mission.gd, with rigid Head/Chest attachments and the existing Quaternius limbs/animations. Original source assets and the reviewed bust are unchanged; only the overlapping old torso triangles are filtered in the runtime copy. Likeness work is deferred at the creator's request.
+
+## Terrain candidate 01 — original generated and authored art
+
+`assets/terrain_study/` contains three original Blender canyon buttresses,
+processional paving/buried courts and portable albedo/normal/roughness textures.
+Sand and sandstone sources were made with built-in imagegen, not downloaded;
+paving reuses the project's generated Gate 02 limestone. These are original
+project art, not CC0 scans. Exact prompts, source PNGs, deterministic authoring
+recipe and packed editable `.blend` are under `art_source/terrain/`. No new
+third-party assets or dependencies. See `TERRAIN_STUDY.md` for provenance,
+rebuilding and limits. Candidate is available in the review only, pending the
+creator's visual acceptance before mission integration.

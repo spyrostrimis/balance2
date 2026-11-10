@@ -1,0 +1,13 @@
+{
+  "revision": 1,
+  "triangles": {
+    "cliff_00.glb": 17581,
+    "cliff_01.glb": 17312,
+    "cliff_02.glb": 17150,
+    "paving.glb": 71470
+  },
+  "source": "art_source/terrain/terrain_authoring.blend",
+  "units": "metres",
+  "collision": false,
+  "provenance": "Original geometry and built-in imagegen material sources. See TEXTURE_SOURCES.md."
+}

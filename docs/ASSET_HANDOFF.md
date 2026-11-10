@@ -259,3 +259,19 @@ earlier next-asset sequencing. Do not redo the Gate, leader or tree work.
   visual inspection to establish that it renders and looks coherent.
 - Keep chat updates concise. Avoid generating many concepts instead of making
   a real asset. Preserve source provenance and report actual limitations.
+
+## Terrain candidate 01 — 10 November 2026
+
+The requested terrain chat has produced a native review candidate. Launch
+`TerrainStudy.bat`; see `TERRAIN_STUDY.md` and the updated `TERRAIN_HANDOFF.md`.
+Original generated sand/cliff sources, packed Blender geometry and baked PBR are
+in `art_source/terrain/` and `assets/terrain_study/`. The candidate covers ground,
+buried courts, processional paving, talus and canyon borders; existing accepted
+assets and mission footprints remain. Compatibility review offers close/RTS/
+overview and B baseline comparison. The mission still uses baseline terrain;
+visual acceptance and integration are pending. No aesthetic parity is claimed.
+Repeated cliff forms and some hard shelf shadows/UV seams remain limitations.
+Thirty battle checks and all 1,247 navigation-cell comparisons pass; no new
+colliders, flat walkable floor, raised landforms outside the grid, clean native
+review logs. The creator's existing HUD work/settings/import changes remain
+uncommitted and were preserved; only this task's doc additions were staged.

@@ -8,13 +8,27 @@ static func stone(color: Color) -> ShaderMaterial:
 	material.set_shader_parameter("stone_color", color)
 	return material
 
-static func build(parent: Node3D) -> void:
+static func build(parent: Node3D, terrain_review: bool = false) -> void:
 	var sandstone := stone(Color("a17d62"))
 	var pale := stone(Color("b5a489"))
 	var dark := stone(Color("766454"))
 	var rng := RandomNumberGenerator.new()
 	rng.seed = 19921994
-	# A continuous landscape beyond the navigable basin, with overlapping mesas.
+	if terrain_review:
+		load("res://scripts/terrain_art.gd").landforms(parent)
+	else:
+		_build_prototype_cliffs(parent, sandstone, pale, dark, rng)
+	if terrain_review:
+		load("res://scripts/terrain_art.gd").road(parent)
+		Art.cylinder(parent, Vector3(0, -0.025, 0), 2.1, 2.1, 0.12, pale, 12)
+		sigil(parent, Vector3(0.9, 0.045, 1.45), 0.32, false)
+	else:
+		_build_road(parent, pale, dark, rng)
+	_build_temple(parent, pale, dark)
+	_build_small_details(parent, dark, rng)
+
+static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
+	# Retained for the baseline mission and review comparison.
 	for i in range(14):
 		var x := -37.0 + i * 5.5
 		if absf(x) < 7: continue
@@ -32,8 +46,8 @@ static func build(parent: Node3D) -> void:
 			var height := rng.randf_range(3.2, 6.5)
 			Art.rock(parent, Vector3(side * rng.randf_range(27, 29), height * 0.35, z), Vector3(8, height, 8), sandstone, 300 + i + (side + 1) * 20)
 			Art.rock(parent, Vector3(side * 23.5, 0.4, z + 2), Vector3(3.5, 1.8, 3.6), pale, 340 + i)
-	_build_road(parent, pale, dark, rng)
-	_build_temple(parent, pale, dark)
+
+static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator) -> void:
 	# Pebbles and small plants reinforce existing rock silhouettes, not paths.
 	for obstacle in [Vector3(-8, 0, -6), Vector3(8, 0, 6), Vector3(-12, 0, 7), Vector3(12, 0, -7)]:
 		# The approved formation includes its own fallen slabs and chips.

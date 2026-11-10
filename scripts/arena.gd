@@ -11,6 +11,7 @@ const CAPTURE_RADIUS := 5.2
 var grid := AStarGrid2D.new()
 var capture_ring: MeshInstance3D
 var obstacles: Array[Vector3] = [] # x/z = center, y = collision radius.
+var terrain_review := false # Opt-in candidate; the playable mission stays accepted baseline.
 
 func _ready() -> void:
 	_build_terrain()
@@ -20,8 +21,11 @@ func _build_terrain() -> void:
 	var sand := ShaderMaterial.new()
 	sand.shader = preload("res://shaders/sand.gdshader")
 	var dark_stone := Art.material(Color("414b4c"))
-	Details.terrain(self, sand)
-	Scenery.build(self)
+	if terrain_review:
+		load("res://scripts/terrain_art.gd").ground(self)
+	else:
+		Details.terrain(self, sand)
+	Scenery.build(self, terrain_review)
 	Details.build(self)
 	# Register all substantial new props before building the navigation grid.
 	obstacles.append_array(Details.obstacle_footprints())

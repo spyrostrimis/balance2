@@ -1,5 +1,35 @@
 # Terrain — next focused chat, 10 November 2026
 
+## Terrain candidate 01 is ready for visual review
+
+This requested terrain chat built a native candidate; launch `TerrainStudy.bat`.
+Read `TERRAIN_STUDY.md` for source, controls, checks and limitations. **No visual
+acceptance or mission integration has been claimed.** The next step is the
+creator's feedback on this actual terrain, not starting it again.
+
+The candidate adds original generated sand/cliff material sources, baked PBR,
+three Blender cliff buttresses with detached shoulders/talus, a broken road,
+four buried stone courts and authored sand/earth/runoff transitions. Exact prompts,
+reproducible recipe and packed editable source are in `art_source/terrain/`.
+The review uses Compatibility and mission lighting, with 1–4 camera views and
+B baseline comparison. It preserves the approved Gate and existing props.
+The playable mission keeps its baseline terrain through `Arena.terrain_review =
+false`; only the viewer opts in. No mechanics or collision footprints changed.
+
+Validation: 30 battle checks pass. All 1,247 navigation cells and obstacle
+footprints match; flat upward-facing playable floor, no new colliders, raised
+cliffs outside the grid. Close/RTS/overview native inspection passed with clean
+final logs. Review captures/logs are ignored under `artifacts/terrain/`.
+Main limitations: repeated cliff forms/strata, some close-up UV seams/hard shelf
+shadows, stylized buried court transitions and no physical ground relief inside
+the playable area. It is not claimed to equal the reference's detail or variety.
+
+Pre-existing HUD work and unrelated settings/import changes remain unstaged.
+Shared README/ASSETS/ASSET_HANDOFF additions were staged via an index-only patch,
+preserving all prior uncommitted content. Tree/leader feedback remains deferred.
+
+## Original request and starting context
+
 The creator approved Gate revision 02: "It's very good. Add it to the game.
 Next, do the same for the terrain - in a new session you'll open".
 The Gate integration is complete. Begin the terrain work now; no reconfirmation
