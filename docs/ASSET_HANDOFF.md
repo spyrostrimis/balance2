@@ -217,6 +217,24 @@ These files are on the shared local workspace, not guaranteed on another host.
 The user's original concept also exists at
 `D:/Downloads/ChatGPT Image Nov 8, 2026, 11_23_56 PM.png`.
 
+## Latest Gate request — 10 November 2026
+
+The creator returned to the Gate and requested a closer match to the Gate in
+`D:/Downloads/balanced2_goal.png`. A local reference copy is preserved under
+`artifacts/handoff-reference/balanced2_goal.png`. This explicitly supersedes the
+earlier "do not redo the Gate" instruction for this focused revision only.
+Leader appearance, tree foliage and unrelated HUD changes remain outside scope.
+
+Revision 02 is at `assets/gate_study/v2/sanctuary_gate.glb`; editable Blender
+source, rebuild script, generated aged limestone and ivy sources, and exact
+prompts are in `art_source/gate/v2/`. It has a compact crown, rounded layered
+arch, grey weathered stone, fluted piers, broken side porticoes, small purple
+banners, broad steps and attached climbing ivy. `GateStudy.bat` now reviews it;
+B compares accepted revision 01 and G previews it in mission surroundings at
+the existing placement/scale. See `GATE_REVISION_02.md` for controls and limits.
+The accepted revision 01 remains in the playable mission pending visual review
+of the new candidate. The surrounding prototype landscape is not upgraded.
+
 ## Tools, workspace and working preferences
 
 - Repo `D:/Games/Balance2`, GitHub `spyrostrimis/balance2`, branch main.

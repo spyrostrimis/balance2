@@ -56,17 +56,19 @@ See [source and limitations](docs/ROCK_STUDY.md).
 
 ## Gate study
 
-Double-click **`GateStudy.bat`** to review the Blender-authored sanctuary facade:
-layered carved limestone, a recessed portal and circular seal, steps and purple
-banners. **1 / 2 / 3** selects close, RTS and mission distance; **B** compares the
-previous gate; **L** switches light; **Space** turns it. Drag to rotate, wheel to
-zoom, **R** reset, **Esc** close. The approved Gate now appears in the mission
-at scale 0.78; the separate Forward+ viewer shows its full authoring size. Cloth is static and
-the facade has no interactive interior. See [source and limits](docs/GATE_STUDY.md).
+Double-click **`GateStudy.bat`** to review revision 02 against the uploaded goal:
+aged grey stone, a lower crown, layered rounded arch, ruined side porticoes,
+purple banners, broad steps and climbing ivy. **1 / 2 / 3** selects close, RTS
+and mission distance; **B** compares approved revision 01; **G** previews the
+candidate in mission surroundings. **L** switches light; **Space** turns it.
+Drag to rotate, wheel to zoom, **R** reset, **Esc** close. The playable mission
+keeps accepted revision 01 pending review. Ivy and cloth are static; the facade
+has no interactive interior. See [revision 02 source and limits](docs/GATE_REVISION_02.md).
 
 ## Character Studio
 
-The Gate is approved and integrated. Next: the **woman Blue Leader**. New asset chats start from
+Gate revision 02 is under review; the interim woman Blue Leader is integrated.
+New asset chats start from
 [the current handoff](docs/ASSET_HANDOFF.md).
 
 Double-click `CharacterStudio.bat`, or choose **Character Studio** on the mission

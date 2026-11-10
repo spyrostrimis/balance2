@@ -83,7 +83,16 @@ normal and roughness maps; the GLB embeds them. No downloaded mesh, texture,
 add-on or franchise artwork was used. No CC0 license is asserted for this
 generated and original project art. See `GATE_STUDY.md` for scope and limits.
 The creator approved the candidate; it now replaces the mission gate at scale
-0.78. The source study retains the old procedural gate for comparison.
+0.78. Revision 01 and its editable source remain intact.
+
+Gate revision 02 (10 November) is a separate reference-driven candidate under
+`assets/gate_study/v2/`, built by `art_source/gate/v2/build_gate.py`. The packed
+Blender source includes original architectural and plant geometry, a newly
+generated aged limestone material and a transparent ivy leaf source. The banner
+source from revision 01 is reused. Exact built-in imagegen prompts are in
+`art_source/gate/v2/TEXTURE_SOURCES.md`. No downloaded or franchise art is used;
+no CC0 claim is made. The uploaded goal image is only a visual reference and is
+not mapped onto the asset. See `GATE_REVISION_02.md` for review and limitations.
 
 ## Woman Blue Leader study (9 November 2026)
 

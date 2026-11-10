@@ -1,5 +1,9 @@
 # Sanctuary Gate — study 01
 
+Revision 01 remains the accepted mission asset. `GateStudy.bat` now opens the
+new [revision 02 comparison](GATE_REVISION_02.md), requested against the creator's
+uploaded `balanced2_goal.png`. Press B to see this accepted revision.
+
 The creator approved study 01 ("Very nice") and requested its integration.
 It now replaces the mission gate at (0, 0, -18.6), with uniform scale 0.78.
 The design follows the approved concept board, especially its lower-right panel.
