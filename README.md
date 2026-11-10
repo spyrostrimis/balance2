@@ -207,7 +207,7 @@ forms and stylized burial edges; see [terrain study](docs/TERRAIN_STUDY.md).
 ## Waterworks review 01
 
 Open `WaterworksStudy.bat` for the breached cistern, damaged pipes and ruined
-aqueduct candidate in native Godot Compatibility. **1–4** select close/RTS views,
+aqueduct art in native Godot Compatibility. **1–4** select close/RTS views,
 **B** compares the existing prototype, **V** reverses the angle; arrows/right-drag
-pan and wheel zooms. The mission retains the existing waterworks pending visual
-acceptance. See [waterworks study](docs/WATERWORKS_STUDY.md) for sources and limits.
+pan and wheel zooms. Waterworks 01 is integrated for interim use at the creator's
+request. See [waterworks study](docs/WATERWORKS_STUDY.md) for sources and limits.

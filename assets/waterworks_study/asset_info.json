@@ -10,6 +10,6 @@
   "source": "art_source/waterworks/waterworks_authoring.blend",
   "collision": false,
   "units": "metres",
-  "status": "Separate review candidate; not accepted or integrated",
+  "status": "Accepted for interim use and integrated, 10 November 2026",
   "provenance": "Original Blender geometry, built-in imagegen sources, portable baked PBR. See TEXTURE_SOURCES.md."
 }

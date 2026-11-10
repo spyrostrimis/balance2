@@ -329,5 +329,5 @@ for k in sorted(set(k for k,m in assets)):
     stats[k]=triangles
     for (key,m),obj in assets.items():
         if key==k:obj.location.x=layout[k]
-(OUT/'asset_info.json').write_text(json.dumps({'revision':1,'triangles':stats,'source':'art_source/waterworks/waterworks_authoring.blend','collision':False,'units':'metres','status':'Separate review candidate; not accepted or integrated','provenance':'Original Blender geometry, built-in imagegen sources, portable baked PBR. See TEXTURE_SOURCES.md.'},indent=2)+'\n')
+(OUT/'asset_info.json').write_text(json.dumps({'revision':1,'triangles':stats,'source':'art_source/waterworks/waterworks_authoring.blend','collision':False,'units':'metres','status':'Accepted for interim use and integrated, 10 November 2026','provenance':'Original Blender geometry, built-in imagegen sources, portable baked PBR. See TEXTURE_SOURCES.md.'},indent=2)+'\n')
 print('WATERWORKS COMPLETE',stats,flush=True)

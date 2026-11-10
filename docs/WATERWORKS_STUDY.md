@@ -1,14 +1,16 @@
 # Waterworks study 01 — 10 November 2026
 
-Separate native review candidate for step 1 of REFERENCE_COMPLETION_PLAN.md.
-The creator has not yet accepted its appearance or requested mission integration.
-Launch `WaterworksStudy.bat` (Godot 4.7.2, Compatibility). The mission continues
-to use its existing waterworks; Gate 02, Terrain 01 and other accepted art remain.
+Step 1 of REFERENCE_COMPLETION_PLAN.md is accepted for interim use and integrated.
+The creator said: "It will do for now. Add it to the game and then open a new
+session and start the next step of our plan." This is interim acceptance,
+not a claim of final quality or reference parity. Launch `WaterworksStudy.bat`
+(Godot 4.7.2, Compatibility) to inspect the integrated art. Gate 02, Terrain 01
+and other accepted assets remain. Next: vegetation; see VEGETATION_HANDOFF.md.
 
 ## Review controls
 
 - **1** cistern, **2** east aqueduct, **3** RTS basin, **4** southern conduit.
-- **B** switches existing prototype / candidate, with the same surroundings.
+- **B** switches previous prototype / integrated art, with the same surroundings.
 - **V** reverses the camera; useful for seeing the inlet behind the existing tree.
 - Arrows or right-drag pan; wheel zooms; **R** resets; **Esc** closes.
 
@@ -75,14 +77,14 @@ were removed; reimport resolved them. Logs and captures stay ignored under
 `artifacts/waterworks/`.
 
 `tests/test_waterworks.gd`: identical 1,247 navigation cells and footprint lists,
-no collision objects, mission default remains the prototype, and 78,775 mesh
+no collision objects, accepted waterworks is the mission default, and 78,775 mesh
 vertices checked for the old footprint / low detail / overhead clearances.
 `tests/test_battle.gd`: 30 checks, zero failures. Shared HUD tests and gameplay
 files were not edited by this pass.
 
 ## Honest limits
 
-This is a first candidate, not a claim of reference parity or aesthetic approval.
+This first pass is accepted for interim use, not a claim of final quality.
 The two aqueducts share much of their form. Stone remains quite regular away
 from breaks, and close views can expose UV seams and stylized chipped corners.
 The existing tree partly obscures the cistern from the default angle; V provides

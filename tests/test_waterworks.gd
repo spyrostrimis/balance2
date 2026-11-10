@@ -5,7 +5,8 @@ func _initialize() -> void:
 
 func run() -> void:
 	var baseline := preload("res://scripts/arena.gd").new()
-	assert(not baseline.waterworks_review, "Unaccepted candidate became mission default")
+	assert(baseline.waterworks_review, "Accepted waterworks should be the mission default")
+	baseline.waterworks_review = false
 	root.add_child(baseline)
 	var candidate := preload("res://scripts/arena.gd").new()
 	candidate.waterworks_review = true
@@ -32,5 +33,5 @@ func run() -> void:
 							covered = true
 							break
 					assert(covered, "Substantial masonry extends beyond existing footprint at %s" % p)
-	print("PASS: identical 1247 navigation cells, footprints and no colliders; checked %d mesh vertices for clearance; mission default unchanged" % checked)
+	print("PASS: identical 1247 navigation cells, footprints and no colliders; checked %d mesh vertices for clearance; accepted mission default" % checked)
 	quit()

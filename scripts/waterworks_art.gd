@@ -1,5 +1,5 @@
 extends RefCounted
-## Review-only original waterworks; no collision, mechanics or footprint changes.
+## Original waterworks accepted for interim use; no collision or footprint changes.
 const Art = preload("res://scripts/shapes.gd")
 
 static func structures(parent: Node3D) -> void:

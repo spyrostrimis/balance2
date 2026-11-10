@@ -45,7 +45,7 @@ func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
 	var top := Label.new()
-	top.text = "WATERWORKS / 01     •     Review candidate — not integrated"
+	top.text = "WATERWORKS / 01     •     Integrated for interim use"
 	top.position = Vector2(24, 18)
 	top.add_theme_font_size_override("font_size", 24)
 	layer.add_child(top)
@@ -89,7 +89,7 @@ func _update_camera() -> void:
 	camera.look_at(focus)
 
 func _update_caption() -> void:
-	caption.text = "%s / %s / %s" % ["Existing prototype" if before else "Waterworks candidate 01", ["Breached cistern & torn main", "Carved piers & broken watercourse", "RTS basin", "Southern low conduit"][view_mode], RenderingServer.get_current_rendering_method()]
+	caption.text = "%s / %s / %s" % ["Previous prototype" if before else "Integrated Waterworks 01", ["Breached cistern & torn main", "Carved piers & broken watercourse", "RTS basin", "Southern low conduit"][view_mode], RenderingServer.get_current_rendering_method()]
 
 func toggle_reverse() -> void:
 	reverse = not reverse
@@ -99,6 +99,7 @@ func toggle_before() -> void:
 	before = not before
 	if before and not is_instance_valid(baseline):
 		baseline = Arena.new()
+		baseline.waterworks_review = false
 		add_child(baseline)
 		baseline.capture_ring.hide()
 	if is_instance_valid(baseline): baseline.visible = before

@@ -1,13 +1,16 @@
 # Waterworks and ruins — next focused chat, 10 November 2026
 
-## Latest state — candidate 01 ready for review
+## Latest state — Waterworks 01 integrated for interim use
 
-The authorized pass is complete as a separate native candidate. Open
+The creator said: "It will do for now. Add it to the game and then open a new
+session and start the next step of our plan." Waterworks 01 is now the mission
+default (`Arena.waterworks_review = true`), accepted for interim use. Open
 `WaterworksStudy.bat`; read `WATERWORKS_STUDY.md` for controls, sources and limits.
 Keys 1–4 select cistern/aqueduct/RTS/conduit, B compares the existing prototype,
-V reverses the angle. The mission still uses its original waterworks: visual
-acceptance and substitution await the creator. Do not integrate automatically
-or begin vegetation/characters before their next direction.
+V reverses the angle; the viewer explicitly selects false for its old comparison.
+A brief windowed Compatibility mission check and the existing navigation/
+clearance check pass. Next authorized work is step 2, trees and ground vegetation,
+in a new chat. Read `VEGETATION_HANDOFF.md`; character work remains later.
 
 Original curved cistern masonry, breached coping, lined interior, torn hollow
 pipes, flanges/bolts/saddles/valve, carved aqueduct piers and broken watercourse,

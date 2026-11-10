@@ -9,14 +9,19 @@ Reference: `D:/Downloads/balanced2_goal.png`; local continuity copy:
 Gate 02 and Terrain 01 are approved for use and integrated. Terrain integration
 was pushed as `4418c6c`; Gate integration as `1b37be3`.
 
+Latest decision: the creator accepted Waterworks 01 for interim use ("It will do
+for now"), requested integration, then a new chat to start step 2. Waterworks is
+now the mission default. **Next: trees and ground vegetation**, with the recorded
+leaf/flower feedback reopened for this step. Read `VEGETATION_HANDOFF.md`.
+
 ## Agreed order of visual impact
 
-1. **Waterworks and ruined stone structures — start now in a new chat.**
+1. **Waterworks and ruined stone structures — integrated for interim use.**
    Replace the prototype cistern, pipes, aqueduct supports and architectural
    remnants. Model broken masonry, damaged connections and convincing wear,
    bringing these assets up to the Gate's material/detail standard. See
    `WATERWORKS_HANDOFF.md` for the concrete starting task.
-2. **Trees and ground vegetation.** Improve leaf shapes/attachment, canopy
+2. **Trees and ground vegetation — start now in a new chat.** Improve leaf shapes/attachment, canopy
    density and flower geometry; add varied dry grasses, shrubs and crevice plants.
    Resolve the recorded foliage/flower feedback when this step begins. It is
    now part of the agreed sequence, but do not work on it during step 1.

@@ -173,4 +173,5 @@ Built-in imagegen produced the aged teal metal source; limestone reuses the
 project's Gate 02 generated source. No third-party files or new dependencies.
 Exact prompts, deterministic Blender/export recipes and packed editable source
 are under `art_source/waterworks/`. This is original project art, not CC0 scans.
-See `WATERWORKS_STUDY.md`. Candidate remains review-only, awaiting acceptance.
+See `WATERWORKS_STUDY.md`. The creator accepted this pass for interim use and
+requested integration; Waterworks 01 is now the mission default.
