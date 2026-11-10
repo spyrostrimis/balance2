@@ -163,3 +163,14 @@ recipe and packed editable `.blend` are under `art_source/terrain/`. No new
 third-party assets or dependencies. See `TERRAIN_STUDY.md` for provenance,
 rebuilding and limits. The creator requested integration after native review;
 Terrain 01 now supplies the mission ground, paving and canyon borders.
+
+## Waterworks candidate 01 — original generated and authored art
+
+`assets/waterworks_study/` contains original curved cistern masonry, damaged
+pipe shells/connections/supports, carved aqueduct ruins and structural rubble.
+The GLBs reference shared sibling PBR PNGs; preserve the folder together.
+Built-in imagegen produced the aged teal metal source; limestone reuses the
+project's Gate 02 generated source. No third-party files or new dependencies.
+Exact prompts, deterministic Blender/export recipes and packed editable source
+are under `art_source/waterworks/`. This is original project art, not CC0 scans.
+See `WATERWORKS_STUDY.md`. Candidate remains review-only, awaiting acceptance.

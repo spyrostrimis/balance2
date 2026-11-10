@@ -8,7 +8,7 @@ static func stone(color: Color) -> ShaderMaterial:
 	material.set_shader_parameter("stone_color", color)
 	return material
 
-static func build(parent: Node3D, terrain_review: bool = false) -> void:
+static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false) -> void:
 	var sandstone := stone(Color("a17d62"))
 	var pale := stone(Color("b5a489"))
 	var dark := stone(Color("766454"))
@@ -25,7 +25,7 @@ static func build(parent: Node3D, terrain_review: bool = false) -> void:
 	else:
 		_build_road(parent, pale, dark, rng)
 	_build_temple(parent, pale, dark)
-	_build_small_details(parent, dark, rng)
+	_build_small_details(parent, dark, rng, waterworks_review)
 
 static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
 	# Retained for the baseline mission and review comparison.
@@ -47,7 +47,7 @@ static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: M
 			Art.rock(parent, Vector3(side * rng.randf_range(27, 29), height * 0.35, z), Vector3(8, height, 8), sandstone, 300 + i + (side + 1) * 20)
 			Art.rock(parent, Vector3(side * 23.5, 0.4, z + 2), Vector3(3.5, 1.8, 3.6), pale, 340 + i)
 
-static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator) -> void:
+static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator, waterworks_review: bool = false) -> void:
 	# Pebbles and small plants reinforce existing rock silhouettes, not paths.
 	for obstacle in [Vector3(-8, 0, -6), Vector3(8, 0, 6), Vector3(-12, 0, 7), Vector3(12, 0, -7)]:
 		# The approved formation includes its own fallen slabs and chips.
@@ -61,7 +61,7 @@ static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumb
 		var p := Vector3(rng.randf_range(-21, 21), 0.03, rng.randf_range(-14, 14))
 		if p.length() < 6: continue
 		Art.rock(parent, p, Vector3(0.12, 0.08, 0.2) * rng.randf_range(0.6, 1.5), dark, i)
-	_build_field_equipment(parent)
+	_build_field_equipment(parent, waterworks_review)
 
 static func _build_road(parent: Node3D, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
 	var paving := stone(Color("9e967e"))
@@ -161,13 +161,16 @@ static func plant(parent: Node3D, pos: Vector3, height: float, seed_value: int) 
 		for i in range(3):
 			Art.sphere(parent, pos + Vector3(0, height * (1.05 + i * 0.12), 0), Vector3(0.13, 0.18, 0.13), flower)
 
-static func _build_field_equipment(parent: Node3D) -> void:
+static func _build_field_equipment(parent: Node3D, waterworks_review: bool = false) -> void:
 	var charcoal := Art.material(Color("2e414a"))
 	var ivory := Art.material(Color("c2b692"))
 	# A torn conduit and survey cases along the safe western approach.
-	for i in range(5):
-		var pipe := Art.cylinder(parent, Vector3(-20.7, 0.23, 7.5 + i * 1.25), 0.2, 0.2, 1.15, charcoal)
-		pipe.rotation.x = PI / 2
+	if waterworks_review:
+		load("res://scripts/waterworks_art.gd").conduits(parent)
+	else:
+		for i in range(5):
+			var pipe := Art.cylinder(parent, Vector3(-20.7, 0.23, 7.5 + i * 1.25), 0.2, 0.2, 1.15, charcoal)
+			pipe.rotation.x = PI / 2
 	for i in range(2):
 		Art.box(parent, Vector3(-20.5, 0.25, 5.2 + i * 0.8), Vector3(0.55, 0.5, 0.6), ivory)
 		Art.box(parent, Vector3(-20.2, 0.3, 5.2 + i * 0.8), Vector3(0.025, 0.16, 0.25), Art.material(Color("4183ac")))

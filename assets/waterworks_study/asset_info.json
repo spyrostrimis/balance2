@@ -1,0 +1,15 @@
+{
+  "revision": 1,
+  "triangles": {
+    "aqueduct_00": 50312,
+    "aqueduct_01": 50312,
+    "cistern": 43628,
+    "conduit": 928,
+    "conduit_broken": 928
+  },
+  "source": "art_source/waterworks/waterworks_authoring.blend",
+  "collision": false,
+  "units": "metres",
+  "status": "Separate review candidate; not accepted or integrated",
+  "provenance": "Original Blender geometry, built-in imagegen sources, portable baked PBR. See TEXTURE_SOURCES.md."
+}

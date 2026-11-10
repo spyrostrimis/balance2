@@ -39,9 +39,12 @@ static func terrain(parent: Node3D, material: Material) -> void:
 	var ground := Art.mesh(parent, surface.commit(), Vector3.ZERO, material)
 	ground.name = "BasinGround"
 
-static func build(parent: Node3D) -> void:
-	_water_station(parent)
-	_waystation(parent)
+static func build(parent: Node3D, waterworks_review: bool = false) -> void:
+	if waterworks_review:
+		load("res://scripts/waterworks_art.gd").structures(parent)
+	else:
+		_water_station(parent)
+		_waystation(parent)
 	var rng := RandomNumberGenerator.new()
 	rng.seed = 4096
 	# Solid foliage and architecture are also registered by Arena.

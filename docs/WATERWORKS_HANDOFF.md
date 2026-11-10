@@ -1,5 +1,34 @@
 # Waterworks and ruins — next focused chat, 10 November 2026
 
+## Latest state — candidate 01 ready for review
+
+The authorized pass is complete as a separate native candidate. Open
+`WaterworksStudy.bat`; read `WATERWORKS_STUDY.md` for controls, sources and limits.
+Keys 1–4 select cistern/aqueduct/RTS/conduit, B compares the existing prototype,
+V reverses the angle. The mission still uses its original waterworks: visual
+acceptance and substitution await the creator. Do not integrate automatically
+or begin vegetation/characters before their next direction.
+
+Original curved cistern masonry, breached coping, lined interior, torn hollow
+pipes, flanges/bolts/saddles/valve, carved aqueduct piers and broken watercourse,
+contained rubble and two low conduit variants are under `assets/waterworks_study/`.
+GLBs use shared external PNGs: retain the folder together. Exact built-in imagegen
+prompt, generated metal source, Blender build/repacking scripts and packed editable
+`waterworks_authoring.blend` are under `art_source/waterworks/`. Limestone reuses
+the original Gate 02 source. No new third-party assets or dependencies.
+
+Native Compatibility close/RTS/reverse inspection is complete, with clean final
+review/import logs. Thirty battle checks pass. A focused check verifies all
+1,247 navigation cells, unchanged footprint lists, no colliders and 78,775 mesh
+vertices against the old clearance constraints. Logs/captures are ignored in
+`artifacts/waterworks/`. Gate, terrain and earlier assets remain intact.
+
+Limits: regular modular masonry and closely related aqueduct variants; static
+machinery and simple water surface; no reference-parity claim. The existing tree
+obscures part of the cistern from one angle. Keep the recorded later plan order.
+Pre-existing HUD/settings/import edits were preserved; shared documentation was
+staged with a task-only index patch in `artifacts/waterworks/update_docs.py`.
+
 ## Authorization and objective
 
 The creator agreed to `REFERENCE_COMPLETION_PLAN.md` and explicitly requested

@@ -203,3 +203,11 @@ terrain in native Godot Compatibility. Keys **1–4** change views, **B** compar
 the previous terrain, arrows/right-drag pan and the wheel zooms. Terrain 01 is
 now integrated in the mission at the creator's request. It still has repeated cliff
 forms and stylized burial edges; see [terrain study](docs/TERRAIN_STUDY.md).
+
+## Waterworks review 01
+
+Open `WaterworksStudy.bat` for the breached cistern, damaged pipes and ruined
+aqueduct candidate in native Godot Compatibility. **1–4** select close/RTS views,
+**B** compares the existing prototype, **V** reverses the angle; arrows/right-drag
+pan and wheel zooms. The mission retains the existing waterworks pending visual
+acceptance. See [waterworks study](docs/WATERWORKS_STUDY.md) for sources and limits.

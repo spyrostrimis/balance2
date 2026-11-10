@@ -288,3 +288,22 @@ transitions → lighting/material cohesion → combat effects/unit presentation 
 final HUD/composition polish**. Start only the first step now. Tree/flower and
 leader likeness feedback is scheduled for later steps, not parallel work.
 The reference's stone guardian/new enemy and new mechanics remain outside scope.
+
+## Waterworks candidate 01 — 10 November 2026
+
+Step 1 now has a native review candidate: `WaterworksStudy.bat`. Keys 1–4 choose
+cistern/aqueduct/RTS/conduit, B compares the prototype and V reverses the camera.
+Read `WATERWORKS_STUDY.md` and the latest state in `WATERWORKS_HANDOFF.md`.
+Original generated metal, reused Gate limestone, deliberately modeled geometry,
+portable baked PBR, packed editable Blender source and exact prompts are in
+`art_source/waterworks/`; exports/shared textures in `assets/waterworks_study/`.
+Mission substitution awaits the creator's visual acceptance. No mechanics,
+footprints, accepted terrain/Gate/character/tree assets or HUD work were changed.
+Thirty battle checks pass; all 1,247 navigation cells and footprint lists match,
+no colliders, and 78,775 asset vertices pass the existing clearance constraints.
+Final native Compatibility close/RTS/reverse and import logs are clean.
+Regular modular masonry, similar aqueduct variants, static machinery and simple
+water remain limitations. The existing tree occludes part of the cistern from
+one angle; use V. No reference-parity claim. Do not start later art steps until
+the creator directs continuation. Shared dirty docs were staged by task-only
+index patch; the pre-existing HUD/settings/import work remains uncommitted.
