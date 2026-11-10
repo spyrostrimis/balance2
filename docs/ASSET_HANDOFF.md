@@ -329,10 +329,14 @@ missing mipmaps and disabled vertex-color use. Final Compatibility review logs
 are clean; 30 battle checks and all 1,247 navigation-cell comparisons pass;
 four tree transforms/footprints are unchanged, no colliders, central corridor clear.
 
-The mission remains on Tree 02: `Arena.vegetation_review = false`. **Not accepted
-or integrated.** Leave aesthetic review and substitution to the creator. Static
+The creator accepted Vegetation 01 for interim use ("It will do for now") and
+requested integration. `Arena.vegetation_review = true` is now the mission default.
+Static
 foliage, dense tree mesh, repeated shoots/ground-cover forms, some intersecting
 leaves and incomplete reference ground-cover density remain limitations.
-Step 3/character refinement has not begun. All prior accepted integrations and
+The creator explicitly defers step 3 (Characters and animation). **Next: step 4,
+Ground-level debris and transitions, in a new chat; step 5 follows afterwards.**
+Read `DEBRIS_HANDOFF.md`; this supersedes previous sequencing. All prior accepted
+integrations and
 the creator's dirty HUD/settings work are preserved. Only task-owned shared-doc
 additions are staged; captures/logs stay ignored in `artifacts/vegetation/`.

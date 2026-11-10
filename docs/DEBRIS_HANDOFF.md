@@ -1,0 +1,86 @@
+# Ground-level debris and transitions — start step 4
+
+## Latest creator instruction — 10 November 2026
+
+The creator accepted Vegetation 01 for interim use: "It will do for now. Add it
+to the game and then open a new session and start the 4th step of our plan:
+Ground-level debris and transitions." They explicitly defer step 3 (Characters
+and animation), want step 4 now, and step 5 (Lighting and material cohesion)
+afterwards. This supersedes all older next-asset lists. Start actual step 4 work
+in the requested new chat; do not stop at acknowledgment or ask to begin again.
+
+Read AGENTS.md and ASSET_HANDOFF.md first, then this file,
+REFERENCE_COMPLETION_PLAN.md, VISION.md, ART_DIRECTION.md and TERRAIN_STUDY.md.
+Inspect `D:/Downloads/balanced2_goal.png` with the image viewer; continuity copy:
+`artifacts/handoff-reference/balanced2_goal.png`.
+
+## Scope
+
+Build deliberately shaped fallen slabs, loose stone, dead branches, exposed
+roots and modest wreckage around existing ruins and cliff feet. Refine paving
+damage, edge breakup, sand burial and contact transitions so props sit in the
+landscape. Concentrate detail at the borders and existing obstacles. Keep the
+central combat area quiet, readable and reachable. Study the reference's small
+debris clusters and sand-to-stone transitions rather than its guardian/UI.
+
+Audit `scripts/scenery.gd` (_build_small_details and existing pebble scatter),
+`scripts/terrain_art.gd` (ground/road/landforms), `scripts/arena.gd`,
+`scripts/waterworks_art.gd` and `scripts/vegetation_art.gd`. Source recipes:
+`art_source/terrain/build_terrain.py`, `art_source/rocks/build_formation.py`,
+`art_source/gate/v2/build_gate.py`, `art_source/waterworks/build_waterworks.py`
+and `art_source/vegetation/build_vegetation.py`. Inspect existing debris included
+in those accepted assets before adding duplicates. This pass is ground dressing
+and transitions, not a rebuilding of the Gate, cliffs or waterworks.
+
+Preserve the flat walkable x=-21..21, z=-14..14 grid; all registered footprints,
+deployments, resources, existing story and gameplay. Cosmetic debris must not
+create hidden blockers. Substantial protrusions must stay within existing solid
+footprints or outside the navigation rectangle. Do not silently add obstacles.
+
+## Accepted workflow and review
+
+Use original built-in imagegen material sources where useful (read the imagegen
+skill), deliberate Blender geometry, deliberately mapped/baked portable PBR,
+and actual close/RTS Godot Compatibility inspection. Preserve exact prompts,
+packed editable `.blend`, source images and reproducible recipes. Reuse accepted
+project material sources where appropriate. No generic primitive stacks plus
+procedural noise, no recognizable franchise or unverified third-party art, no
+unnecessary dependencies or renderer migration. Pictures are not the deliverable.
+
+Create a separate native review candidate first, open it when ready, record
+honest limitations and leave aesthetic acceptance/integration to the creator.
+The Vegetation/Waterworks/Terrain study pattern provides before/after and actual
+basin views. Keep captures/logs/tooling ignored under `artifacts/`; sources under
+`art_source/` (.gdignore). Follow AGENTS.md checks appropriate to changes; avoid
+repeating lengthy checks for previously completed integrations.
+
+## Current integrated state and deferred work
+
+Gate02, Terrain01, Waterworks01, Vegetation01/Tree03, Korali, sandstone02 and
+interim Leader02 are integrated. Vegetation is now the mission default through
+`Arena.vegetation_review = true`; the study and invariant test explicitly set
+false for the older comparison. It is interim acceptance, not reference parity.
+Its static foliage, dense meshes, repeated plant forms and some leaf
+intersections remain recorded limitations; do not resume foliage refinement.
+Vegetation source/export provenance is in VEGETATION_STUDY.md.
+
+Characters/animation are explicitly deferred. Preserve the interim leader and
+all recorded likeness feedback. Do not start stone guardian/enemy work, new
+mechanics, economy, campaigns or multiplayer. Step 5 follows this ground pass;
+do not expand this pass into global lighting/material tuning in parallel.
+
+## Tools and worktree hygiene
+
+Repository `D:/Games/Balance2`, main; Blender `C:/Blender/blender.exe`;
+Godot `C:/Godot/Godot_v4.7.2-stable_win64_console.exe` and GUI sibling.
+Commit/push only cohesive task-owned work and update the durable handoff.
+
+Substantial pre-existing uncommitted HUD work remains in `scripts/hud.gd`,
+`battle.gd`, `unit.gd`, `tests/test_battle.gd`, `tests/visual_smoke.gd`,
+`art_source/ui/`, `assets/ui/` and parts of README/ASSETS/ART_DIRECTION/ASSET_HANDOFF.
+Preserve it, `project.godot`, `export_presets.cfg`, existing texture `.import`
+changes and untracked `blue_leader_mission.gd.uid`. Stage only your own hunks.
+Ignored `artifacts/vegetation/update_docs.py` and `integrate_docs.py` demonstrate
+task-only index patches for shared dirty documents; do not rerun old scripts
+unchanged. Snapshot texture import state before native checks and preserve
+pre-existing changes when cleaning any new automatic importer side effects.

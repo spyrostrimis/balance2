@@ -1,5 +1,5 @@
 extends RefCounted
-## Review-only original vegetation. No colliders or navigation changes.
+## Original vegetation accepted for interim mission use. No colliders or navigation changes.
 const TREE = preload("res://assets/vegetation_study/tree.glb")
 const GRASSES = [preload("res://assets/vegetation_study/grass_tall.glb"), preload("res://assets/vegetation_study/grass_low.glb"), preload("res://assets/vegetation_study/grass_arching.glb")]
 const PLANTS = [preload("res://assets/vegetation_study/crevice_flower.glb"), preload("res://assets/vegetation_study/rosette.glb"), preload("res://assets/vegetation_study/shrub.glb")]

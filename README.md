@@ -216,7 +216,7 @@ request. See [waterworks study](docs/WATERWORKS_STUDY.md) for sources and limits
 
 Open `VegetationStudy.bat` for Tree 03, dry grasses, shrubs and crevice flowers
 in native Godot Compatibility. **1–6** select tree/leaves/RTS/flowers/border/
-specimen; **B** compares mission plants (except flower view); **V** reverses;
-arrows/right-drag pan, wheel zoom, R resets, Esc closes. The mission retains
-Tree 02 pending creator acceptance. Foliage is static and the candidate still
+specimen; **B** compares previous plants (except flower view); **V** reverses;
+arrows/right-drag pan, wheel zoom, R resets, Esc closes. Vegetation 01 is integrated
+for interim use. Foliage is static and still
 uses dense meshes and repeated plant forms. See [vegetation study](docs/VEGETATION_STUDY.md).

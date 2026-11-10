@@ -49,7 +49,7 @@ func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
 	var top := Label.new()
-	top.text = "VEGETATION / 01     •     Review candidate - not integrated"
+	top.text = "VEGETATION / 01     •     Integrated for interim use"
 	top.position = Vector2(24, 18)
 	top.add_theme_font_size_override("font_size", 24)
 	layer.add_child(top)
@@ -97,7 +97,7 @@ func _update_camera() -> void:
 	camera.look_at(focus)
 
 func _update_caption() -> void:
-	caption.text = "%s / %s / %s" % ["Mission Tree 02 / previous plants" if before else "Vegetation 01 / Tree 03", ["Connected layered canopy", "Leaf / petiole inspection", "RTS basin - existing placements", "Modeled buds, corollas and grass seedheads", "Cliff-toe pocket", "Isolated tree specimen"][view_mode], RenderingServer.get_current_rendering_method()]
+	caption.text = "%s / %s / %s" % ["Previous Tree 02 / plants" if before else "Vegetation 01 / Tree 03", ["Connected layered canopy", "Leaf / petiole inspection", "RTS basin - existing placements", "Modeled buds, corollas and grass seedheads", "Cliff-toe pocket", "Isolated tree specimen"][view_mode], RenderingServer.get_current_rendering_method()]
 
 func toggle_reverse() -> void:
 	reverse = not reverse

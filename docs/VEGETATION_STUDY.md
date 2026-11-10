@@ -1,7 +1,8 @@
 # Vegetation candidate 01 / Tree 03
 
-Separate native review candidate, 10 November 2026. **Not integrated or accepted.**
-The playable mission retains Tree 02 and its existing ground plants. Open
+Accepted for interim use and integrated, 10 November 2026. The creator said
+"It will do for now" and requested its addition to the game. This does not claim
+final aesthetic quality or reference parity. Open
 `VegetationStudy.bat` for native Godot Compatibility review.
 
 ## Review controls
@@ -18,7 +19,7 @@ The playable mission retains Tree 02 and its existing ground plants. Open
 The viewer uses the existing warm light setup and accepted environment assets.
 It is an asset review without combatants or HUD; it does not claim final mission
 composition or reference parity. The study's `Arena.vegetation_review` switch is
-true; the mission default is false. Gate 02, Terrain 01, Waterworks 01, Korali,
+true; the mission default is also true. B explicitly selects the older plants. Gate 02, Terrain 01, Waterworks 01, Korali,
 sandstone02 and interim Leader02 remain unchanged.
 
 ## What changed
@@ -78,5 +79,5 @@ dense geometry candidate; broad leaf arrangement and repeated grass/shrub forms
 remain visible. Small flower surfaces simplify at RTS distance; the root
 rosettes remain stylized. Canopies still have some leaf intersections. Material
 microdetail is generated and mip-filtered, not photogrammetry. The reference's
-denser, naturally blended ground cover is not fully matched. Aesthetic acceptance
-and any mission substitution belong to the creator; step 3 has not started.
+denser, naturally blended ground cover is not fully matched. The creator accepted these limits for interim use. Characters/animation are
+explicitly deferred; step 4 (debris/transitions) is next and step 5 follows.

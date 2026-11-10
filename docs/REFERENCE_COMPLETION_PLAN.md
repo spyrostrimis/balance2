@@ -9,10 +9,11 @@ Reference: `D:/Downloads/balanced2_goal.png`; local continuity copy:
 Gate 02 and Terrain 01 are approved for use and integrated. Terrain integration
 was pushed as `4418c6c`; Gate integration as `1b37be3`.
 
-Latest decision: the creator accepted Waterworks 01 for interim use ("It will do
-for now"), requested integration, then a new chat to start step 2. Waterworks is
-now the mission default. **Next: trees and ground vegetation**, with the recorded
-leaf/flower feedback reopened for this step. Read `VEGETATION_HANDOFF.md`.
+Latest decision: Vegetation 01 / Tree 03 is accepted for interim use and
+integrated. The creator explicitly defers **step 3: Characters and animation**.
+**Start step 4: Ground-level debris and transitions now, in a new chat. Step 5:
+Lighting and material cohesion follows afterwards.** Read `DEBRIS_HANDOFF.md`.
+This supersedes earlier sequencing; preserve the interim characters.
 
 ## Agreed order of visual impact
 
@@ -21,20 +22,17 @@ leaf/flower feedback reopened for this step. Read `VEGETATION_HANDOFF.md`.
    remnants. Model broken masonry, damaged connections and convincing wear,
    bringing these assets up to the Gate's material/detail standard. See
    `WATERWORKS_HANDOFF.md` for the concrete starting task.
-2. **Trees and ground vegetation — separate candidate ready for review.** Open
-   `VegetationStudy.bat`; read `VEGETATION_STUDY.md`. Mission integration awaits
-   the creator's acceptance. Improve leaf shapes/attachment, canopy
-   density and flower geometry; add varied dry grasses, shrubs and crevice plants.
-   Resolve the recorded foliage/flower feedback when this step begins. It is
-   now part of the agreed sequence, but do not work on it during step 1.
-3. **Characters and animation.** Finish the woman Blue Leader's likeness and
+2. **Trees and ground vegetation — integrated for interim use.** Tree 03,
+   rebuilt flowers and ground-cover kits are in the mission. See
+   `VEGETATION_STUDY.md` for the accepted interim state and remaining limits.
+3. **Characters and animation — explicitly deferred for now.** Finish the woman Blue Leader's likeness and
    full-body outfit, then the Blue/Red roster's silhouettes, gear and movement.
    Existing leader remains an interim composite. Consult the recorded likeness
    feedback when this step begins; do not resume character work during step 1.
-4. **Ground-level debris and transitions.** Deliberate fallen slabs, loose stone,
+4. **Ground-level debris and transitions — start now in the new chat.** Deliberate fallen slabs, loose stone,
    dead branches, roots and wreckage around ruins/cliff feet; refine paving
    damage and sand burial. Keep central combat space readable and reachable.
-5. **Lighting and material cohesion.** Unify warm sand, pale worked stone and
+5. **Lighting and material cohesion — after step 4.** Unify warm sand, pale worked stone and
    cooler shade through light, ambient fill, shadow and material tuning. Stay
    with the existing renderer; no renderer migration is implied.
 6. **Combat effects and unit presentation.** Improve muzzle flashes, projectile

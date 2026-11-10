@@ -354,7 +354,7 @@ scene['notes']='Candidate only. Exact petiole/polyline connections. Static geome
 bpy.ops.wm.save_as_mainfile(filepath=str(SRC/'vegetation_authoring.blend'))
 assert max(r['gap'] for r in records)<1e-6
 assert min(orientation)>.35, 'Upper blade winding reversed or folded through itself'
-info={'revision':1,'tree_revision':3,'status':'Separate review candidate; not integrated or aesthetically accepted','assets':stats,
+info={'revision':1,'tree_revision':3,'status':'Accepted for interim use and integrated, 10 November 2026','assets':stats,
       'attachment_records':len(records),'max_centerline_attachment_gap':max(r['gap'] for r in records),
       'minimum_lamina_normal_dot_local_up':min(orientation),'collision':False,'animated':False,
       'source':'art_source/vegetation/vegetation_authoring.blend','provenance':'Original geometry and built-in imagegen atlas; accepted original bark source reused. See TEXTURE_SOURCES.md.'}

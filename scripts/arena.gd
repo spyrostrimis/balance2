@@ -13,7 +13,7 @@ var capture_ring: MeshInstance3D
 var obstacles: Array[Vector3] = [] # x/z = center, y = collision radius.
 var terrain_review := true # Approved Terrain 01; false retains the old study comparison.
 var waterworks_review := true # Accepted for interim use; false retains the old comparison.
-var vegetation_review := false # Separate candidate only; mission retains accepted Tree 02.
+var vegetation_review := true # Vegetation 01 accepted for interim use; false retains Tree 02 comparison.
 
 func _ready() -> void:
 	_build_terrain()

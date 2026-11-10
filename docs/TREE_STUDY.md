@@ -1,10 +1,11 @@
 # Basin tree and root flowers — study 02
 
-**10 November update:** Tree 02 remains the mission default. The reopened
-foliage/flower pass now has a separate Tree 03 candidate in `VegetationStudy.bat`.
+**10 November update:** Vegetation 01 / Tree 03 is now the mission default,
+accepted for interim use. `VegetationStudy.bat` retains Tree 02 comparison.
 See `VEGETATION_STUDY.md` and `VEGETATION_HANDOFF.md` for the measured winding/
 attachment audit, rebuilt geometry, ground-cover kits and native review results.
-This supersedes the historical deferral below; Tree 03 awaits creator acceptance.
+This supersedes the historical deferral below. Characters are deferred; step 4
+(debris/transitions) is next, then step 5. See `DEBRIS_HANDOFF.md`.
 
 After approving the textured sandstone revision, the creator requested the same
 generated-source/Blender-bake workflow for this tree. Revision 02 adds detailed

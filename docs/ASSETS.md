@@ -186,4 +186,5 @@ bark reuses the project's accepted generated Tree 02 source. No third-party
 files or dependencies were introduced, and no CC0 claim is made for generated art.
 Exact prompt, deterministic Blender recipe, source audits and packed editable
 `.blend` are in `art_source/vegetation/`. Native review and limitations are in
-`VEGETATION_STUDY.md`. The candidate is not accepted or integrated.
+`VEGETATION_STUDY.md`. Vegetation 01 is accepted for interim use and integrated,
+10 November 2026.
