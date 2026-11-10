@@ -232,8 +232,13 @@ arch, grey weathered stone, fluted piers, broken side porticoes, small purple
 banners, broad steps and attached climbing ivy. `GateStudy.bat` now reviews it;
 B compares accepted revision 01 and G previews it in mission surroundings at
 the existing placement/scale. See `GATE_REVISION_02.md` for controls and limits.
-The accepted revision 01 remains in the playable mission pending visual review
-of the new candidate. The surrounding prototype landscape is not upgraded.
+The creator approved revision 02 ("It's very good") and requested its integration.
+It now replaces revision 01 at the same position and scale 0.78. The two flanking
+rocks move to x = +/-9.4, z = -19.5 to reveal the side porticoes. The discovery
+shot targets height 3.0 at size 14. Navigation, dialogue and gameplay are unchanged.
+Revision 01 remains available with B in the viewer. The creator explicitly
+requested **terrain next, in a new chat**. Read `TERRAIN_HANDOFF.md`; it supersedes
+earlier next-asset sequencing. Do not redo the Gate, leader or tree work.
 
 ## Tools, workspace and working preferences
 

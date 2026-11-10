@@ -8,7 +8,7 @@
   "height_m": 7.99,
   "width_m": 18.0,
   "front": "Godot +Z",
-  "status": "Reference-driven revision; visual acceptance pending",
+  "status": "Approved; integrated in the mission at scale 0.78",
   "source": "art_source/gate/v2/gate_authoring_v2.blend",
   "reference": "User-provided balanced2_goal.png (10 November 2026)"
 }

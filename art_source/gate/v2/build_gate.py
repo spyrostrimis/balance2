@@ -410,6 +410,6 @@ encoded=json.dumps(gltf,separators=(',',':')).encode('utf-8')
 encoded+=b' '*((-len(encoded))%4)
 tail=data[20+old_length:]
 glb_path.write_bytes(struct.pack('<III',0x46546c67,2,20+len(encoded)+len(tail))+struct.pack('<II',len(encoded),0x4e4f534a)+encoded+tail)
-stats={'revision':2,'blender':bpy.app.version_string,'triangles':triangles,'materials':7,'stone_texture_resolution':4096,'cloth_door_texture_resolution':1024,'height_m':7.99,'width_m':18.0,'front':'Godot +Z','status':'Reference-driven revision; visual acceptance pending','source':'art_source/gate/v2/gate_authoring_v2.blend','reference':'User-provided balanced2_goal.png (10 November 2026)'}
+stats={'revision':2,'blender':bpy.app.version_string,'triangles':triangles,'materials':7,'stone_texture_resolution':4096,'cloth_door_texture_resolution':1024,'height_m':7.99,'width_m':18.0,'front':'Godot +Z','status':'Approved; integrated in the mission at scale 0.78','source':'art_source/gate/v2/gate_authoring_v2.blend','reference':'User-provided balanced2_goal.png (10 November 2026)'}
 (OUT/'asset_info.json').write_text(json.dumps(stats,indent=2)+'\n')
 print('GATE II COMPLETE',stats,flush=True)

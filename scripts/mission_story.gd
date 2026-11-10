@@ -45,7 +45,7 @@ func discovery_lines() -> Array[Dictionary]:
 		_line(speaker, "Mark a route for the recovery crew. Water systems first.", portrait, Vector3(0, 0.5, 0), 13.0, "AFTERMATH / SAFE ACCESS"),
 		_line("FIELD TECHNICIAN", "There's worked stone beneath the Korali. These markings match the sealed monument.", "radio", Vector3(0.9, 0.12, 1.45), 4.4, "DISCOVERY / BENEATH THE KORALI"),
 		_line(speaker, "Record it. Don't cut any deeper.", portrait, Vector3(0.9, 0.12, 1.45), 4.0, "DISCOVERY / BENEATH THE KORALI"),
-		_line("FIELD TECHNICIAN", "Recorded. The monument is still sealed. We'll leave it that way.", "radio", Vector3(0, 4.2, -18.0), 15.0, "DISCOVERY / A CLOSED DOOR")]
+		_line("FIELD TECHNICIAN", "Recorded. The monument is still sealed. We'll leave it that way.", "radio", Vector3(0, 3.0, -18.0), 14.0, "DISCOVERY / A CLOSED DOOR")]
 
 func begin_opening() -> void:
 	if active or game.phase != "briefing": return

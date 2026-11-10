@@ -61,13 +61,13 @@ aged grey stone, a lower crown, layered rounded arch, ruined side porticoes,
 purple banners, broad steps and climbing ivy. **1 / 2 / 3** selects close, RTS
 and mission distance; **B** compares approved revision 01; **G** previews the
 candidate in mission surroundings. **L** switches light; **Space** turns it.
-Drag to rotate, wheel to zoom, **R** reset, **Esc** close. The playable mission
-keeps accepted revision 01 pending review. Ivy and cloth are static; the facade
+Drag to rotate, wheel to zoom, **R** reset, **Esc** close. The approved revision 02
+now replaces the mission Gate at scale 0.78. Ivy and cloth are static; the facade
 has no interactive interior. See [revision 02 source and limits](docs/GATE_REVISION_02.md).
 
 ## Character Studio
 
-Gate revision 02 is under review; the interim woman Blue Leader is integrated.
+Gate revision 02 and the interim woman Blue Leader are integrated. Terrain is next.
 New asset chats start from
 [the current handoff](docs/ASSET_HANDOFF.md).
 

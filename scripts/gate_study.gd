@@ -1,5 +1,5 @@
 extends "res://scripts/korali_study.gd"
-## Reference-driven revision 02; accepted revision 01 remains in the mission.
+## Approved revision 02, now used in the mission; B preserves revision 01.
 var context: Node3D
 var context_mode := false
 var stage_ground: MeshInstance3D
@@ -56,14 +56,7 @@ func toggle_context() -> void:
 	if context_mode and not is_instance_valid(context):
 		context = preload("res://scripts/arena.gd").new()
 		add_child(context)
-		# Preview only: replace the instance inside this disposable review arena.
-		var old := context.find_child("SanctuaryGate", true, false)
-		old.get_parent().remove_child(old)
-		old.free()
-		var candidate := _create_study()
-		candidate.position = Vector3(0, 0, -18.6)
-		candidate.scale = Vector3.ONE * 0.78
-		context.add_child(candidate)
+		# Uses the mission's integrated Gate and fitted flanking rocks directly.
 		context.capture_ring.hide()
 	if is_instance_valid(context): context.visible = context_mode
 	stage_ground.visible = not context_mode
@@ -73,7 +66,7 @@ func toggle_context() -> void:
 
 func _update_caption() -> void:
 	if context_mode:
-		caption.text = "Revision 02 in mission surroundings / scale 0.78 / preview only / G returns"
+		caption.text = "Integrated revision 02 / mission surroundings / scale 0.78 / G returns"
 	else:
 		super._update_caption()
 

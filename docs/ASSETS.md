@@ -85,7 +85,7 @@ generated and original project art. See `GATE_STUDY.md` for scope and limits.
 The creator approved the candidate; it now replaces the mission gate at scale
 0.78. Revision 01 and its editable source remain intact.
 
-Gate revision 02 (10 November) is a separate reference-driven candidate under
+Gate revision 02 (10 November) is the approved, integrated revision under
 `assets/gate_study/v2/`, built by `art_source/gate/v2/build_gate.py`. The packed
 Blender source includes original architectural and plant geometry, a newly
 generated aged limestone material and a transparent ivy leaf source. The banner

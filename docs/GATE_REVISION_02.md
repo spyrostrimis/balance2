@@ -7,10 +7,11 @@ short central blade, carved side piers and broken horizontal lintels, smaller
 purple banners, six broad worn steps, ivy, dry grass and rubble. It does not
 attempt the image's entire landscape, HUD, characters or combat effects.
 
-The accepted revision 01 remains in the playable mission. Revision 02 is a
-separate candidate for visual review; its viewer includes a disposable arena
-preview at the existing mission placement and scale. No gameplay, navigation,
-story, renderer settings, leader work, tree work or HUD work was changed.
+The creator approved revision 02 ("It's very good") and requested integration.
+It now replaces revision 01 in the mission at (0, 0, -18.6), scale 0.78. The
+two flanking rocks move outward/back to reveal the porticoes. The final discovery
+shot is centered at height 3.0 with orthographic size 14 for the lower crown.
+Dialogue, gameplay, navigation, renderer, leader, trees and HUD are unchanged.
 
 ## Review
 
@@ -25,8 +26,8 @@ Run `GateStudy.bat`. The native Godot window now loads revision 02.
 
 The context preview uses the study's lighting and renderer. It is useful for
 scale and cliff overlap, not a claim that the entire mission matches the image.
-The old flanking rocks partly cover the outer porticoes; later integration should
-fit those few rocks to the candidate without changing the surrounding map.
+The mission's two flanking rocks are now fitted outside the porticoes. The
+context preview uses the integrated arena directly, with no Gate substitution.
 
 ## Authoring and provenance
 
