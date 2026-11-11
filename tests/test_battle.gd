@@ -48,6 +48,27 @@ func run() -> void:
 
 	fresh()
 	battle.start_battle()
+	unit = battle.units[2]
+	unit.position = Vector3(-16, 0, 9)
+	unit.issue_patrol(Vector3(-16, 0, 3))
+	var returned := false
+	var reached_end := false
+	for frame in range(900):
+		unit.step(1.0 / 60)
+		if unit.position.distance_to(unit.patrol_end) < 1.2: reached_end = true
+		if reached_end and unit.position.distance_to(unit.patrol_origin) < 1.2: returned = true
+	check(reached_end and returned and unit.patrol_active, "Patrol reaches its endpoint and returns without a second order")
+	unit.stop()
+	check(not unit.patrol_active and unit.path.is_empty(), "Stop cancels the repeating patrol")
+	unit.issue_patrol(Vector3(-16, 0, 3))
+	unit.issue_move(Vector3(-18, 0, 9))
+	check(not unit.patrol_active and unit.order == "move", "A new move order replaces patrol")
+	battle.arm_command("patrol")
+	battle.toggle_pause()
+	check(not battle.has_armed_command(), "Pausing clears pending command targeting")
+
+	fresh()
+	battle.start_battle()
 	check(not battle.heal() and battle.heal_cooldown == 0, "Full-health healing does not waste cooldown")
 	battle.units[0].health = 100
 	battle.units[1].health = 70

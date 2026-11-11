@@ -19,6 +19,9 @@ var attack_timer := 0.0
 var alive := true
 var selected := false
 var order := "guard"
+var patrol_active := false
+var patrol_origin := Vector3.ZERO
+var patrol_end := Vector3.ZERO
 var target: Node3D
 var destination := Vector3.ZERO
 var path := PackedVector3Array()
@@ -64,20 +67,31 @@ func issue_move(point: Vector3, attack_move: bool = false) -> void:
 	if not alive:
 		return
 	order = "advance" if attack_move else "move"
+	patrol_active = false
 	target = null
 	destination = point
 	path = game.arena.path_between(position, point)
+
+func issue_patrol(point: Vector3) -> void:
+	if not alive: return
+	patrol_origin = position
+	var cell: Vector2i = game.arena.nearest_open(point)
+	patrol_end = Vector3(cell.x, 0, cell.y)
+	issue_move(patrol_end, true)
+	patrol_active = true
 
 func issue_attack(enemy: Node3D) -> void:
 	if not alive or not is_instance_valid(enemy) or not enemy.alive:
 		return
 	order = "attack"
+	patrol_active = false
 	target = enemy
 	repath_timer = 0.0
 	path.clear()
 
 func stop() -> void:
 	order = "guard"
+	patrol_active = false
 	target = null
 	path.clear()
 
@@ -125,7 +139,11 @@ func _step_orders(delta: float) -> void:
 	if order == "guard":
 		return
 	if path.is_empty():
-		if order == "move":
+		if patrol_active:
+			if position.distance_to(destination) < 1.2:
+				destination = patrol_origin if destination == patrol_end else patrol_end
+			path = game.arena.path_between(position, destination)
+		elif order == "move":
 			stop()
 		elif order == "advance" and not is_instance_valid(target):
 			if position.distance_to(destination) > 1.2:

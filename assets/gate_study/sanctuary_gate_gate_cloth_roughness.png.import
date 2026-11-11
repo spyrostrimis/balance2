@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cav72l2rsuxbf"
-path="res://.godot/imported/sanctuary_gate_gate_cloth_roughness.png-f103e2f7b2fdf860bfaeb295bb8f1acb.ctex"
+path.s3tc="res://.godot/imported/sanctuary_gate_gate_cloth_roughness.png-f103e2f7b2fdf860bfaeb295bb8f1acb.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "a2ac7e801bb61b504f87f72cab26584a"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/gate_study/sanctuary_gate_gate_cloth_roughness.png"
-dest_files=["res://.godot/imported/sanctuary_gate_gate_cloth_roughness.png-f103e2f7b2fdf860bfaeb295bb8f1acb.ctex"]
+dest_files=["res://.godot/imported/sanctuary_gate_gate_cloth_roughness.png-f103e2f7b2fdf860bfaeb295bb8f1acb.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

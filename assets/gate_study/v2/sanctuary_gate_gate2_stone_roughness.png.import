@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyfjadgqrkj5s"
-path="res://.godot/imported/sanctuary_gate_gate2_stone_roughness.png-52764d278a4e90bdec95d3d7d482444c.ctex"
+path.s3tc="res://.godot/imported/sanctuary_gate_gate2_stone_roughness.png-52764d278a4e90bdec95d3d7d482444c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "f893a2b9f46b70335bc77c654d294fb5"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/gate_study/v2/sanctuary_gate_gate2_stone_roughness.png"
-dest_files=["res://.godot/imported/sanctuary_gate_gate2_stone_roughness.png-52764d278a4e90bdec95d3d7d482444c.ctex"]
+dest_files=["res://.godot/imported/sanctuary_gate_gate2_stone_roughness.png-52764d278a4e90bdec95d3d7d482444c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

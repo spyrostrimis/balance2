@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://87te4v1iyhhm"
-path="res://.godot/imported/leader_bust_Layered_shoulder_shell_color.png-c9eab37d8214e709195c46f9ce7e5c42.ctex"
+path.s3tc="res://.godot/imported/leader_bust_Layered_shoulder_shell_color.png-c9eab37d8214e709195c46f9ce7e5c42.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "fd8ea4ef690d429d13a9d9edd7dce087"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/blue_leader_study/v2/leader_bust_Layered_shoulder_shell_color.png"
-dest_files=["res://.godot/imported/leader_bust_Layered_shoulder_shell_color.png-c9eab37d8214e709195c46f9ce7e5c42.ctex"]
+dest_files=["res://.godot/imported/leader_bust_Layered_shoulder_shell_color.png-c9eab37d8214e709195c46f9ce7e5c42.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

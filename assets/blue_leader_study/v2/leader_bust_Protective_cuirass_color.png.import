@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh5cr0oyer203"
-path="res://.godot/imported/leader_bust_Protective_cuirass_color.png-7ec1f060b20bf595b9d1c3dda969a1f0.ctex"
+path.s3tc="res://.godot/imported/leader_bust_Protective_cuirass_color.png-7ec1f060b20bf595b9d1c3dda969a1f0.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "9bf94c41fcb299e4f2999f4957a65f70"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/blue_leader_study/v2/leader_bust_Protective_cuirass_color.png"
-dest_files=["res://.godot/imported/leader_bust_Protective_cuirass_color.png-7ec1f060b20bf595b9d1c3dda969a1f0.ctex"]
+dest_files=["res://.godot/imported/leader_bust_Protective_cuirass_color.png-7ec1f060b20bf595b9d1c3dda969a1f0.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

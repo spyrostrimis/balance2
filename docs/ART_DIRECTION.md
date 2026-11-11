@@ -50,6 +50,15 @@ Do not reveal its leader's species or full appearance in early imagery.
 - Interface: dark blue-charcoal, parchment/ivory text, restrained bronze rules,
   blue/red tactical accents. Narrative panels should read like mission briefings.
 
+9 November UI direction: the creator requested tactile fantasy framing inspired
+by Reforged, with the smaller scale and separated bottom panels of Dota 2.
+Top: framed navigation/status strip; upper-left hero portrait always visible in
+combat. Bottom: minimap left, portraits/selection/abilities center, small painted
+Move/Stop/Attack/Patrol icons right. No vertical right sidebar. Thin overhead bars
+sit above the characters; heroes include portrait, name, mana track and level.
+Use original chipped limestone, bronze and cobalt details from this world's
+sanctuary/expedition language. An original Korali crest fills unused ability space.
+
 ## Current implementation and next art work
 
 The first environment pass uses original procedural rocks, stonework, road,

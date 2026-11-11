@@ -1,5 +1,34 @@
 # Asset chat handoff — 9 November 2026
 
+## Latest UI work — compact fantasy HUD (9 November 2026)
+
+The creator requested a Reforged-inspired framed top bar and persistent hero
+portrait, Dota-scale overhead bars and three separate bottom panels, with nothing
+along the right side. Implemented in `scripts/hud.gd`: clickable tactical minimap
+bottom left; portrait, selected troops, stats and abilities bottom center; four
+painted order icons bottom right. A Korali crest fills the ability area for a
+nonhero/empty selection. The old sidebar and camera's horizontal compensation
+are removed. Objectives toggle from the top bar. Original generated frame and
+icon atlas are in `assets/ui/`, with exact prompts in `art_source/ui/PROMPTS.md`.
+Portraits are static renders of the current models; leader appearance refinement
+remains deferred. No reference-game art was imported.
+
+Move, Stop, Attack and Patrol are functional, with M/S/A/P keys (H remains Stop).
+Patrol is the only new order behavior: repeat between origin and destination,
+engage along the route, cancel on replacement order. Minimap left-click centers
+the camera; right-click moves; armed commands accept minimap destinations. F1
+selects the hero. Level 1 is a presentation placeholder and blue mana tracks
+are empty because this mission has neither mana nor progression. No interactive
+buildings exist to label yet. See README for controls and limits. This is an
+implemented first UI pass awaiting the creator's aesthetic review, not claimed
+visual acceptance.
+
+Validation: 30 headless battle checks and 28 windowed GUI checks pass, including
+patrol return/cancellation, minimap commands, hero selection, crest/empty states,
+and separated panels at 1280×720 and 1920×1080. Final logs have no script errors.
+Native captures are ignored under `artifacts/hud-*.png` and `artifacts/battlefield.png`.
+Canvas stretch now expands to the window aspect ratio to preserve usable width.
+
 ## Latest decision — integrated interim leader (9 November 2026)
 
 The creator explicitly requested keeping revision 02 and adding her to the game,

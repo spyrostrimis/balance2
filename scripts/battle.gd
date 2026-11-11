@@ -23,10 +23,11 @@ var capture_state := "NEUTRAL"
 var heal_cooldown := 0.0
 var ai_timer := 0.0
 var attack_armed := false
+var pending_command := ""
 var dragging := false
 var drag_origin := Vector2.ZERO
 var drag_position := Vector2.ZERO
-var camera_focus := Vector3(5.55, 0, -6.0)
+var camera_focus := Vector3(0, 0, -3.0)
 var effects: Array[Dictionary] = []
 var status_message := "Select your squad. Secure the Korali."
 var notification_timer := 8.0
@@ -140,8 +141,8 @@ func _process(delta: float) -> void:
 		if Input.is_physical_key_pressed(KEY_UP) or Input.is_physical_key_pressed(KEY_I): pan.z -= 1
 		if Input.is_physical_key_pressed(KEY_DOWN) or Input.is_physical_key_pressed(KEY_K): pan.z += 1
 		camera_focus += pan * delta * 16
-		camera_focus.x = clampf(camera_focus.x, -14, 10)
-		camera_focus.z = clampf(camera_focus.z, -10, 10)
+		camera_focus.x = clampf(camera_focus.x, -21, 21)
+		camera_focus.z = clampf(camera_focus.z, -14, 14)
 		_update_camera()
 	if is_instance_valid(hud):
 		hud.queue_redraw()
@@ -258,6 +259,7 @@ func finish(faction: int, reason: String) -> void:
 	phase = "ended"
 	dragging = false
 	attack_armed = false
+	pending_command = ""
 	if faction == 0: story.begin_discovery()
 
 func select_all() -> void:
@@ -308,10 +310,45 @@ func command_move(point: Vector3, advance: bool = false) -> void:
 	effects.append({"node": marker, "time": 0.6, "total": 0.6, "expand": false})
 	notify("Attack-move ordered." if advance else "Move ordered. Troops return fire when they stop.")
 
+func has_armed_command() -> bool:
+	return attack_armed or not pending_command.is_empty()
+
+func cancel_command() -> void:
+	attack_armed = false
+	pending_command = ""
+
+func arm_command(command: String) -> void:
+	if phase != "playing": return
+	cancel_command()
+	attack_armed = command == "attack"
+	pending_command = command
+	notify({"move": "Move: choose a destination. Esc cancels.", "attack": "Attack: choose an enemy or ground destination. Esc cancels.", "patrol": "Patrol: choose the other end of the route. Esc cancels."}[command])
+
+func execute_command(point: Vector3, enemy: Node3D = null) -> void:
+	if phase != "playing": return
+	if pending_command == "patrol":
+		for i in range(selected.size()):
+			var offset := Vector3((i % 2 - 0.5) * 1.5, 0, (floori(i / 2.0) - 0.5) * 1.5) if selected.size() > 1 else Vector3.ZERO
+			selected[i].issue_patrol(point + offset)
+		notify("Patrol ordered. Troops engage enemies along the route.")
+	elif attack_armed and is_instance_valid(enemy):
+		for unit in selected: unit.issue_attack(enemy)
+		notify("Focus fire on %s." % enemy.callsign)
+	else:
+		command_move(point, attack_armed)
+	cancel_command()
+
+func stop_selected() -> void:
+	if phase != "playing": return
+	cancel_command()
+	for unit in selected: unit.stop()
+	notify("Holding position. Units fire at enemies in range.")
+
 func toggle_pause() -> void:
 	if phase == "playing":
 		phase = "paused"
 		dragging = false
+		cancel_command()
 	elif phase == "paused":
 		phase = "playing"
 
@@ -322,7 +359,7 @@ func focus_squad() -> void:
 	var center := Vector3.ZERO
 	for unit in group:
 		center += unit.position
-	camera_focus = center / group.size() + Vector3(camera.size * 0.154, 0, 0)
+	camera_focus = center / group.size()
 	_update_camera()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -335,8 +372,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_ENTER:
 				if phase == "briefing": begin_mission()
 			KEY_SPACE, KEY_ESCAPE:
-				if attack_armed:
-					attack_armed = false
+				if has_armed_command():
+					cancel_command()
 				else:
 					toggle_pause()
 			KEY_R:
@@ -348,13 +385,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_Q:
 				heal()
 			KEY_A:
-				if phase == "playing":
-					attack_armed = true
-					notify("Attack-move: left-click a destination. Esc cancels.")
-			KEY_H:
-				if phase == "playing":
-					for unit in selected: unit.stop()
-					notify("Holding position. Units fire at enemies in range.")
+				arm_command("attack")
+			KEY_M:
+				arm_command("move")
+			KEY_P:
+				arm_command("patrol")
+			KEY_F1:
+				if phase == "playing": select_unit(units[0])
+			KEY_H, KEY_S:
+				stop_selected()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and dragging:
 			dragging = false
@@ -380,16 +419,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
 			camera.size = minf(48, camera.size + 2)
 		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if attack_armed:
+			if has_armed_command():
 				var ground: Variant = ground_at(event.position)
-				if ground != null: command_move(ground, true)
-				attack_armed = false
+				if ground != null: execute_command(ground, unit_at(event.position, 1))
 			else:
 				dragging = true
 				drag_origin = event.position
 				drag_position = event.position
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			attack_armed = false
+			cancel_command()
 			var enemy := unit_at(event.position, 1)
 			if enemy:
 				for unit in selected: unit.issue_attack(enemy)

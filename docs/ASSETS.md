@@ -128,6 +128,17 @@ project geometry and reuses the project's generated material atlas.
 
 ## Generated concept reference
 
+### Original HUD art — 9 November 2026
+
+`assets/ui/command_atlas.png` contains the Move, Stop, Attack, Patrol and Healing
+Pulse icons plus an original Korali expedition crest. `assets/ui/sanctuary_frame.png`
+is a limestone, bronze and charcoal panel frame sliced in code. Both were made
+with the built-in imagegen tool; exact prompts are in `art_source/ui/PROMPTS.md`.
+They are original generated project art, not CC0. Warcraft III Reforged and
+Dota 2 screenshots supplied by the creator served as layout references only;
+no franchise artwork was copied into the game. HUD portraits render the existing
+game models, with their source provenance unchanged.
+
 `assets/concepts/first-contact-v1.png` is the original concept board generated
 with the built-in image generation tool in this project conversation and approved
 by the creator. The full prompt is retained beside it. It is used in the art

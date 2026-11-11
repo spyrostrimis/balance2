@@ -107,15 +107,19 @@ The briefing and opening pause the simulation until command passes to the player
 | Shift + select | Add units; Shift-click toggles one unit |
 | Right-click ground | Move in a loose formation |
 | Right-click enemy | Focus fire and pursue that enemy |
-| A, then left-click | Attack-move toward a destination |
-| Q / Healing pulse button | Captain heals nearby allies, including himself |
-| H | Stop and hold position; fire at enemies in range |
+| M / Move icon, then left-click | Move to a destination |
+| A / Attack icon, then left-click | Attack-move on ground; focus fire on an enemy |
+| P / Patrol icon, then left-click | Patrol between the current position and destination, engaging enemies |
+| Q / Healing pulse button | Captain heals nearby allies, including herself |
+| S / H / Stop icon | Stop and hold position; fire at enemies in range |
 | 1 | Select surviving Blue troops |
-| Click a roster card | Select that soldier |
+| Click a selection portrait | Select that soldier; Shift-click toggles membership |
+| F1 / upper-left hero portrait | Select the Captain; double-click portrait to focus camera |
+| Minimap left-click / right-click | Center camera / issue move; armed orders also accept minimap destinations |
 | F | Focus camera on selection |
 | Arrows / IJKL | Pan camera |
 | Mouse wheel | Zoom, including closer views of the animated soldiers |
-| Space / Escape | Pause / resume; Escape first cancels armed attack-move |
+| Space / Escape | Pause / resume; first cancels an armed command |
 | R while paused or after a result | Restart at the briefing |
 
 Move orders prioritize moving; troops auto-fire when they stop. Use attack-move
@@ -132,7 +136,18 @@ equipment, and heavy armor; running, aiming, firing, and falling animations;
 story briefing, skippable opening and discovery sequences, and outcome text;
 rock-aware grid paths, selection and group orders,
 ranged combat, simple objective AI, healing, capture and elimination outcomes,
-pause, restart, and a command sidebar.
+pause, restart, and a compact fantasy HUD with independent bottom panels, painted
+order icons, a clickable tactical minimap, persistent hero portrait, and thin
+overhead health bars. Objectives open from the framed top bar; the right edge
+is clear. Selection shows portraits, stats and Healing Pulse when the Captain
+is selected, or the expedition crest otherwise.
+
+The level-1 badges and empty blue mana tracks establish the requested hero UI;
+this mission still has no leveling or mana resource, and Healing Pulse costs
+only its existing cooldown. Portraits are static renders of the current game
+models. The minimap shows the arena's road, collision footprints, capture ring,
+units and camera area, without fog of war. There are no selectable buildings
+in this mission; the sanctuary and water infrastructure remain scenery.
 
 Not yet implemented: harvesting, transformation, construction, repair of machines,
 campaigns, hero progression, additional factions/species, wildlife, storms,
@@ -184,7 +199,7 @@ The visual interface also needs a windowed playtest after layout or input change
 | `scripts/arena.gd` | Terrain, obstacles, AStarGrid2D paths |
 | `scripts/scenery.gd` | Decorative cliffs, road, temple, plants, and field equipment |
 | `scripts/basin_details.gd` | Raised border terrain, cistern, aqueduct, trees, and obstacle footprints |
-| `scripts/hud.gd` | Briefing, command panel, roster, overlays, results |
+| `scripts/hud.gd` | Fantasy HUD, minimap, selection portraits, command icons, overlays, results |
 | `scripts/mission_story.gd` | Dialogue, camera shots, opening/discovery lifecycle, survivor-aware ending |
 | `scripts/story_panel.gd` | Subtitles, hold/next/skip controls, live 3D portraits |
 | `scripts/shapes.gd` | Shared procedural mesh helpers |

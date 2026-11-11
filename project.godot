@@ -1,24 +1,34 @@
-; Balance — first-contact prototype. Open with Godot 4.7.
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
+
 config/name="Balance — First Contact"
+config/description="A small-scale RTS about scarce resources and the cost of command."
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/description="A small-scale RTS about scarce resources and the cost of command."
 
 [display]
+
 window/size/viewport_width=1440
 window/size/viewport_height=900
 window/size/window_width_override=1440
 window/size/window_height_override=900
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
+
 renderer/rendering_method="forward_plus"
 renderer/rendering_method.mobile="forward_plus"
 lights_and_shadows/directional_shadow/size=8192
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
-textures/default_filters/use_nearest_mipmap_filter=false
-environment/defaults/default_clear_color=Color(0.035, 0.055, 0.075, 1)
 anti_aliasing/quality/msaa_3d=2
+environment/defaults/default_clear_color=Color(0.035, 0.055, 0.075, 1)

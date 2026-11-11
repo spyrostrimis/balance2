@@ -53,6 +53,8 @@ func run() -> void:
 	current_scene = battle
 	battle.set_physics_process(false)
 	await process_frame
+	# Let the native window finish its initial focus/configure events before input.
+	await create_timer(0.3).timeout
 	await capture("briefing")
 	# Real GUI event dispatch, rather than directly invoking button callbacks.
 	var deploy: Button = battle.hud.buttons.primary
@@ -60,6 +62,8 @@ func run() -> void:
 	check(battle.phase == "intro" and battle.story.active, "Deploy button starts the opening through GUI input")
 	await key(KEY_ESCAPE)
 	check(battle.phase == "playing" and not battle.story.active, "Escape skips the opening and hands over command")
+	check(not battle.hud.over_ui(Vector2(1400, 400)), "Right edge remains usable battlefield")
+	check(not battle.hud.over_ui(Vector2(300, 850)), "Gap between minimap and selection panel remains usable battlefield")
 	await click(battle.hud.card_rects[1].get_center(), MOUSE_BUTTON_LEFT)
 	check(battle.selected.size() == 1 and battle.selected[0] == battle.units[1], "Roster card selects the intended soldier")
 	await key(KEY_1)
@@ -112,6 +116,41 @@ func run() -> void:
 	battle.units[0].health -= 30
 	await click(battle.hud.buttons.heal.get_global_rect().get_center(), MOUSE_BUTTON_LEFT)
 	check(battle.units[0].health == battle.units[0].max_health and battle.heal_cooldown > 0, "Healing button restores health and starts cooldown")
+	await click(battle.hud.buttons.move.get_global_rect().get_center(), MOUSE_BUTTON_LEFT)
+	check(battle.pending_command == "move", "Move icon arms destination targeting")
+	await key(KEY_ESCAPE)
+	check(not battle.has_armed_command() and battle.phase == "playing", "Escape cancels targeting without pausing")
+	await click(battle.hud.buttons.patrol.get_global_rect().get_center(), MOUSE_BUTTON_LEFT)
+	point = battle.camera.unproject_position(Vector3(-8, 0, 3))
+	await click(point, MOUSE_BUTTON_LEFT)
+	check(battle.units[0].patrol_active, "Patrol icon and destination create a repeating route")
+	await click(battle.hud.buttons.hold.get_global_rect().get_center(), MOUSE_BUTTON_LEFT)
+	check(not battle.units[0].patrol_active and battle.units[0].order == "guard", "Stop icon cancels patrol")
+	await click(battle.hud.hero_rect.get_center(), MOUSE_BUTTON_LEFT)
+	check(battle.selected.size() == 1 and battle.selected[0].leader, "Persistent upper-left portrait selects the Captain")
+	await click(battle.hud.map_content.get_center(), MOUSE_BUTTON_LEFT)
+	check(battle.camera_focus.distance_to(Vector3.ZERO) < 0.1, "Minimap click centers the battlefield camera")
+	await click(battle.hud.map_content.position + Vector2(30, 90), MOUSE_BUTTON_RIGHT)
+	check(battle.units[0].order == "move", "Minimap right-click issues a move order")
+	battle.select_unit(battle.units[1])
+	await capture("hud-trooper-crest")
+	check(not battle.hud.buttons.heal.visible, "Trooper-only selection shows the crest instead of an unrelated ability")
+	battle.selected.clear()
+	battle._sync_selection()
+	await capture("hud-no-selection")
+	check(battle.hud.buttons.move.disabled, "Orders disable when no troops are selected")
+	battle.select_all()
+	root.size = Vector2i(1920, 1080)
+	await process_frame
+	await capture("hud-1920")
+	check(not battle.hud.selection_rect.intersects(battle.hud.actions_rect) and not battle.hud.selection_rect.intersects(battle.hud.map_rect), "Bottom panels remain separated at 1920x1080")
+	root.size = Vector2i(1280, 720)
+	await process_frame
+	await capture("hud-1280")
+	check(not battle.hud.selection_rect.intersects(battle.hud.actions_rect) and not battle.hud.selection_rect.intersects(battle.hud.map_rect), "Bottom panels remain separated at 1280x720")
+	root.size = Vector2i(1440, 900)
+	await process_frame
+	await key(KEY_1)
 	for enemy in battle.living(1): enemy.take_damage(1000)
 	battle.step_simulation(0.02)
 	await key(KEY_ESCAPE)
