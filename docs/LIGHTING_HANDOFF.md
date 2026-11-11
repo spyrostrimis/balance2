@@ -1,5 +1,9 @@
 # Lighting and material cohesion — step 5 integrated
 
+**Latest follow-up:** the creator requested a new Gate/surroundings cohesion
+pass based on Claude's review and independent investigation. Read
+`GATE_COHESION_HANDOFF.md`; this supersedes proceeding directly to step 6.
+
 ## Current state — 11 November 2026
 
 The creator requested: "We have credits again. Continue your work please.
