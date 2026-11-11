@@ -47,7 +47,7 @@ func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
 	var top := Label.new()
-	top.text = "GROUND DETAILS / 01     |     Separate review candidate"
+	top.text = "GROUND DETAILS / 01     |     Integrated in mission"
 	top.position = Vector2(24, 18)
 	top.add_theme_font_size_override("font_size", 24)
 	layer.add_child(top)

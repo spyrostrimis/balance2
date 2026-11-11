@@ -360,9 +360,10 @@ reverse/before views were inspected; final script/shader logs are clean.
 Repeated forms, stylized carving, approximate sand skins and subtle distant
 details remain limitations. No reference-parity claim.
 
-**Not accepted or integrated:** `Arena.debris_review = false` remains the mission
-default. Leave aesthetic acceptance/integration to the creator. Step 3 remains
-deferred; step 5 follows this review, and has not begun. Earlier integrations and
+The creator approved Debris 01 on 11 November 2026 and requested integration.
+`Arena.debris_review = true` is now the mission default. Step 3 remains deferred.
+**Next: step 5, Lighting and material cohesion, in a new chat.** Read
+`LIGHTING_HANDOFF.md`; it supersedes older next-task lists. Earlier integrations and
 pre-existing dirty HUD/settings/import work are preserved. Only task-owned
 shared-document additions were staged; captures/logs stay ignored in
 `artifacts/debris/`.

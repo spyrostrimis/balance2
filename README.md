@@ -229,4 +229,4 @@ isolated kit. **B** compares the integrated scene (except isolated kit); **V**
 reverses; arrows/right-drag pan, wheel zooms, R resets and Esc closes. Includes
 fallen slabs, loose stone, branches, roots, modest wreckage and shallow sand
 burial. Repeated forms and approximate contact skins remain limitations.
-The mission is unchanged pending acceptance. See [debris study](docs/DEBRIS_STUDY.md).
+Debris 01 is integrated in the mission. See [debris study](docs/DEBRIS_STUDY.md).

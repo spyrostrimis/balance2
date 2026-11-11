@@ -10,6 +10,6 @@
   },
   "collision": false,
   "source": "art_source/debris/debris_authoring.blend",
-  "status": "Separate review candidate; not integrated",
+  "status": "Approved and integrated, 11 November 2026",
   "provenance": "Original geometry, built-in imagegen and reused original project sources; TEXTURE_SOURCES.md"
 }

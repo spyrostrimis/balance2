@@ -5,7 +5,8 @@ func _initialize() -> void:
 
 func run() -> void:
 	var baseline := preload("res://scripts/arena.gd").new()
-	assert(not baseline.debris_review, "Unaccepted candidate became mission default")
+	assert(baseline.debris_review, "Accepted debris should be the mission default")
+	baseline.debris_review = false
 	root.add_child(baseline)
 	var candidate := preload("res://scripts/arena.gd").new()
 	candidate.debris_review = true

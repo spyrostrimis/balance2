@@ -1,8 +1,9 @@
 # Ground details 01 — 10 November 2026
 
-Separate review candidate for step 4. **Not accepted or integrated.** Launch
-`DebrisStudy.bat` for actual Godot Compatibility views in the existing basin.
-The mission keeps its current dressing (`Arena.debris_review = false`).
+Approved for mission integration on 11 November 2026. The creator requested
+"Add it to the game"; `Arena.debris_review = true` is now the mission default.
+Launch `DebrisStudy.bat` for native Compatibility views and previous-dressing
+comparison. Step 5 follows in the requested new chat; read LIGHTING_HANDOFF.md.
 
 ## Review controls
 
@@ -86,4 +87,5 @@ stone face; close low angles can reveal small intersections or seams. Thin
 chips and roots are intentionally subtle at RTS scale. Existing large paving
 cells, cliffs and all deferred foliage/character issues remain unchanged. No
 dynamic debris, destruction, wind or new interaction was introduced. Aesthetic
-acceptance and mission integration belong to the creator.
+acceptance for mission integration was given by the creator; these limitations
+remain recorded for later refinement.

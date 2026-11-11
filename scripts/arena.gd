@@ -14,7 +14,7 @@ var obstacles: Array[Vector3] = [] # x/z = center, y = collision radius.
 var terrain_review := true # Approved Terrain 01; false retains the old study comparison.
 var waterworks_review := true # Accepted for interim use; false retains the old comparison.
 var vegetation_review := true # Vegetation 01 accepted for interim use; false retains Tree 02 comparison.
-var debris_review := false # Separate candidate; creator has not approved mission integration.
+var debris_review := true # Debris 01 approved for mission use; false retains the old comparison.
 
 func _ready() -> void:
 	_build_terrain()

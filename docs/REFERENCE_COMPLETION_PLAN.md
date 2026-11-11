@@ -11,9 +11,9 @@ was pushed as `4418c6c`; Gate integration as `1b37be3`.
 
 Latest decision: Vegetation 01 / Tree 03 is accepted for interim use and
 integrated. The creator explicitly defers **step 3: Characters and animation**.
-**Step 4: Ground-level debris and transitions now has candidate 01 ready for
-native review (`DebrisStudy.bat`), not yet accepted or integrated. Step 5:
-Lighting and material cohesion follows afterwards.** Read `DEBRIS_HANDOFF.md`.
+**Step 4: Ground-level debris and transitions is approved and integrated,
+11 November 2026. Start step 5: Lighting and material cohesion in the requested
+new chat.** Read `LIGHTING_HANDOFF.md`.
 This supersedes earlier sequencing; preserve the interim characters.
 
 ## Agreed order of visual impact
@@ -30,10 +30,10 @@ This supersedes earlier sequencing; preserve the interim characters.
    full-body outfit, then the Blue/Red roster's silhouettes, gear and movement.
    Existing leader remains an interim composite. Consult the recorded likeness
    feedback when this step begins; do not resume character work during step 1.
-4. **Ground-level debris and transitions — candidate 01 awaiting review.** Deliberate fallen slabs, loose stone,
+4. **Ground-level debris and transitions — integrated.** Deliberate fallen slabs, loose stone,
    dead branches, roots and wreckage around ruins/cliff feet; refine paving
    damage and sand burial. Keep central combat space readable and reachable.
-5. **Lighting and material cohesion — after step 4.** Unify warm sand, pale worked stone and
+5. **Lighting and material cohesion — start now in the new chat.** Unify warm sand, pale worked stone and
    cooler shade through light, ambient fill, shadow and material tuning. Stay
    with the existing renderer; no renderer migration is implied.
 6. **Combat effects and unit presentation.** Improve muzzle flashes, projectile

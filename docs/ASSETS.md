@@ -200,5 +200,5 @@ reuse original project art with provenance links. Generated art is not declared
 CC0; no third-party files or dependencies were added. The portable 1024px tiles
 carry albedo, color-derived tangent normals and roughness/metallic surface maps.
 Local sand-contact meshes use accepted terrain PBR and a Compatibility shader.
-This is a separate review candidate, not accepted or integrated. See
+Debris 01 is approved and integrated, 11 November 2026. See
 `DEBRIS_STUDY.md` for controls, preservation checks and limitations.
