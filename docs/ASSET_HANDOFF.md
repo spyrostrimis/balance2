@@ -394,3 +394,20 @@ No reference-parity claim. Logs/captures are ignored in `artifacts/lighting/`.
 normal mission retains original light/material values. Step 3 stays deferred;
 steps 6/7 have not begun. Pre-existing HUD/settings/import work is preserved;
 only task-owned additions in shared dirty documents belong to this commit.
+
+## Lighting 01 integrated — 11 November 2026
+
+The creator requested completing the work and then adding it to the game.
+Lighting 01 is now the mission default through `Battle.lighting_review = true`.
+The mission applies the shared profile once after construction; the separate
+review explicitly disables that default and supplies its own profile to retain
+the exact original-lighting comparison. `LightingStudy.bat` remains available.
+
+All 12 lighting isolation/restoration/integration checks and all 30 battle
+checks pass. A brief native Compatibility mission run is clean. Existing HUD
+work, settings, imports and accepted geometry are preserved; task-only hunks
+were staged in shared files. See `LIGHTING_STUDY.md` for the unchanged honest
+limits; integration authorization does not imply final art/reference parity.
+
+Step 5 is integrated. Next in the agreed plan is step 6, combat effects and
+unit presentation; it has not begun. Step 3 remains deferred and step 7 later.

@@ -17,6 +17,7 @@ var full_candidate := true
 func _ready() -> void:
 	get_window().title = "Balance — Lighting & Material Study 01"
 	battle = preload("res://scenes/main.tscn").instantiate()
+	battle.lighting_review = false # Preserve the pre-Lighting 01 comparison; apply profile exactly once below.
 	add_child(battle)
 	# Real mission construction and deployments; no simulation during comparison.
 	battle.start_battle()
@@ -85,7 +86,7 @@ func _update_camera() -> void:
 	battle.hud.queue_redraw()
 
 func _update_caption() -> void:
-	caption.text = "LIGHTING 01 — %s | %s" % [["BEFORE: integrated mission", "AFTER: light only", "AFTER: light + materials"][profile.mode], NAMES[view_mode]]
+	caption.text = "LIGHTING 01 — %s | %s" % [["BEFORE: previous lighting", "AFTER: light only", "AFTER: integrated light + materials"][profile.mode], NAMES[view_mode]]
 
 func toggle_before() -> void:
 	profile.set_mode((2 if full_candidate else 1) if profile.mode == 0 else 0)

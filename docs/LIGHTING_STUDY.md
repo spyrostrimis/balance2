@@ -1,14 +1,16 @@
 # Lighting and material cohesion 01 — 11 November 2026
 
-Separate review candidate, **not accepted or integrated**. Open
+**Authorized for mission use and integrated.** The creator requested finishing
+the work and then adding it to the game on 11 November 2026. Open
 `LightingStudy.bat`. It runs the actual mission in Godot Compatibility, with
 all eight troops, current HUD and accepted environment assets. Simulation is
 held at deployment so comparisons keep identical geometry, poses and cameras.
-The mission launcher continues to use its original lighting/material values.
+The normal mission now uses Lighting 01 by default. This records authorization
+for integration, not a claim of final art quality or exact reference parity.
 
 ## Review controls
 
-- **B**: integrated mission / candidate at the current camera, without rebuilding.
+- **B**: previous lighting / integrated Lighting 01 at the current camera, without rebuilding.
 - **L**: candidate light only / candidate light plus material adjustments.
 - **1** or **R**: actual mission RTS camera, size 36, with existing HUD.
 - **2–8**: Gate/canyon, waterworks, sand/paving/tree, debris, Blue, Red, Korali.
@@ -53,7 +55,9 @@ mostly static GLB geometry, not the earlier procedural foliage shader.
 `scripts/lighting_profile.gd` is the editable, opt-in source recipe. It captures
 the actual original environment/light/material bindings, creates local material
 copies cached per source, and restores those exact original bindings for B.
-It is invoked only by `scripts/lighting_study.gd`; nothing opts the mission in.
+`Battle.lighting_review` defaults to true and applies the full profile after
+mission construction. The review explicitly sets it false before construction
+and applies its own profile once, preserving the historical before comparison.
 
 | Component | Candidate |
 | --- | --- |
@@ -70,7 +74,7 @@ It is invoked only by `scripts/lighting_study.gd`; nothing opts the mission in.
 | Vegetation, cloth, characters, Korali | Authored materials retained; respond to the shared light/environment |
 
 The ground/paving/contact shaders gain optional tint and normal uniforms whose
-defaults reproduce their previous values. Sand and contact skins receive the
+defaults reproduce their previous values for historical comparisons. Sand and contact skins receive the
 same candidate sand multiplier so the lighting pass does not create a new
 color mismatch at burial boundaries. No mesh, UV, source PNG, GLB, texture import,
 project setting, resource position or navigation footprint was edited.
@@ -84,7 +88,7 @@ during native inspection; the values above are the revised candidate.
 
 ## Validation
 
-- `tests/test_lighting.gd`: 10 isolation/restoration checks pass, including all
+- `tests/test_lighting.gd`: 12 isolation/restoration/integration checks pass, including all
   1,247 navigation cells, exact footprints, mesh resources/transforms, all eight
   deployments, source-material immutability and repeated before/after restoration.
 - `tests/test_battle.gd`: all 30 existing checks pass.
@@ -92,6 +96,8 @@ during native inspection; the values above are the revised candidate.
   same cameras, including full mission RTS with HUD, both squads and Korali.
   Final review logs have no script/shader errors. Native B/L/H/preset controls
   are checked separately. Captures/logs are ignored under `artifacts/lighting/`.
+- After enabling the mission default, all 30 battle checks and a brief native
+  Compatibility mission run pass with no script/shader errors.
 
 Reproduce the paired native captures:
 
@@ -113,6 +119,6 @@ Gate flanking rocks and pale Korali foundation remain visible. Lighting does not
 repair those shapes, deferred botanical detail or the interim character likeness.
 Current HUD/selection lights are also unchanged; they belong to later steps.
 
-Creator aesthetic acceptance and mission integration are pending. Do not call
-step 5 accepted, substitute this profile into the mission, or begin steps 6/7
-without the creator's next direction. Step 3 remains explicitly deferred.
+Mission integration was explicitly authorized by the creator after requesting
+completion of the work. Step 6 effects/unit presentation is next in the recorded
+plan, but has not begun. Step 7 remains later; step 3 is explicitly deferred.

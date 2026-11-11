@@ -233,11 +233,12 @@ Debris 01 is integrated in the mission. See [debris study](docs/DEBRIS_STUDY.md)
 
 ## Lighting review 01
 
-Open `LightingStudy.bat` for the separate step 5 candidate in Compatibility.
+Open `LightingStudy.bat` for the step 5 comparison in Compatibility.
 B compares before/after at the same camera; L separates light-only and material
 changes. 1-8 select RTS, Gate, waterworks, ground/tree, debris, Blue, Red and
 Korali. H toggles the existing HUD, Tab the review overlay; arrows/right-drag
 pan, wheel zooms, R resets and Esc closes. The actual mission is held at
-deployment for comparison. Lighting is not integrated pending creator review.
+deployment for comparison. Lighting 01 is now the normal mission default,
+authorized by the creator; the review keeps the previous lighting on B.
 Shadow resolution, repeated cliff shapes, paving/contact seams and interim
 characters remain limitations. See [lighting study](docs/LIGHTING_STUDY.md).

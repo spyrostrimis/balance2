@@ -1,5 +1,5 @@
 extends RefCounted
-## Opt-in Lighting 01. Copies materials; never edits imported/shared resources.
+## Shared Lighting 01. Copies materials; never edits imported/shared resources.
 ## Construct after the mission arena is ready. set_mode(0) restores exact inputs.
 const SUN := {
 	"rotation_degrees": Vector3(-38, -36, 0),
@@ -54,7 +54,7 @@ func _init(arena: Node3D, environment: WorldEnvironment, light: DirectionalLight
 					bindings.append({"mesh": mesh, "slot": slot, "original": mesh.get_surface_override_material(slot), "tuned": tuned})
 
 func set_mode(value: int) -> void:
-	# 0 = integrated mission; 1 = light only; 2 = light and materials.
+	# 0 = previous lighting; 1 = light only; 2 = integrated light and materials.
 	mode = clampi(value, 0, 2)
 	world.environment = original_environment if mode == 0 else candidate_environment
 	for key in SUN: sun.set(key, original_sun[key] if mode == 0 else SUN[key])

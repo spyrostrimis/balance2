@@ -5,6 +5,7 @@ const Soldier = preload("res://scripts/unit.gd")
 const HUD = preload("res://scripts/hud.gd")
 const Art = preload("res://scripts/shapes.gd")
 const Story = preload("res://scripts/mission_story.gd")
+const LightingProfile = preload("res://scripts/lighting_profile.gd")
 const CAPTURE_SECONDS := 40.0
 const HEAL_COOLDOWN := 16.0
 const HEAL_RADIUS := 6.5
@@ -32,6 +33,8 @@ var notification_timer := 8.0
 var winner := -1
 var result_reason := ""
 var shake := 0.0
+var lighting_review := true # Lighting 01 authorized for mission use; false keeps the study baseline.
+var lighting_profile: RefCounted
 
 func _ready() -> void:
 	_setup_environment()
@@ -53,6 +56,14 @@ func _ready() -> void:
 	story.game = self
 	add_child(story)
 	select_all()
+	if lighting_review:
+		var world: WorldEnvironment
+		var sunlight: DirectionalLight3D
+		for child in get_children():
+			if child is WorldEnvironment: world = child
+			if child is DirectionalLight3D: sunlight = child
+		lighting_profile = LightingProfile.new(arena, world, sunlight)
+		lighting_profile.set_mode(2)
 
 func _setup_environment() -> void:
 	var environment := WorldEnvironment.new()

@@ -12,8 +12,8 @@ was pushed as `4418c6c`; Gate integration as `1b37be3`.
 Latest decision: Vegetation 01 / Tree 03 is accepted for interim use and
 integrated. The creator explicitly defers **step 3: Characters and animation**.
 **Step 4: Ground-level debris and transitions is approved and integrated,
-11 November 2026. Step 5: Lighting and material cohesion now has a separate
-native review candidate; aesthetic acceptance/integration are pending.**
+11 November 2026. Step 5: Lighting and material cohesion is also integrated
+following the creator's explicit request to finish the work and add it to the game.**
 Open `LightingStudy.bat` and read `LIGHTING_HANDOFF.md` / `LIGHTING_STUDY.md`.
 This supersedes earlier sequencing; preserve the interim characters.
 
@@ -34,7 +34,7 @@ This supersedes earlier sequencing; preserve the interim characters.
 4. **Ground-level debris and transitions — integrated.** Deliberate fallen slabs, loose stone,
    dead branches, roots and wreckage around ruins/cliff feet; refine paving
    damage and sand burial. Keep central combat space readable and reachable.
-5. **Lighting and material cohesion — candidate ready for creator review.** Unify warm sand, pale worked stone and
+5. **Lighting and material cohesion — integrated.** Unify warm sand, pale worked stone and
    cooler shade through light, ambient fill, shadow and material tuning. Stay
    with the existing renderer; no renderer migration is implied.
 6. **Combat effects and unit presentation.** Improve muzzle flashes, projectile

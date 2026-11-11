@@ -22,6 +22,8 @@ func material_state(mat: Material) -> Array:
 
 func run() -> void:
 	var battle := preload("res://scenes/main.tscn").instantiate()
+	check(battle.lighting_review, "Lighting 01 is enabled by default for the mission")
+	battle.lighting_review = false # Audit exact original bindings, as the review viewer does.
 	root.add_child(battle)
 	battle.set_physics_process(false)
 	battle.set_process(false)
@@ -78,5 +80,9 @@ func run() -> void:
 		profile.set_mode(0)
 	for key in old_sun: restored = restored and sun.get(key) == old_sun[key]
 	check(restored and world.environment == env, "Repeated before/after restores exact environment and sunlight")
+	var integrated := preload("res://scenes/main.tscn").instantiate()
+	root.add_child(integrated)
+	integrated.set_physics_process(false)
+	check(integrated.lighting_profile != null and integrated.lighting_profile.mode == 2, "Normal mission constructs and applies the full profile")
 	print("Lighting isolation: %d failures" % failures)
 	quit(1 if failures else 0)
