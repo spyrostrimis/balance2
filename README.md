@@ -25,7 +25,7 @@ or harvesting system.
 ## Korali visual study
 
 Double-click **`KoraliStudy.bat`** for the isolated Blender-to-Godot rock study.
-It uses Forward+ while the mission retains its existing renderer. The approved
+It uses Forward+, as the mission itself now does. The approved
 new Korali rock now replaces the mission's original deposit.
 **1 / 2 / 3** select close, RTS inspection, and mission camera distance; **B**
 compares the old rock; **L** changes lighting; **Space** turns the rock.
@@ -86,6 +86,8 @@ and remaining work toward the concept art.
 
 Open `project.godot` with **Godot 4.7.2** and press **F6** with the main scene open,
 or **F5** to run the project. Click **Deploy expedition** (or press Enter).
+The mission runs on Godot's Forward+ renderer (Vulkan) with Lighting 02's
+screen-space profile; Compatibility is no longer the shipped target.
 No asset downloads, plugins, export templates, or package installs are required.
 
 On the current Windows development machine, double-click `Play.bat`.
@@ -242,3 +244,31 @@ deployment for comparison. Lighting 01 is now the normal mission default,
 authorized by the creator; the review keeps the previous lighting on B.
 Shadow resolution, repeated cliff shapes, paving/contact seams and interim
 characters remain limitations. See [lighting study](docs/LIGHTING_STUDY.md).
+
+## Gate cohesion review 01
+
+Open `GateCohesionStudy.bat` for the Gate-area cohesion candidate in the actual
+mission under Lighting 01 (Compatibility). **B** compares the integrated Gate 02
+cluster; **1–7** select RTS, Gate, steps/base, left/right flank, crown and
+oblique; **G** toggles sand drifts/contact; H HUD, Tab panel, arrows/right-drag
+pan, wheel zoom, R resets, Esc closes. Fractured sandstone flankers and worked
+markers replace the untextured prototypes; stair treads are chipped and settled,
+sand drifts against the base, and the Gate atlas is ~60% sharper. Gate cohesion
+01 is now in the mission; B in the study shows the previous Gate 02 cluster. See [gate cohesion study](docs/GATE_COHESION_STUDY.md).
+
+## Renderer study
+
+Open `RendererStudy.bat` to see the same mission under Forward+ with a
+screen-space profile (SSAO, SSIL, soft shadows, light glow). **B** toggles the
+profile; **1–8** select views; H HUD, Tab panel, Esc closes. The creator chose
+the migration: the mission now runs on Forward+ with this profile as Lighting 02.
+See [renderer study](docs/RENDERER_STUDY.md).
+
+## Lighting 02 — Forward+ migration
+
+The mission project now uses Forward+ (`project.godot`), with 8192 directional
+shadows and high soft-shadow filtering. `scripts/lighting_profile.gd` applies
+the Lighting 02 screen-space profile on that renderer: SSAO, SSIL, a 1.1°
+sun disc with four shadow splits, restrained glow and re-exposure (sun ×1.55,
+ambient ×1.70, contrast 1.10). Mission-based study launchers now run Forward+
+too. Lighting 01 values alone remain available (RendererStudy B).

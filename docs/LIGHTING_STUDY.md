@@ -122,3 +122,13 @@ Current HUD/selection lights are also unchanged; they belong to later steps.
 Mission integration was explicitly authorized by the creator after requesting
 completion of the work. Step 6 effects/unit presentation is next in the recorded
 plan, but has not begun. Step 7 remains later; step 3 is explicitly deferred.
+
+## Lighting 02 — Forward+ profile (11 November 2026)
+
+The mission migrated to Forward+ at the creator's request. The shared profile
+now layers SSAO (radius 2.0, intensity 3.0), SSIL (radius 4.0, intensity .9),
+a 1.1° sun with four parallel splits, additive glow (threshold 1.35, intensity
+.25), contrast 1.10 / saturation 1.08, and re-exposure (sun ×1.55, ambient
+×1.70) on top of Lighting 01, because Forward+ rendered the same values about
+a quarter darker. Earlier "stay in Compatibility" guidance is superseded. See
+`RENDERER_STUDY.md` for the comparison that drove the decision.

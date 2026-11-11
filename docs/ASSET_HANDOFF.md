@@ -411,3 +411,30 @@ limits; integration authorization does not imply final art/reference parity.
 
 Step 5 is integrated. Next in the agreed plan is step 6, combat effects and
 unit presentation; it has not begun. Step 3 remains deferred and step 7 later.
+
+## Gate cohesion 01 — integrated, 11 November 2026
+
+Per the creator's request to act on Claude's Gate review, a separate candidate
+is ready in `GateCohesionStudy.bat` (actual mission, Lighting 01, B before/after).
+Untextured flanking boulders and cream markers are replaced with fractured
+cliff-matched sandstone and worked limestone; treads are chipped/settled; sand
+drifts and contact occlusion ground the base; the crown blade became a keystone;
+Gate atlas density +60%. Read `GATE_COHESION_STUDY.md` and the status section of
+`GATE_COHESION_HANDOFF.md`. The creator then requested integration: it is now
+the mission default (`Arena.gate_cohesion_review = true`). A follow-up warmed
+the stone and added doorway depth; `RendererStudy.bat` and `RENDERER_STUDY.md`
+compare Compatibility with Forward+ as a migration decision aid. Step 6
+(combat effects/unit presentation) is next in the agreed plan afterwards.
+
+## Lighting 02 — Forward+ migration, 11 November 2026
+
+After reviewing `RendererStudy.bat` the creator chose the migration ("this is
+our path"). `project.godot` now targets Forward+; `lighting_profile.gd` applies
+the screen-space profile (SSAO/SSIL/soft sun/glow/re-exposure) whenever the
+renderer is Forward+, with `set_screen_space(false)` for the Lighting 01-only
+comparison. Mission-based study `.bat` files run Forward+. Lighting, battle,
+Gate cohesion and debris checks pass; native Forward+ captures of the mission,
+renderer, Gate and lighting studies logged no errors. Stop building per-asset
+occlusion workarounds; let SSAO carry contact darkening. Remaining from the
+cohesion review: ground pass (macro variation, dunes, cracked patches) and cliff
+variety/warmth; then step 6 of the agreed plan.

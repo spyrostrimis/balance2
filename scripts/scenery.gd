@@ -8,7 +8,7 @@ static func stone(color: Color) -> ShaderMaterial:
 	material.set_shader_parameter("stone_color", color)
 	return material
 
-static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false, vegetation_review: bool = false, debris_review: bool = false) -> void:
+static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false, vegetation_review: bool = false, debris_review: bool = false, gate_cohesion: bool = false, gate_compare: bool = false) -> void:
 	var sandstone := stone(Color("a17d62"))
 	var pale := stone(Color("b5a489"))
 	var dark := stone(Color("766454"))
@@ -24,7 +24,11 @@ static func build(parent: Node3D, terrain_review: bool = false, waterworks_revie
 		sigil(parent, Vector3(0.9, 0.045, 1.45), 0.32, false)
 	else:
 		_build_road(parent, pale, dark, rng)
-	_build_temple(parent, pale, dark)
+	# The compare study builds both Gate clusters; only one is visible at a time.
+	if gate_compare or not gate_cohesion:
+		_build_temple(parent, pale, dark).visible = not gate_cohesion
+	if gate_compare or gate_cohesion:
+		load("res://scripts/gate_cohesion_art.gd").build(parent).visible = gate_cohesion
 	_build_small_details(parent, dark, rng, waterworks_review, vegetation_review, debris_review)
 
 static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
@@ -83,7 +87,10 @@ static func _build_road(parent: Node3D, pale: Material, dark: Material, rng: Ran
 	Art.cylinder(parent, Vector3(0, -0.025, 0), 2.1, 2.1, 0.12, pale, 12)
 	sigil(parent, Vector3(0.9, 0.045, 1.45), 0.32, false)
 
-static func _build_temple(parent: Node3D, pale: Material, dark: Material) -> void:
+static func _build_temple(root: Node3D, pale: Material, dark: Material) -> Node3D:
+	var parent := Node3D.new()
+	parent.name = "GateCluster_previous"
+	root.add_child(parent)
 	var temple := preload("res://assets/gate_study/v2/sanctuary_gate.glb").instantiate()
 	temple.name = "SanctuaryGate"
 	temple.position = Vector3(0, 0, -18.6)
@@ -96,6 +103,7 @@ static func _build_temple(parent: Node3D, pale: Material, dark: Material) -> voi
 		Art.rock(parent, Vector3(side * 9.4, 1.4, -19.5), Vector3(4.0, 3.5, 5.8), dark, 780 + side)
 		Art.rock(parent, Vector3(side * 8, 1.1, -15.4), Vector3(1.1, 2.5, 0.85), pale, 791 + side)
 		sigil(parent, Vector3(side * 8, 1.4, -14.9), 0.25, true)
+	return parent
 
 static func _build_temple_previous(parent: Node3D, pale: Material, dark: Material) -> void:
 	# Retained only for the Gate study's before/after comparison.

@@ -6,4 +6,4 @@ if not exist "%GODOT_EXE%" (
   pause
   exit /b 1
 )
-start "Balance Waterworks Study" "%GODOT_EXE%" --path "%~dp0." --rendering-method gl_compatibility res://scenes/waterworks_study.tscn
+start "Balance Waterworks Study" "%GODOT_EXE%" --path "%~dp0." --rendering-method forward_plus res://scenes/waterworks_study.tscn

@@ -161,3 +161,14 @@ illustrates selective index patches; do not rerun it unchanged. Commit/push only
 cohesive owned work and update durable handoff. Do not close unrelated user
 editor/game windows. AGENTS.md checks apply to new art changes; avoid lengthy
 completed-asset retests for simple approved substitutions.
+
+## Status — candidate 01 ready for review (11 November 2026)
+
+Work began in a Claude Code session (Codex out of credits), building on Codex's
+unfinished untracked `art_source/gate/cohesion/` start. Read
+`GATE_COHESION_STUDY.md` for confirmed vs. unconfirmed review points, changes,
+verification and limits; launch `GateCohesionStudy.bat`. Notable finding: the
+"blurry lintels" were global under-resolution (13% atlas fill, uniform ~41 px/m),
+not a lintel UV mismatch. Codex's rectangular tread notches were replaced.
+The creator approved it ("Add it to the game"); `Arena.gate_cohesion_review`
+now defaults true. Gate 02 remains available as the study's B comparison.

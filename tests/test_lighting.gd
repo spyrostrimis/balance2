@@ -54,7 +54,13 @@ func run() -> void:
 	check(profile.bindings.size() > 30, "Runtime and imported arena meshes are both included")
 	profile.set_mode(2)
 	check(world.environment != env and world.environment.sky != null, "Candidate supplies its own reflection environment")
-	check(not world.environment.glow_enabled and not world.environment.ssao_enabled and not world.environment.fog_enabled, "No masking post-processing or unsupported SSAO")
+	if profile.screen_space:
+		check(world.environment.ssao_enabled and world.environment.ssil_enabled and not world.environment.fog_enabled and is_equal_approx(sun.light_energy, Profile.FORWARD_SUN.light_energy), "Lighting 02 screen-space profile and re-exposure apply on Forward+")
+		profile.set_screen_space(false)
+		check(not world.environment.ssao_enabled and is_equal_approx(sun.light_energy, Profile.SUN.light_energy), "Lighting 01 values alone remain available for comparison")
+		profile.set_screen_space(true)
+	else:
+		check(not world.environment.glow_enabled and not world.environment.ssao_enabled and not world.environment.fog_enabled, "No masking post-processing or unsupported SSAO")
 	var unchanged := true
 	for mat in materials: unchanged = unchanged and materials[mat] == material_state(mat)
 	check(unchanged, "Original materials, texture references, UV scales and emission stay unchanged")

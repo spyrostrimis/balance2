@@ -1,0 +1,18 @@
+{
+  "flanker_left": {
+    "triangles": 17848,
+    "resolution": 2048
+  },
+  "flanker_right": {
+    "triangles": 18526,
+    "resolution": 2048
+  },
+  "marker_left": {
+    "triangles": 1086,
+    "resolution": 1024
+  },
+  "marker_right": {
+    "triangles": 1008,
+    "resolution": 1024
+  }
+}

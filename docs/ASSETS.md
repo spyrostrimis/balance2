@@ -202,3 +202,13 @@ carry albedo, color-derived tangent normals and roughness/metallic surface maps.
 Local sand-contact meshes use accepted terrain PBR and a Compatibility shader.
 Debris 01 is approved and integrated, 11 November 2026. See
 `DEBRIS_STUDY.md` for controls, preservation checks and limitations.
+
+## Gate cohesion 01 (11 November 2026)
+
+`assets/gate_cohesion/` holds a separate review candidate: the revised Gate,
+two fractured sandstone flankers and two worked wayside markers. All geometry is
+original, built by `art_source/gate/cohesion/build_gate.py` and
+`build_neighbors.py` (packed `.blend` sources beside them). No new raster
+source: it reuses the project's generated Gate 02 limestone/ivy, Gate 01 banner
+and Terrain 01 cliff images. No third-party files, add-ons or franchise art;
+no CC0 claim. See `GATE_COHESION_STUDY.md`.

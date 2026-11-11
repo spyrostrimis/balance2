@@ -1,0 +1,14 @@
+{
+  "revision": "cohesion01",
+  "blender": "5.2.3 LTS",
+  "triangles": 165954,
+  "materials": 7,
+  "stone_texture_resolution": 4096,
+  "cloth_door_texture_resolution": 1024,
+  "height_m": 7.99,
+  "width_m": 18.0,
+  "front": "Godot +Z",
+  "status": "Separate review candidate; not integrated",
+  "source": "art_source/gate/cohesion/gate_cohesion_authoring.blend",
+  "reference": "User-provided balanced2_goal.png (10 November 2026)"
+}
