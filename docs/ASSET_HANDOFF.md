@@ -367,3 +367,30 @@ The creator approved Debris 01 on 11 November 2026 and requested integration.
 pre-existing dirty HUD/settings/import work are preserved. Only task-owned
 shared-document additions were staged; captures/logs stay ignored in
 `artifacts/debris/`.
+
+## Lighting and material cohesion 01 — review ready, 11 November 2026
+
+Step 5 now has a separate native candidate in `LightingStudy.bat`. It loads
+the actual mission with eight troops and current HUD, held at deployment.
+B compares exact original/candidate light and materials at the current camera;
+L isolates lighting; 1-8 select RTS and close presets; H toggles HUD and Tab
+the review overlay. Read `LIGHTING_HANDOFF.md` and `LIGHTING_STUDY.md`.
+
+The opt-in reusable recipe in `scripts/lighting_profile.gd` adds restrained sky
+reflection, cooler ambient, revised shadow contact and separate sand/stone/
+cliff/metal normal and color adjustments. Existing GLBs, geometry, textures,
+UV scale, botanical/character/Korali materials, placements and mechanics stay
+unchanged. Three ground/contact shaders expose optional uniforms with original
+defaults. There are no new raster sources, third-party assets or dependencies.
+
+All 10 isolation/restoration checks and 30 battle checks pass. Native matched
+before/after captures cover eight actual mission cameras in Compatibility;
+B/L/H and preset controls were checked in the open review. Final logs are clean.
+Known limits include shadow resolution, approximate reflection, cliff repeats,
+paving/contact seams, prototype flankers/foundation and deferred character art.
+No reference-parity claim. Logs/captures are ignored in `artifacts/lighting/`.
+
+**Awaiting creator review; not integrated or aesthetically accepted.** The
+normal mission retains original light/material values. Step 3 stays deferred;
+steps 6/7 have not begun. Pre-existing HUD/settings/import work is preserved;
+only task-owned additions in shared dirty documents belong to this commit.

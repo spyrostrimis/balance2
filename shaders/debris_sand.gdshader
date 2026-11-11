@@ -1,5 +1,7 @@
 shader_type spatial;
 render_mode diffuse_burley, depth_draw_never;
+uniform vec3 sand_tint = vec3(1.0);
+uniform float normal_strength = .20;
 uniform sampler2D sand_color : source_color, repeat_enable, filter_linear_mipmap_anisotropic;
 uniform sampler2D sand_normal : hint_normal, repeat_enable, filter_linear_mipmap_anisotropic;
 uniform sampler2D rock_color : source_color, repeat_enable, filter_linear_mipmap_anisotropic;
@@ -13,6 +15,7 @@ void fragment() {
     vec3 broad=texture(sand_color,mat2(vec2(.8,.6),vec2(-.6,.8))*p/13.0+.31).rgb;
     sand=mix(sand,broad,.24);
     sand=mix(sand,vec3(dot(sand,vec3(.299,.587,.114))),.22)*.83;
+    sand *= sand_tint;
     float compacted=max(court(p,vec2(-10,-4),vec2(7,4.8)),court(p,vec2(10,-5),vec2(7.4,5)));
     compacted=max(compacted,court(p,vec2(-9,8),vec2(6.2,4.8)));
     compacted=max(compacted,court(p,vec2(10,8.8),vec2(6.5,4.8)));
@@ -25,7 +28,7 @@ void fragment() {
     color=mix(color,texture(rock_color,p/2.7).rgb*vec3(.73,.76,.77),talus*.36);
     ALBEDO=mix(color,sand*vec3(.49,.60,.55),runoff*.45);
     NORMAL_MAP=texture(sand_normal,p/4.0).rgb;
-    NORMAL_MAP_DEPTH=.20;
+    NORMAL_MAP_DEPTH=normal_strength;
     ROUGHNESS=.96;
     // Feather silhouette without a decal node (Compatibility); no painted shadow.
     ALPHA=COLOR.a;

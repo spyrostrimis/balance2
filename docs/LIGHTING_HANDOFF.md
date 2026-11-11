@@ -1,4 +1,29 @@
-# Lighting and material cohesion — start step 5
+# Lighting and material cohesion — step 5 review ready
+
+## Current state — 11 November 2026
+
+Lighting 01 is built as a **separate native review candidate, not integrated**.
+Open `LightingStudy.bat`; read `LIGHTING_STUDY.md` for the actual audit, recipe,
+checks and limitations. B compares the exact integrated mission at the same
+camera; L separates light-only from light/material changes. 1-8 select RTS,
+Gate, waterworks, ground/tree, debris, Blue, Red and Korali. H toggles HUD and
+Tab hides the review overlay. Existing mission simulation is held in the viewer.
+
+The candidate uses warmer sand, paler worked stone, reduced peach cliff tint,
+cooler ambient fill, a restrained reflection sky and revised shadow bias.
+Authored botanical/character/Korali materials and all geometry are preserved.
+The reusable opt-in recipe is `scripts/lighting_profile.gd`. Optional uniforms
+on the three ground/contact shaders keep original defaults for the mission.
+No new generated sources, third-party files, dependencies or renderer change.
+
+All 10 isolation/restoration checks and 30 battle checks pass. All eight native
+before/after views were inspected in Compatibility; final logs are clean.
+Artifacts stay under ignored `artifacts/lighting/`. The tracked import state was
+snapshotted before runs; pre-existing HUD/settings/source work remains separate.
+
+**Next: creator review of Lighting 01.** Leave aesthetic acceptance/integration
+to the creator. Step 3 remains deferred and steps 6/7 have not begun. Historical
+start instructions below record the request that produced this candidate.
 
 ## Creator instruction — 11 November 2026
 

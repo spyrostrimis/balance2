@@ -1,5 +1,8 @@
 shader_type spatial;
 render_mode diffuse_burley;
+uniform vec3 sand_tint = vec3(1.0);
+uniform vec3 stone_tint = vec3(1.0);
+uniform float normal_strength = .35;
 uniform sampler2D stone_color : source_color, repeat_enable, filter_linear_mipmap_anisotropic;
 uniform sampler2D stone_normal : hint_normal, repeat_enable, filter_linear_mipmap_anisotropic;
 uniform sampler2D sand_color : source_color, repeat_enable, filter_linear_mipmap_anisotropic;
@@ -19,11 +22,12 @@ void fragment() {
     vec3 broad=texture(sand_color,mat2(vec2(.8,.6),vec2(-.6,.8))*p/13.0+.31).rgb;
     sand=mix(sand,broad,.24);
     sand=mix(sand,vec3(dot(sand,vec3(.299,.587,.114))),.22)*.83;
+    sand *= sand_tint;
     // Shallow windblown burial across the perimeter of each surviving court.
     float grit=texture(sand_color,p/1.3).r;
     exposed=smoothstep(.08,.73,exposed+(grit-.5)*.50);
-    ALBEDO=mix(sand*.86,texture(stone_color,UV).rgb,exposed*.96);
+    ALBEDO=mix(sand*.86,texture(stone_color,UV).rgb*stone_tint,exposed*.96);
     NORMAL_MAP=mix(texture(sand_normal,p/4.0).rgb,texture(stone_normal,UV).rgb,exposed);
-    NORMAL_MAP_DEPTH=.35;
+    NORMAL_MAP_DEPTH=normal_strength;
     ROUGHNESS=.92;
 }
