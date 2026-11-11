@@ -8,7 +8,7 @@ static func stone(color: Color) -> ShaderMaterial:
 	material.set_shader_parameter("stone_color", color)
 	return material
 
-static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false, vegetation_review: bool = false) -> void:
+static func build(parent: Node3D, terrain_review: bool = false, waterworks_review: bool = false, vegetation_review: bool = false, debris_review: bool = false) -> void:
 	var sandstone := stone(Color("a17d62"))
 	var pale := stone(Color("b5a489"))
 	var dark := stone(Color("766454"))
@@ -25,7 +25,7 @@ static func build(parent: Node3D, terrain_review: bool = false, waterworks_revie
 	else:
 		_build_road(parent, pale, dark, rng)
 	_build_temple(parent, pale, dark)
-	_build_small_details(parent, dark, rng, waterworks_review, vegetation_review)
+	_build_small_details(parent, dark, rng, waterworks_review, vegetation_review, debris_review)
 
 static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:
 	# Retained for the baseline mission and review comparison.
@@ -47,7 +47,7 @@ static func _build_prototype_cliffs(parent: Node3D, sandstone: Material, pale: M
 			Art.rock(parent, Vector3(side * rng.randf_range(27, 29), height * 0.35, z), Vector3(8, height, 8), sandstone, 300 + i + (side + 1) * 20)
 			Art.rock(parent, Vector3(side * 23.5, 0.4, z + 2), Vector3(3.5, 1.8, 3.6), pale, 340 + i)
 
-static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator, waterworks_review: bool = false, vegetation_review: bool = false) -> void:
+static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumberGenerator, waterworks_review: bool = false, vegetation_review: bool = false, debris_review: bool = false) -> void:
 	# Pebbles and small plants reinforce existing rock silhouettes, not paths.
 	for obstacle in [Vector3(-8, 0, -6), Vector3(8, 0, 6), Vector3(-12, 0, 7), Vector3(12, 0, -7)]:
 		# The approved formation includes its own fallen slabs and chips.
@@ -60,7 +60,10 @@ static func _build_small_details(parent: Node3D, dark: Material, rng: RandomNumb
 	for i in range(60):
 		var p := Vector3(rng.randf_range(-21, 21), 0.03, rng.randf_range(-14, 14))
 		if p.length() < 6: continue
-		Art.rock(parent, p, Vector3(0.12, 0.08, 0.2) * rng.randf_range(0.6, 1.5), dark, i)
+		var pebble_scale := rng.randf_range(0.6, 1.5)
+		# Candidate replaces generic scatter with selected edge fragments. Keep RNG consumption.
+		if not debris_review:
+			Art.rock(parent, p, Vector3(0.12, 0.08, 0.2) * pebble_scale, dark, i)
 	_build_field_equipment(parent, waterworks_review)
 
 static func _build_road(parent: Node3D, pale: Material, dark: Material, rng: RandomNumberGenerator) -> void:

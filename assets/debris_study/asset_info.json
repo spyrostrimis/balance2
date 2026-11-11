@@ -1,0 +1,15 @@
+{
+  "revision": 1,
+  "triangles": {
+    "ruin_fall": 2564,
+    "cliff_spall": 1778,
+    "dead_bough": 1520,
+    "exposed_root": 1920,
+    "wreckage": 1278,
+    "paving_spall": 1116
+  },
+  "collision": false,
+  "source": "art_source/debris/debris_authoring.blend",
+  "status": "Separate review candidate; not integrated",
+  "provenance": "Original geometry, built-in imagegen and reused original project sources; TEXTURE_SOURCES.md"
+}

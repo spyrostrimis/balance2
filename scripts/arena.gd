@@ -14,6 +14,7 @@ var obstacles: Array[Vector3] = [] # x/z = center, y = collision radius.
 var terrain_review := true # Approved Terrain 01; false retains the old study comparison.
 var waterworks_review := true # Accepted for interim use; false retains the old comparison.
 var vegetation_review := true # Vegetation 01 accepted for interim use; false retains Tree 02 comparison.
+var debris_review := false # Separate candidate; creator has not approved mission integration.
 
 func _ready() -> void:
 	_build_terrain()
@@ -27,7 +28,7 @@ func _build_terrain() -> void:
 		load("res://scripts/terrain_art.gd").ground(self)
 	else:
 		Details.terrain(self, sand)
-	Scenery.build(self, terrain_review, waterworks_review, vegetation_review)
+	Scenery.build(self, terrain_review, waterworks_review, vegetation_review, debris_review)
 	Details.build(self, waterworks_review, vegetation_review)
 	# Register all substantial new props before building the navigation grid.
 	obstacles.append_array(Details.obstacle_footprints())
@@ -57,6 +58,8 @@ func _build_terrain() -> void:
 		for z in [-3, 3]:
 			Art.cylinder(self, Vector3(side * 17, 0.55, z), 0.3, 0.2, 1.1, dark_stone)
 			Art.box(self, Vector3(side * 17, 1.15, z), Vector3(0.36, 0.16, 0.36), Art.material(faction_color, 0.35))
+	if debris_review:
+		load("res://scripts/debris_art.gd").build(self)
 
 func _build_grid() -> void:
 	grid.region = Rect2i(-HALF_WIDTH, -HALF_DEPTH, HALF_WIDTH * 2 + 1, HALF_DEPTH * 2 + 1)

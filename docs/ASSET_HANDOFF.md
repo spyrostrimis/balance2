@@ -340,3 +340,29 @@ Read `DEBRIS_HANDOFF.md`; this supersedes previous sequencing. All prior accepte
 integrations and
 the creator's dirty HUD/settings work are preserved. Only task-owned shared-doc
 additions are staged; captures/logs stay ignored in `artifacts/vegetation/`.
+
+## Ground details candidate 01 — 10 November 2026
+
+Step 4 is ready for native review in `DebrisStudy.bat`: 1-6 choose ruin debris,
+paving, RTS, wreckage, roots and isolated kit; B compares the integrated scene,
+V reverses. Read `DEBRIS_STUDY.md` and the current `DEBRIS_HANDOFF.md`.
+Six original modeled kits, 24 placements and 28 feathered sand-contact meshes
+address border rubble, branches, short roots, maintenance wreckage, paving chips
+and burial. Existing accepted rubble was audited; candidate removes only the
+old generic random pebble scatter. Source PNG, exact built-in imagegen prompt,
+packed editable Blender file and recipe are under `art_source/debris/`;
+exports/shared portable PBR are under `assets/debris_study/`.
+
+All 30 battle checks and 1,247 navigation comparisons pass. Imported-geometry
+checks cover 29,409 vertices, identical footprints/accepted transforms/floor,
+no colliders and a clear central radius 6. Native Compatibility close/RTS/kit/
+reverse/before views were inspected; final script/shader logs are clean.
+Repeated forms, stylized carving, approximate sand skins and subtle distant
+details remain limitations. No reference-parity claim.
+
+**Not accepted or integrated:** `Arena.debris_review = false` remains the mission
+default. Leave aesthetic acceptance/integration to the creator. Step 3 remains
+deferred; step 5 follows this review, and has not begun. Earlier integrations and
+pre-existing dirty HUD/settings/import work are preserved. Only task-owned
+shared-document additions were staged; captures/logs stay ignored in
+`artifacts/debris/`.

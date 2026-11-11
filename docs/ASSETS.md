@@ -188,3 +188,17 @@ Exact prompt, deterministic Blender recipe, source audits and packed editable
 `.blend` are in `art_source/vegetation/`. Native review and limitations are in
 `VEGETATION_STUDY.md`. Vegetation 01 is accepted for interim use and integrated,
 10 November 2026.
+
+## Debris candidate 01 — original authored art
+
+`assets/debris_study/` contains six original GLB kits with shared sibling PBR:
+ruin_fall, cliff_spall, dead_bough, exposed_root, wreckage and paving_spall.
+Keep the GLBs and PNGs together. `art_source/debris/` contains the deterministic
+Blender recipe, packed editable `.blend`, new generated deadwood source and exact
+built-in imagegen prompt in `TEXTURE_SOURCES.md`. Stone, sand and pipe sources
+reuse original project art with provenance links. Generated art is not declared
+CC0; no third-party files or dependencies were added. The portable 1024px tiles
+carry albedo, color-derived tangent normals and roughness/metallic surface maps.
+Local sand-contact meshes use accepted terrain PBR and a Compatibility shader.
+This is a separate review candidate, not accepted or integrated. See
+`DEBRIS_STUDY.md` for controls, preservation checks and limitations.

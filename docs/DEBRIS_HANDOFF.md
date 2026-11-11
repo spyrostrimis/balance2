@@ -1,4 +1,36 @@
-# Ground-level debris and transitions — start step 4
+# Ground-level debris and transitions — candidate 01 ready
+
+## Current state — 10 November 2026
+
+Step 4 now has a separate native review candidate. Launch `DebrisStudy.bat`;
+read `DEBRIS_STUDY.md` for controls, source paths, checks and limitations. Keys
+1–6 select ruin debris/paving/RTS/wreckage/roots/isolated kit; B compares the
+integrated scene, V reverses. **Not accepted or integrated.** The mission default
+is `Arena.debris_review = false`; all earlier accepted asset defaults remain.
+
+Six original Blender kits, 24 placements and 28 local feathered sand contacts
+cover fallen carved slabs, bedding wedges, dead branches, short exposed roots,
+maintenance wreckage and shallow paving edge chips. The old random pebble
+scatter is omitted only in the candidate. Existing sandstone/cistern/pier rubble
+was audited and preserved rather than duplicated. Source image, exact built-in
+imagegen prompt, packed editable `.blend` and deterministic recipe live under
+`art_source/debris/`; six GLBs and shared portable PBR live in
+`assets/debris_study/`. No third-party files or new dependencies.
+
+30 battle checks pass. `tests/test_debris.gd` verifies all 1,247 navigation cells,
+footprints, accepted asset transforms, unchanged floor, no colliders, central
+radius 6 clearance, 24 placements and 29,409 mesh/transition vertices. Larger
+debris stays outside navigation or within existing trunk discs. Final native
+Compatibility close/RTS/kit/reverse/before views have clean logs. Captures/logs
+are ignored under `artifacts/debris/`; pre-existing import state was snapshotted
+there for cleanup. Shared dirty docs are staged by task-only index patch.
+
+Limitations: repeated kit forms, stylized carving/fractures, no separate wood
+end-grain atlas, approximate sand skins with possible close-angle intersections,
+and subtle RTS-scale chips/roots. No claim of reference parity. Keep aesthetic
+acceptance/integration with the creator. Step 3 remains deferred; step 5 follows
+this review and must not be started in parallel. All pre-existing HUD/settings
+work remains separate and uncommitted.
 
 ## Latest creator instruction — 10 November 2026
 

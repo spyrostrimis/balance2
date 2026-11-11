@@ -220,3 +220,13 @@ specimen; **B** compares previous plants (except flower view); **V** reverses;
 arrows/right-drag pan, wheel zoom, R resets, Esc closes. Vegetation 01 is integrated
 for interim use. Foliage is static and still
 uses dense meshes and repeated plant forms. See [vegetation study](docs/VEGETATION_STUDY.md).
+
+## Ground details review 01
+
+Open `DebrisStudy.bat` for the separate debris/transitions candidate in native
+Godot Compatibility. **1-6**: ruin debris, paving, RTS basin, wreckage, roots,
+isolated kit. **B** compares the integrated scene (except isolated kit); **V**
+reverses; arrows/right-drag pan, wheel zooms, R resets and Esc closes. Includes
+fallen slabs, loose stone, branches, roots, modest wreckage and shallow sand
+burial. Repeated forms and approximate contact skins remain limitations.
+The mission is unchanged pending acceptance. See [debris study](docs/DEBRIS_STUDY.md).
